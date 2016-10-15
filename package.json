@@ -1,0 +1,32 @@
+{
+  "name": "datababes",
+  "version": "1.0.0",
+  "description": "CMSC 127 Project",
+  "main": "backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon backend/server.js"
+  },
+  "author": "datababes",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "lodash": "^4.13.1",
+    "method-override": "^2.3.6",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gelloguiam/datababes.git"
+  },
+  "keywords": [
+    "web"
+  ],
+  "bugs": {
+    "url": "https://github.com/gelloguiam/datababes/issues"
+  },
+  "homepage": "https://github.com/gelloguiam/datababes#readme"
+}

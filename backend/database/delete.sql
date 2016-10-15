@@ -1,0 +1,2 @@
+DROP USER 'datababes'@'localhost';
+DROP DATABASE IF EXISTS DATABABES;
