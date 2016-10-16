@@ -1,0 +1,28 @@
+<div>
+	<table>
+		<thead>
+			<th>Person ID</th>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Email Address</th>
+			<th>Contact no</th>
+			<th>Date Added</th>
+			<th>Account Type</th>
+			<th>Username</th>
+			<th>Passwords</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="person in people">
+				<td>{{ person.PersonId }}</td>
+				<td>{{ person.FirstName }} {{ person.MiddleName }} {{ person.LastName }}</td>
+				<td>{{ person.Address }}</td>
+				<td>{{ person.EmailAddress }}</td>
+				<td>{{ person.ContactNo }}</td>
+				<td>{{ person.DateAdded }}</td>
+				<td>{{ person.AccountType }}</td>
+				<td>{{ person.Username }}</td>
+				<td>{{ person.Password }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div

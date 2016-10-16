@@ -1,13 +1,10 @@
 'use strict';
 
-const __ = require(__dirname + '/../controllers/user');
+const get = require(__dirname + '/../controllers/get');
 
 module.exports = (router) => {
 
-	router.del = router.delete;
-
-	router.post('/api/login', __.login);
-	router.get('/api/logout', __.logout);
+	router.get('/get', get.get_all);
 
 	router.all('*', (req, res) => {
 		res.status(404).send({message : 'Unmatched route. =(('});
