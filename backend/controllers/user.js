@@ -12,7 +12,6 @@ exports.login = (req, res, next) => {
         password:   req.body.password
     };
 
-
     function start () {
         let response;
 
@@ -24,8 +23,8 @@ exports.login = (req, res, next) => {
         }
         
         const queryString = "SELECT *"
-			+ " FROM user"
-			+ " WHERE username=?"
+			+ " FROM person"
+			+ " WHERE username = ?"
 			+ " AND password = ?";
 
 		db.query(queryString,

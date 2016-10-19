@@ -10,13 +10,14 @@
   "author": "datababes",
   "license": "ISC",
   "dependencies": {
+    "anytv-node-importer": "0.0.7",
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
     "express": "^4.14.0",
     "lodash": "^4.13.1",
     "method-override": "^2.3.6",
-    "winston": "^2.2.0",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "winston": "^2.2.0"
   },
   "devDependencies": {},
   "repository": {

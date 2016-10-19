@@ -5,15 +5,16 @@
 		.controller('GetCtrl', GetCtrl);
 
 	function GetCtrl($scope, GetService) {
+		$scope.people = [];
+
 		$scope.get = () => {
-
-			// const data = {
-			// 	name: $scope.name,
-			// 	details: $scope.details
-			// }
-
-			// GetService.get(data);
-			GetService.get();
+			GetService.get()
+				.then((data) => {
+					$scope.people = data.data;
+					console.log($scope.people);
+				}, (err) => {
+					throw new Error(err);
+				});
 		}
 	}
 })();
