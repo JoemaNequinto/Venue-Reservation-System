@@ -1,6 +1,4 @@
 
-
-
 function renderVenueMap() {
 
   var map_container = $("#venue-map")[0];
@@ -14,3 +12,9 @@ function renderVenueMap() {
   var map = new google.maps.Map(map_container, map_attributes);
   console.log(map);
 }
+
+$('.button-collapse').sideNav({
+	menuWidth: 300, // Default is 240
+	edge: 'left', // Choose the horizontal origin
+	closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
+});

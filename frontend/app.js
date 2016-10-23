@@ -12,8 +12,16 @@
 			.when('/dash', {
 				templateUrl: 'views/home.html'
 			})
-			.when('/get', {
-				templateUrl: 'views/get.html',
+			.when('/get-people', {
+				templateUrl: 'views/get-person.html',
+				controller: 'GetCtrl'
+			})
+			.when('/get-events', {
+				templateUrl: 'views/get-event.html',
+				controller: 'GetCtrl'
+			})
+			.when('/get-locations', {
+				templateUrl: 'views/get-location.html',
 				controller: 'GetCtrl'
 			})
 			.otherwise({

@@ -1,58 +1,61 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Home | Datababes</title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="../bower_components/materialize/dist/css/materialize.css" rel="stylesheet">
-        <link href="../assets/css/home.css" rel="stylesheet">
-    </head>
-
-    <body>
-        <div id="main-wrapper" class="row">
-            <div id="sidebar-wrapper" class="col s2 row">
-                <div id="sidebar-overlay">
-                    <div id="sidebar-brand"><h5>DATABABES</h5></div>
-                    <div id="profile">
-                        <img src="../assets/images/profile.jpg" id="profile-icon">
-                        <p id="profile-name">Marya Aguirre</p>
-                    </div>
-                    <div id="sidebar-list">
-                        <div class="row nav-item">
-                            <div class="col s3 nav-item-icon"><i class="tiny material-icons">search</i></div>
-                            <div class="col s9 nav-item-text"><a href="#!">Search</a></div>
-                        </div>
-                        <div class="row nav-item">
-                            <div class="col s3 nav-item-icon"><i class="tiny material-icons">grade</i></div>
-                            <div class="col s9 nav-item-text"><a href="#!">My Events</a></div>
-                        </div>
-                        <div class="row nav-item">
-                            <div class="col s3 nav-item-icon"><i class="tiny material-icons">view_module</i></div>
-                            <div class="col s9 nav-item-text"><a href="#!">Profile</a></div>
-                        </div>
-                        <div class="row nav-item">
-                            <div class="col s3 nav-item-icon"><i class="tiny material-icons">power_settings_new</i></div>
-                            <div class="col s9 nav-item-text"><a href="#!">Logout</a></div>
-                        </div>
-                    </div>
-                </div>
+<div id="main-wrapper" class="row">
+    <ul id="slide-out" class="side-nav">
+        <li>
+            <div class="userView">
+                <img class="background" src="../assets/images/header.jpg">
+                <a href=""><img class="circle" src="../assets/images/profile.jpg"></a>
+                <a href=""><span class="white-text name">Marya Aguirre</span></a>
+                <a href=""><span class="white-text email">maguirre@gmail.com</span></a>
             </div>
-            <div id="content-wrapper" class="col s10 row">
-                <div id="venue-map"></div>
-                <div id="query-panel">
-                    <div class="row" id="search-box">
-                        <div class="input-field col s12">
-                            <input placeholder="Search Venue or Event" id="first_name" type="text" class="validate">
-                        </div>
-                        <div class="btn-floating brown" id="search-button"><i class="material-icons">search</i></div>
-                    </div>
-                    <div id="results-box">
-                        <p>No results to show.</p>
-                    </div>
-                </div>
+        </li>
+        <li><a class="waves-effect waves-teal" href=""><i class="material-icons">search</i>Search</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect waves-teal" href=""><i class="material-icons">grade</i>My Events</a></li>
+        <li><a class="waves-effect waves-teal" href=""><i class="material-icons">view_module</i>Profile</a></li>
+        <li><a class="waves-effect waves-teal" href=""><i class="material-icons">power_settings_new</i>Logout</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+<div id="sidebar-wrapper" class="col s2 row">
+    <div id="sidebar-overlay">
+        <div id="sidebar-brand"><h5>DATABABES</h5></div>
+        <div id="profile">
+            <img src="../assets/images/profile.jpg" id="profile-icon">
+            <p id="profile-name">Marya Aguirre</p>
+        </div>
+        <div id="sidebar-list">
+            <div class="row nav-item">
+                <div class="col s3 nav-item-icon"><i class="tiny material-icons">search</i></div>
+                <div class="col s9 nav-item-text"><a href="#!">Search</a></div>
             </div>
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/materialize.js"></script>
-        <script src="../assets/js/home.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSn43crhAL6geKe88vha2Y0IKKFlsElA&callback=renderVenueMap" defer></script>
-    </body>
-</html>
+            <div class="row nav-item">
+                <div class="col s3 nav-item-icon"><i class="tiny material-icons">grade</i></div>
+                <div class="col s9 nav-item-text"><a href="#!">My Events</a></div>
+            </div>
+            <div class="row nav-item">
+                <div class="col s3 nav-item-icon"><i class="tiny material-icons">view_module</i></div>
+                <div class="col s9 nav-item-text"><a href="#!">Profile</a></div>
+            </div>
+            <div class="row nav-item">
+                <div class="col s3 nav-item-icon"><i class="tiny material-icons">power_settings_new</i></div>
+                <div class="col s9 nav-item-text"><a href="#!">Logout</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="content-wrapper" class="col s10 row">
+    <div id="venue-map"></div>
+    <div id="query-panel">
+        <div class="row" id="search-box">
+            <div class="input-field col s12">
+                <input placeholder="Search Venue or Event" id="first_name" type="text" class="validate">
+            </div>
+            <div class="btn-floating brown" id="search-button"><i class="material-icons">search</i></div>
+        </div>
+        <div id="results-box">
+            <p>No results to show.</p>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="../assets/js/home.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSn43crhAL6geKe88vha2Y0IKKFlsElA&callback=renderVenueMap" defer></script>

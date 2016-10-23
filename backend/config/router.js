@@ -8,7 +8,9 @@ module.exports = (router) => {
 	
 	router.post('/login', __.user.login);
 	router.get('/logout', __.user.logout);
-	router.get('/get', __.get.get_all);
+	router.get('/get-people', __.get.getAllPerson);
+	router.get('/get-events', __.get.getAllEvent);
+	router.get('/get-locations', __.get.getAllLocation);
 
 	router.all('*', (req, res) => {
 		res.status(404).send({message : 'Unmatched route. =(('});

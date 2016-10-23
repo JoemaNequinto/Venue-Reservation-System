@@ -1,0 +1,23 @@
+<div ng-init="getevents()">
+	<h4> EVENT <small>TABLE</small></h4>
+	<table class="table bordered striped centered">
+		<thead>
+			<th>EventId</th>
+			<th>EventName</th>
+			<th>EventDetails</th>
+			<th>EventDate</th>
+			<th>EventStartTime</th>
+			<th>EventEndTime</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="event in events">
+				<td>{{ event.EventId }}</td>
+				<td>{{ event.EventName }}</td>
+				<td>{{ event.EventDetails }}</td>
+				<td>{{ event.EventDate }}</td>
+				<td>{{ event.EventStartTime }}</td>
+				<td>{{ event.EventEndTime }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div
