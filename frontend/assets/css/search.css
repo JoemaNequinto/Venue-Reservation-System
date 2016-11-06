@@ -1,0 +1,38 @@
+/* CONTENT WRAPPER */
+#venue-map {
+  padding: 0;
+  margin: 0;
+  height: 70vh;
+  width: 100%;
+}
+
+
+/* SEARCH PANEL */
+
+#query-panel {
+  width: 100%;
+  height: 30vh;
+}
+
+#search-box {
+  height: auto;
+  /*padding: 10px;*/
+  color: white;
+  margin: 0;
+  background-color: #3f3250;
+}
+
+#results-box {
+  padding: 10px;
+}
+
+#search-button-wrapper {
+    padding: 20px;
+}
+
+#search-button {
+  background-color: #e14658;
+  padding: 10px;
+  border-radius: 100%;
+  float: right;
+}

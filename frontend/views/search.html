@@ -1,17 +1,19 @@
-<link href="assets/css/home.css" rel="stylesheet">
+<link href="assets/css/search.css" rel="stylesheet">
 
 <div id="venue-map"></div>
 <div id="query-panel">
     <div class="row" id="search-box">
-        <div class="input-field col s12">
-            <input placeholder="Search Venue or Event" id="first_name" type="text" class="validate">
+        <div class="input-field col s11">
+            <input placeholder="search venue or event here" id="first_name" type="text" class="validate">
         </div>
-        <div class="btn-floating" id="search-button"><i class="material-icons">search</i></div>
+        <div class="col s1" id="search-button-wrapper">
+          <i class="material-icons" id="search-button">search</i>
+        </div>
     </div>
     <div id="results-box">
         <p>No results to show.</p>
     </div>
 </div>
 
-<script type="text/javascript" src="../assets/js/home.js"></script>
+<script type="text/javascript" src="../assets/js/search.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSn43crhAL6geKe88vha2Y0IKKFlsElA&callback=renderVenueMap" defer></script>
