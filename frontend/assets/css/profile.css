@@ -1,0 +1,155 @@
+#card-wrapper {
+  background: #c0b3a0;
+  /*box-shadow: 1px 1px 15px #111 inset;*/
+  padding: 20px;
+  height: 100vh;
+}
+
+.dash-card {
+  background-color: #22252c;
+}
+
+#calendar-wrapper {
+  padding: 0;
+}
+
+/*.card-icon {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background: #333;
+  border-radius: 5px;
+}*/
+
+.card {
+  border: solid 2px white;
+  padding-bottom: 10px;
+  color: #c0b3a0;
+}
+
+.card-content {
+  text-align: center;
+  line-height: 1em;
+}
+
+.card-link {
+  border: solid 2px white;
+  padding: 10px;
+  color: #e14658;
+  font-variant: small-caps;
+}
+
+#view-all-events {
+  background-color: #3f3250;
+}
+
+#view-all-venues {
+  background-color: #3f3250;
+}
+
+#view-all-events  .card-link:hover {
+  color: #3f3250;
+  background: white;
+}
+
+#view-all-venues  .card-link:hover {
+  color: #3f3250;
+  background: white;
+}
+
+#activity-log {
+  overflow: hidden;
+}
+
+#activity-log-header {
+  color: white;
+  font-weight: bold;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#activity-log-body {
+
+}
+
+.activity {
+  background: #555555;
+  padding: 10px;
+  line-height: 5px;
+  border-left: solid 5px #3f3250;
+  color: white;
+}
+
+.activity-title {
+  font-weight: bold;
+}
+
+
+/* CALENDAR */
+* {box-sizing:border-box;}
+ul {list-style-type: none;}
+
+.month {
+    padding: 12px;
+    width: 100%;
+    background: #3f3250;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #22252c;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    color: white;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+    color: #e14658;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #e14658;
+    border-radius: 100%;
+    color: white !important
+}

@@ -2,7 +2,7 @@
 
 const config		= require(__dirname + '/config/config');
 const router		= require(__dirname + '/config/router');
-const express 		= require('express');
+const express 	= require('express');
 const winston		= require('winston');
 
 let app;

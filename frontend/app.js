@@ -9,8 +9,11 @@
 			.when('/', {
 				templateUrl: 'views/login.html'
 			})
-			.when('/dash', {
+			.when('/home', {
 				templateUrl: 'views/home.html'
+			})
+			.when('/search', {
+				templateUrl: 'views/search.html'
 			})
 			.when('/get-people', {
 				templateUrl: 'views/get-person.html',
@@ -26,6 +29,6 @@
 			})
 			.otherwise({
 				redirectTo: '/'
-			})	
+			})
 	}
 })();
