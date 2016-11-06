@@ -1,148 +1,155 @@
-/*div {
-  border: solid 1px red;
+#card-wrapper {
+  background: #c0b3a0;
+  /*box-shadow: 1px 1px 15px #111 inset;*/
+  padding: 20px;
+  height: 100vh;
+}
+
+.dash-card {
+  background-color: #22252c;
+}
+
+#calendar-wrapper {
+  padding: 0;
+}
+
+/*.card-icon {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background: #333;
+  border-radius: 5px;
 }*/
 
-.col, .row {
-  margin: 0;
-  padding: 0;
-}
-
-
-/* SIDEBAR */
-
-#sidebar-wrapper {
-  padding: 0;
-  margin: 0;
-  background-color: #66615b;
-  background: url('../images/sidebar.png');
-  background-size: auto 100%;
-  height: 100vh;
-  width: 15%;
-  float: left;
-  transition: all 0.3s linear;
-}
-
-#nav-toggle {
-    padding: 10px;
-    float: left;
-}
-
-#sidebar-overlay {
-  height: 100vh;
-  background: rgba(0,0,0,0.7);
-}
-
-#sidebar-brand {
-  color: white;
-  padding: 10px 15px;
-}
-
-#site-title {
-  font-size: 15pt;
-  transition: all 0.3s linear;
-}
-
-#sidebar-list {
-  margin-top: 50px;
-}
-
-.nav-item {
-  padding: 10px;
-}
-
-.nav-item-icon {
-  width: 100%;
-}
-
-.nav-item-icon i {
-  padding: 5px;
-  color: white;
+.card {
   border: solid 2px white;
-  transition: all linear 0.3s;
-}
-
-.nav-item-text a {
-  color: white;
-  font-size: 15px;
-  text-transform: uppercase;
-  transition: all linear 0.3s;
-}
-
-.nav-item:hover > .nav-item-icon i {
-    color: #f1c40f;
-    padding: 10px;
-    border: solid 2px #f1c40f;
-}
-
-.nav-item:hover > .nav-item-text a {
-  font-size: 20px;
-  color: #f1c40f;
-}
-
-
-
-/* CONTENT WRAPPER */
-
-#content-wrapper {
-  padding: 0;
-  width: 85%;
-  float: right;
-  transition: all 0.3s linear;
-}
-
-#venue-map {
-  padding: 0;
-  margin: 0;
-  height: 100vh;
-  width: 100%;
-}
-
-#profile {
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  line-height: 0px;
-  border-top: solid 1px rgba(0,0,0,0.2);
-  border-bottom: solid 1px rgba(0,0,0,0.2);
-  padding-top: 10px;
   padding-bottom: 10px;
-  transition: all 0.1s linear;
+  color: #c0b3a0;
 }
 
-#profile-icon {
-  width: 120px;
-  border-radius: 100%;
+.card-content {
+  text-align: center;
+  line-height: 1em;
+}
+
+.card-link {
   border: solid 2px white;
-}
-
-
-
-/* SEARCH PANEL */
-
-#query-panel {
-  width: 500px;
-  height: auto;
-  background-color: white;
-  position: absolute;
-  right: 25px;
-  top: 25px;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);;
-}
-
-#search-box {
-  padding: 20px;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  margin: 0;
-}
-
-#results-box {
   padding: 10px;
+  color: #e14658;
+  font-variant: small-caps;
 }
 
-#search-button {
-  position: absolute;
-  right: 20px;
-  top: 100px;
-  background-color: #f1c40f;
+#view-all-events {
+  background-color: #3f3250;
+}
+
+#view-all-venues {
+  background-color: #3f3250;
+}
+
+#view-all-events  .card-link:hover {
+  color: #3f3250;
+  background: white;
+}
+
+#view-all-venues  .card-link:hover {
+  color: #3f3250;
+  background: white;
+}
+
+#activity-log {
+  overflow: hidden;
+}
+
+#activity-log-header {
+  color: white;
+  font-weight: bold;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#activity-log-body {
+
+}
+
+.activity {
+  background: #555555;
+  padding: 10px;
+  line-height: 5px;
+  border-left: solid 5px #3f3250;
+  color: white;
+}
+
+.activity-title {
+  font-weight: bold;
+}
+
+
+/* CALENDAR */
+* {box-sizing:border-box;}
+ul {list-style-type: none;}
+
+.month {
+    padding: 12px;
+    width: 100%;
+    background: #3f3250;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #22252c;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    color: white;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+    color: #e14658;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #e14658;
+    border-radius: 100%;
+    color: white !important
 }
