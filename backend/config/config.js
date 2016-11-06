@@ -9,6 +9,7 @@ const config  = {
 
     PORT: 8000,
     COOKIE_SECRET: 'D@t@B@b35',
+    COOKIE_NAME: 'dAtAB@B3S',
     // Directories
     DIR: {
         ASSETS: __dirname + '/../../frontend'

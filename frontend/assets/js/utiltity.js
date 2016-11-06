@@ -28,4 +28,4 @@
 	//expose utility object
 	root.utility = utility;
 
-})(this)
+})(this);

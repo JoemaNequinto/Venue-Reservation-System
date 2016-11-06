@@ -3,7 +3,9 @@
 const config		= require(__dirname + '/config/config');
 const router		= require(__dirname + '/config/router');
 const express 		= require('express');
+const session       = require('express-session');
 const winston		= require('winston');
+const passport      = require('passport');
 
 let app;
 let handler;
@@ -31,7 +33,23 @@ function start() {
 	// parse application/json
 	app.use(require('body-parser').json());
 	app.use(require('compression')());
-
+	// configure the session store
+	app.use(session({
+		resave : false,
+		secret : config.COOKIE_SECRET,
+		rolling : true,
+		saveUninitialized : false,
+		name : config.COOKIE_NAME,
+		cookie : {
+			path: '/',
+			httpOnly:false,
+			secure:false,
+			maxAge: 60 * 1000 * 60 * 2 // 2 hours
+		}
+	}));
+	// required for passport
+	app.use(passport.initialize());
+	app.use(passport.session());
 	winston.log('info', 'Server listening on port', config.PORT);
 	app.use(router(express.Router()));
 	return app.listen(config.PORT);
