@@ -1,6 +1,4 @@
 'use strict';
-
-const status        = require(__dirname + '/../lib/status');
 const db            = require(__dirname + '/../lib/mysql');
 const winston       = require('winston');
 
