@@ -1,97 +1,116 @@
 #card-wrapper {
-  background: #c0b3a0;
-  /*box-shadow: 1px 1px 15px #111 inset;*/
-  padding: 20px;
-  height: 100vh;
+    background: #c0b3a0;
+    /*box-shadow: 1px 1px 15px #111 inset;*/
+    padding: 20px;
+    height: 100vh;
 }
 
 .dash-card {
-  background-color: #22252c;
+    background-color: #3f3250;
 }
 
 #calendar-wrapper {
-  padding: 0;
+    padding: 0;
 }
 
-/*.card-icon {
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  background: #333;
-  border-radius: 5px;
-}*/
-
 .card {
-  border: solid 2px white;
-  padding-bottom: 10px;
-  color: #c0b3a0;
+    /*  border: solid 2px white;*/
+    border-bottom: 5px solid #e14658;
+    padding-bottom: 18px;
+    color: white;
 }
 
 .card-content {
-  text-align: center;
-  line-height: 1em;
+    text-align: center;
+    font-family: 'Lato Semibold';
+    font-style: italic;
+    line-height: 1em;
 }
 
 .card-link {
-  border: solid 2px white;
-  padding: 10px;
-  color: #e14658;
-  font-variant: small-caps;
+    border: solid 2px white;
+    border-radius: 25px;
+    padding: 5px 15px;
+    font-style: normal;
+    text-transform: uppercase;
+    color: white;
+
 }
 
 #view-all-events {
-  background-color: #3f3250;
+    background-color: #3f3250;
 }
 
 #view-all-venues {
-  background-color: #3f3250;
+    background-color: #3f3250;
 }
 
 #view-all-events  .card-link:hover {
-  color: #3f3250;
-  background: white;
+    color: #3f3250;
+    background: white;
 }
 
 #view-all-venues  .card-link:hover {
-  color: #3f3250;
-  background: white;
+    color: #3f3250;
+    background: white;
 }
 
 #activity-log {
-  overflow: hidden;
+    padding-bottom: 0px;
+    border-bottom: 0px;
 }
 
 #activity-log-header {
-  color: white;
-  font-weight: bold;
-  padding-top: 10px;
-  text-align: center;
+    color: white;
+    font-family: 'Lato Bold';
+    font-size: 18px;
+    padding-top: 15px;
+    text-align: center;
 }
 
 #activity-log-body {
+    padding: 0px;
+    height: auto;
+}
 
+#activity-log-body > ul {
+    border-bottom: 5px solid #e14658;
 }
 
 .activity {
-  background: #555555;
-  padding: 10px;
-  line-height: 5px;
-  border-left: solid 5px #3f3250;
-  color: white;
+    background: #e8e5e5;
+    padding: 10px 50px;
+    line-height: 3px;
+    font-family: 'Lato Semibold';
+    font-weight: 500;
+    color: #23242B;
+    font-size: 12px;
+}
+
+.activity:nth-child(2n){
+    background: #dddddd;
 }
 
 .activity-title {
-  font-weight: bold;
+    font-family: 'Lato Black';
+    font-size: 15px;
 }
 
 
 /* CALENDAR */
+
+
 * {box-sizing:border-box;}
 ul {list-style-type: none;}
 
+
+#calendar-wrapper{
+    border-bottom: 5px solid #e14658;
+}
 .month {
-    padding: 12px;
+    padding: 25.5px 12px;
     width: 100%;
+
     background: #3f3250;
 }
 
@@ -103,18 +122,18 @@ ul {list-style-type: none;}
 .month ul li {
     color: white;
     font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    font-family: 'Lato Bold';
+
 }
 
 .month .prev {
     float: left;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
 }
 
 .month .next {
     float: right;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
 }
 
 .weekdays {
@@ -152,4 +171,14 @@ ul {list-style-type: none;}
     background: #e14658;
     border-radius: 100%;
     color: white !important
+}
+
+
+.btn-floating{
+    background-color: #e14658;
+}
+
+
+.btn-floating:hover{
+    background-color: #3f3250;
 }

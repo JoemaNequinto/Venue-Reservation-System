@@ -1,9 +1,9 @@
 div {
-  /*border: solid 1px red;*/
+    /*border: solid 1px red;*/
 }
 
 #content-wrapper {
-  width: 100vw;
+    width: 100vw;
 }
 
 #main-container {
@@ -13,11 +13,11 @@ div {
 }
 
 .card {
-  padding: 10px;
+    padding: 10px;
 }
 
 .card-content {
-  text-align: center;
+    text-align: center;
 }
 
 #slider-overlay {
@@ -29,24 +29,24 @@ div {
 }
 
 .slider. fullscreen img {
-  background-size: cover;
+    background-size: cover;
 }
 
 @keyframes brand {
     0% {
-      border: solid 5px #c0b3a0;
+        border: solid 5px #c0b3a0;
     }
     30% {
-      border: solid 6px white;
-      color: #e14658;
-      transform: rotateZ(20deg);
+        border: solid 6px white;
+        color: #e14658;
+        transform: rotateZ(20deg);
     }
     50% {
-      border: solid 5px #c0b3a0;
-      transform: rotateZ(0deg);
+        border: solid 5px #c0b3a0;
+        transform: rotateZ(0deg);
     }
     100% {
-      border: solid 5px #c0b3a0;
+        border: solid 5px #c0b3a0;
     }
 }
 
@@ -82,25 +82,25 @@ h1 {
 }
 
 input:focus {
-  border-bottom: 2px solid #3f3250 !important;
-  box-shadow: none !important;
+    border-bottom: 2px solid #3f3250 !important;
+    box-shadow: none !important;
 }
 
 #login-container .btn {
-  width: 100%;
-  border-radius: 0;
-  /*border: solid 3px #e14658;*/
-  background-color: #e14658;
-  /*color: #e14658;*/
+    width: 100%;
+    border-radius: 0;
+    /*border: solid 3px #e14658;*/
+    background-color: #e14658;
+    /*color: #e14658;*/
 }
 
 #forgot-password {
-  padding: 10px;
-  text-align: center;
+    padding: 10px;
+    text-align: center;
 }
 
 #forgot-password a {
-  color: #3f3250;
+    color: #3f3250;
 }
 
 #card-footer {
@@ -112,18 +112,18 @@ input:focus {
     position: relative;
 }
 
- /*hiding template side nav*/
+/*hiding template side nav*/
 
 #content-wrapper {
-  transition: 0;
+    transition: 0;
 }
 
 #sidebar-wrapper {
-  transition: 0;
+    transition: 0;
 }
 
 .hidden {
-  visibility: hidden;
-  display: none;
-  width: 0 !important;
+    visibility: hidden;
+    display: none;
+    width: 0 !important;
 }

@@ -1,121 +1,159 @@
 <link href="assets/css/home.css" rel="stylesheet">
 
 <div id="card-wrapper">
-  <div class="col s12">
+    <div class="col s12">
 
-    <div class="col s6">
-      <div class="card-panel dash-card" id="calendar-wrapper">
-        <div class="month">
-          <ul>
-            <li class="prev">❮</li>
-            <li class="next">❯</li>
-            <li style="text-align:center">
-              August<br>
-              <span style="font-size:18px">2016</span>
-            </li>
-          </ul>
+        <div class="col s6">
+            <div class="card-panel dash-card" id="calendar-wrapper">
+                <div class="month">
+                    <ul>
+                        <li class="prev">❮</li>
+                        <li class="next">❯</li>
+                        <li style="text-align:center">
+                            August
+                            <span style="font-size:18px">2016</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="weekdays">
+                    <li>Mo</li>
+                    <li>Tu</li>
+                    <li>We</li>
+                    <li>Th</li>
+                    <li>Fr</li>
+                    <li>Sa</li>
+                    <li>Su</li>
+                </ul>
+
+                <ul class="days">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li><span class="active">10</span></li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25</li>
+                    <li>26</li>
+                    <li>27</li>
+                    <li>28</li>
+                    <li>29</li>
+                    <li>30</li>
+                    <li>31</li>
+                </ul>
+
+            </div>
         </div>
 
-        <ul class="weekdays">
-          <li>Mo</li>
-          <li>Tu</li>
-          <li>We</li>
-          <li>Th</li>
-          <li>Fr</li>
-          <li>Sa</li>
-          <li>Su</li>
+        <div class="col s3">
+            <div class="card" id="view-all-events">
+                <div class="card-image">
+                    <img alt="events" src="assets/images/events-img.jpg"/>
+                </div>
+                <div class="card-content">
+                    <p>See what's happening on your neighborhood!</p>
+                </div>
+                <div class="card-content card-link-wrapper">
+                    <a href="#" class="card-link">View All Events</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s3">
+            <div class="card" id="view-all-venues">
+                <div class="card-image">
+                    <img alt="events" src="assets/images/venues-img.jpg"/>
+                </div>
+                <div class="card-content">
+                    <p>More venues for your upcoming events!</p>
+                </div>
+                <div class="card-content card-link-wrapper" style="padding:20px">
+                    <a href="#/get-locations" class="card-link">View All Venues</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12">
+        <div class="col s4">
+            <div class="card-panel dash-card"></div>
+        </div>
+        <div class="col s8">
+            <div class="card dash-card" id="activity-log">
+                <div class="s12" id="activity-log-header">Activity Log</div>
+                <div class="s12" id="activity-log-body">
+                    <ul>
+                        <li class="activity">
+                            <p class="activity-title">UP Bugkos Pizza Party</p>
+                            <p>November 11, 2016 &bullet; 77 Events Place</p>
+                        </li>
+                        <li class="activity">
+                            <p class="activity-title">Open Air Screen</p>
+                            <p>November 9, 2016 &bullet; Freedom Park</p>
+                        </li>
+                        <li class="activity">
+                            <p class="activity-title">VR in UPLB</p>
+                            <p>November 7, 2016 &bullet; Institute of Computer Science</p>
+                        </li>
+                        <li class="activity">
+                            <p class="activity-title">Hydro Laguna</p>
+                            <p>November 4, 2016 &bullet; Calamba, Laguna</p>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-action-btn horizontal">
+        <a class="btn-floating btn-large">
+
+            <i class="large material-icons" id="add-fab">add</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating tooltipped" id="add-venue-fab" href="home#add-venue-modal"><i class="material-icons">place</i></a></li>
+            <li><a class="btn-floating" id="add-event-fab"><i class="material-icons">event</i></a></li>
         </ul>
-
-        <ul class="days">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li><span class="active">10</span></li>
-          <li>11</li>
-          <li>12</li>
-          <li>13</li>
-          <li>14</li>
-          <li>15</li>
-          <li>16</li>
-          <li>17</li>
-          <li>18</li>
-          <li>19</li>
-          <li>20</li>
-          <li>21</li>
-          <li>22</li>
-          <li>23</li>
-          <li>24</li>
-          <li>25</li>
-          <li>26</li>
-          <li>27</li>
-          <li>28</li>
-          <li>29</li>
-          <li>30</li>
-          <li>31</li>
-        </ul>
-
-      </div>
     </div>
 
-    <div class="col s3">
-      <div class="card" id="view-all-events">
-        <div class="card-image">
-          <img alt="events" src="assets/images/events-img.jpg"/>
+    <!-- Modal Trigger -->
+    <!-- <a class="waves-effect waves-light btn" href="#modal1">Modal</a> -->
+
+    <!-- Modal Structure -->
+    <div id="add-venue" class="modal">
+        <div class="modal-content">
+            <h4>Add A Venue</h4>
+            <input placeholder="Location Name" id="location-name" type="text" class="validate">
+            <label for="location-capacity">Location Capacity</label>
+            <p class="range-field">
+                <input type="range" id="location-capacity" min="0" max="100" />
+            </p>
+            <textarea id="location-details" class="materialize-textarea" placeholder="Location Details"></textarea>
         </div>
-        <div class="card-content">
-          <p>See what's happening on your neighborhood!</p>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">ADD</a>
         </div>
-        <div class="card-content card-link-wrapper">
-          <a href="#/get-locations" class="card-link">View All Venues</a>
-        </div>
-      </div>
     </div>
 
-    <div class="col s3">
-      <div class="card" id="view-all-venues">
-        <div class="card-image">
-          <img alt="events" src="assets/images/venues-img.jpg"/>
-        </div>
-        <div class="card-content">
-          <p>More venues for your upcoming events!</p>
-        </div>
-        <div class="card-content card-link-wrapper" style="padding:20px">
-          <a href="#/get-locations" class="card-link">View All Venues</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col s12">
-    <div class="col s4">
-      <div class="card-panel dash-card"></div>
-    </div>
-    <div class="col s8">
-      <div class="card dash-card" id="activity-log">
-        <div class="s12" id="activity-log-header">Activity Log</div>
-        <div class="s12" id="activity-log-body">
-          <ul>
-            <li class="activity">
-              <p class="activity-title">UP Bugkos Pizza Party</p>
-              <p>November 11, 2016, 77 Events Place</p>
-            </li>
-            <li class="activity">
-              <p class="activity-title">UP Bugkos Pizza Party</p>
-              <p>November 11, 2016, 77 Events Place</p>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script type="text/javascript" src="../assets/js/home.js"></script>
-<script type="text/javascript" src="../assets/js/auth.js"></script>
+    <script type="text/javascript" src="../assets/js/home.js"></script>
+    <script type="text/javascript" src="../assets/js/auth.js"></script>
