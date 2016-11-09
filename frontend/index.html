@@ -2,10 +2,14 @@
 <html ng-app="datababes">
 <head>
 	<title>DATABABES</title>
+	<base href="/">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" >
   	<link href="assets/css/defaults.css" rel="stylesheet">
-  	<link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
 </head>
 <body>
 
@@ -32,7 +36,7 @@
 	              </div>
 	              <div class="row nav-item">
 	                  <div class="col s3 nav-item-icon"><i class="tiny material-icons">power_settings_new</i></div>
-	                  <div class="col s9 nav-item-text"><a href="#!">Logout</a></div>
+	                  <div class="col s9 nav-item-text"><a onclick="logout()">Logout</a></div>
 	              </div>
 	          </div>
 	      </div>
@@ -46,11 +50,15 @@
 	<script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-
+	
 	<script type="text/javascript" src="app.js"></script>
-	<script type="text/javascript" src="controllers/get.controller.js"></script>
-	<script type="text/javascript" src="services/get.service.js"></script>
 	<script type="text/javascript" src="assets/js/defaults.js"></script>
+	<script type="text/javascript" src="assets/js/utility.js"></script>
+	<script type="text/javascript" src="assets/js/login.js"></script>
+	<!-- Services -->
+	<script type="text/javascript" src="services/get.service.js"></script>
+	<!-- Controllers -->
+	<script type="text/javascript" src="controllers/get.controller.js"></script>
 
 </body>
 </html>

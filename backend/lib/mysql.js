@@ -1,6 +1,6 @@
 'use strict';
 
-var mysql = require('mysql');
+const mysql = require('mysql');
 
 const obj = {
 	host: 'localhost',
