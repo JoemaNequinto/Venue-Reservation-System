@@ -27,8 +27,8 @@
 				templateUrl: 'views/get-location.html',
 				controller: 'GetCtrl'
 			})
-			.otherwise({
-				redirectTo: '/'
-			})
+			// .otherwise({
+			// 	redirectTo: '/'
+			// })
 	}
 })();

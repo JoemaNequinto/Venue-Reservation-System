@@ -19,30 +19,39 @@
     src: url("../font/pacifico/Pacifico.ttf");
 }
 
-
+.row {
+    padding: 0;
+    margin: 0;
+}
 
 body {
     padding: 0;
     margin: 0;
     font-family: 'Lato Semibold';
+    background-color: #c0b3a0;
 }
+
+/*div {
+    border: solid red 1px;
+}*/
 
 #main-wrapper {
     padding: 0;
     margin: 0;
-    height: 100vh;
+    height: 100%;
 }
 
 #sidebar-wrapper {
     background-color: #3E324E;
     height: 100vh;
-    width: 18%;
+    width: 200px;
     padding: 0;
     margin: 0;
-      background: url('../images/sidebar.png');
+    background: url('../images/sidebar.png');
     background-size: auto 100%;
     float: left;
     transition: all 0.3s linear;
+    position: fixed;
 }
 
 #nav-toggle {
@@ -96,7 +105,7 @@ body {
 }
 
 .nav-item-icon i {
-    padding: 5px 0px;
+        padding: 5px 0px;
     font-size: 27px;
     color: white;
     display: block;
@@ -134,14 +143,13 @@ body {
 }
 
 #content-wrapper {
+    height: 100vh !important;
+    width: calc(100% - 200px);
     padding: 0;
-    width: 82%;
     float: right;
     transition: all 0.3s linear;
-    height: 100vh;
-    margin-bottom: 0px;
+    position: static;
 }
-
 
 
 #profile {
