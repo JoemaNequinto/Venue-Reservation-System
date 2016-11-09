@@ -64,7 +64,7 @@ h1 {
     border-radius: 100%;
     line-height: 80px;
     border: solid 5px #c0b3a0;
-    /*animation-direction: alternate;*/
+    animation-direction: alternate;
     animation: brand 8s infinite;
     transition: all 0.5s linear;
 }
@@ -76,8 +76,8 @@ h1 {
     height: auto;
     background-color: #FFF;
     margin: auto;
-    /*border-top: 5px solid #3f3250;
-    border-bottom: 5px solid #3f3250;*/
+    border-top: 5px solid #3f3250;
+    border-bottom: 5px solid #3f3250;
     z-index: 10;
 }
 

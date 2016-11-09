@@ -11,7 +11,6 @@ function renderVenueMap() {
    }
 
   var map = new google.maps.Map(map_container, map_attributes);
-  console.log(map);
 }
 
 function setSideNav(){

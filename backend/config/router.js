@@ -11,6 +11,7 @@ module.exports = (router) => {
 	router.get('/get-people', __.get.getAllPerson);
 	router.get('/get-events', __.get.getAllEvent);
 	router.get('/get-locations', __.get.getAllLocation);
+	router.post('/locations', __.venue.addVenue);
 
 	router.all('*', (req, res) => {
 		res.status(404).send({message : 'Unmatched route. =(('});

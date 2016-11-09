@@ -1,84 +1,67 @@
 'use strict';
 const db            = require(__dirname + '/../lib/mysql');
-const winston       = require('winston');
 
-
-exports.login = (req, res, next) => {
-
-    const data = {
-        username:   req.body.username,
-        password:   req.body.password
+exports.login = function(req, res, next) {
+  if (!req.body.username) {
+     return res.status(400).send("Username cannot be blank.");
+ }
+ if (!req.body.password) {
+     return res.status(400).send("Password cannot be blank.");
+ }
+    var data = {
+        username: req.body.username,
+        password: req.body.password
     };
 
-    function start () {
-        let response;
+    //what to do at the start of the query
+    function start() {
+        //Do not append the user inputs to string. This eliminates SQL Injection.
+        var queryString = "SELECT *"
+            + " FROM person"
+            + " WHERE Username=?"
+            + " AND Password = ?";
+        db.query(
+            queryString,
+            [data.username, data.password],
+            send_response
+        );
+    };
 
-        // If a session is already existing
-        if (req.session && req.session.user) {
-            response = status.ALREADY_LOGGED_IN;
-
-            return res.status(response.status).send(response.message);
+    //what to do after the query is done
+    function send_response(err, result, args, last_query) {
+        if(err) {
+            next(err);
+            return res.status(500).send(err);
+        } else if(!result.length) {
+            //Do not send which one is wrong. This eliminates user enumeration.
+            return res.status(404).send({message: 'Wrong username or password.'});
+        } else {
+            req.session.user = {
+                username: result[0].username,
+                role:"USER"
+            };
+                result[0].role = "USER"
+            return res.send(result[0]);
         }
-        
-        const queryString = "SELECT *"
-			+ " FROM person"
-			+ " WHERE username = ?"
-			+ " AND password = ?";
-
-		db.query(queryString,
-                [data.password, data.username])
-            .then((result) => {
-
-                // If the username is not found
-                if (!result.length) {
-                    response = status.INV_USERNAME;
-
-                    return res.status(response.status).send(response.message);
-                }
-
-                // If the password is invalid
-                if (!result[0].is_password_valid) {
-                    response = status.INV_PASSWORD;
-
-                    return res.status(response.status).send(response.message);
-                }
-
-                return result;
-            })
-            .then((result) => {
-
-                let user = {
-                    username:               result[0].username,
-                    is_password_valid:      result[0].is_password_valid,
-                }
-
-                req.session.user = user;
-                res.send(user);
-            })
-            .catch((error) => {
-                winston.error(error);
-            });
     };
-
     start();
 };
 
-
-exports.logout = (req, res, next) => {
-    let response;
-
-    function start () {
-
-        // If there is no active session
-        if (!req.session.user) {
-            response = status.MISSING_SESSION;
-
-            return res.status(response.status).send(response.message);
-        }
-
+exports.logout = function(req, res, next) {
+    function start() {
         req.session.destroy();
-        res.send({message: 'Successfully logged out'});
-    }
+        return res.send({message: 'Logout success!'});
+    };
+    start();
+};
 
+exports.checkSession = function (req, res, next) {
+    function  start() {
+        if (!req.session.username) {
+            return res.send("NO_SESSION");
+        } else {
+            return res.send("SESSION");
+        }
+    };
     start();
 };
