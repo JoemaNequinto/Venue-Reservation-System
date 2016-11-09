@@ -6,7 +6,7 @@
 }
 
 .dash-card {
-  background-color: #22252c;
+  background-color: #3f3250;
 }
 
 #calendar-wrapper {
@@ -22,21 +22,27 @@
 }*/
 
 .card {
-  border: solid 2px white;
+/*  border: solid 2px white;*/
+  border-bottom: 8px solid #e14658;
   padding-bottom: 10px;
-  color: #c0b3a0;
+  color: white;
 }
 
 .card-content {
   text-align: center;
+  font-family: 'Lato Semibold';
+  font-style: italic;
   line-height: 1em;
 }
 
 .card-link {
   border: solid 2px white;
-  padding: 10px;
-  color: #e14658;
-  font-variant: small-caps;
+  border-radius: 25px;
+  padding: 5px 15px;
+  font-style: normal;
+  text-transform: uppercase;
+  color: white;
+
 }
 
 #view-all-events {
@@ -58,40 +64,69 @@
 }
 
 #activity-log {
-  overflow: hidden;
+  padding-bottom: 0px;
+  border-bottom: 0px;
 }
 
 #activity-log-header {
   color: white;
-  font-weight: bold;
-  padding-top: 10px;
+  font-family: 'Lato Bold';
+  font-size: 18px;
+  padding-top: 15px;
   text-align: center;
 }
 
 #activity-log-body {
+  padding: 0px;
+  height: auto;
+}
 
+#activity-log-body > ul{
+  border-bottom: 8px solid #e14658;
 }
 
 .activity {
-  background: #555555;
-  padding: 10px;
+  background: #dddddd;
+  padding: 10px 50px;
   line-height: 5px;
-  border-left: solid 5px #3f3250;
-  color: white;
+  font-size: 'Lato Semibold';
+  font-weight: 500;
+  color: #23242B;
+}
+
+.activity {
+  background: #e8e5e5;
+  padding: 10px 50px;
+  line-height: 5px;
+  font-size: 'Lato Semibold';
+  font-weight: 500;
+  color: #23242B;
+}
+
+.activity:nth-child(2n){
+  background: #dddddd;
 }
 
 .activity-title {
-  font-weight: bold;
+  font-family: 'Lato Black';
+  font-size: 20px;
 }
 
 
 /* CALENDAR */
+
+
 * {box-sizing:border-box;}
 ul {list-style-type: none;}
 
+
+#calendar-wrapper{
+   border-bottom: 8px solid #e14658;
+}
 .month {
-    padding: 12px;
+    padding: 25.5px 12px;
     width: 100%;
+
     background: #3f3250;
 }
 
@@ -103,18 +138,18 @@ ul {list-style-type: none;}
 .month ul li {
     color: white;
     font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    font-family: 'Lato Bold';
+
 }
 
 .month .prev {
     float: left;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
 }
 
 .month .next {
     float: right;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
 }
 
 .weekdays {
