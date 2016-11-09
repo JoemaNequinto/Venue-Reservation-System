@@ -126,14 +126,34 @@
   </div>
   <div class="fixed-action-btn horizontal">
     <a class="btn-floating btn-large">
+
       <i class="large material-icons" id="add-fab">add</i>
     </a>
     <ul>
-      <li><a class="btn-floating " id="add-venue-fab"><i class="material-icons">place</i></a></li>
+      <li><a class="btn-floating tooltipped" id="add-venue-fab" href="home#add-venue-modal"><i class="material-icons">place</i></a></li>
       <li><a class="btn-floating" id="add-event-fab"><i class="material-icons">event</i></a></li>
     </ul>
   </div>
-</div>
+
+  <!-- Modal Trigger -->
+  <!-- <a class="waves-effect waves-light btn" href="#modal1">Modal</a> -->
+
+  <!-- Modal Structure -->
+  <div id="add-venue" class="modal">
+    <div class="modal-content">
+      <h4>Add A Venue</h4>
+      <input placeholder="Location Name" id="location-name" type="text" class="validate">
+      <label for="location-capacity">Location Capacity</label>
+      <p class="range-field">
+        <input type="range" id="location-capacity" min="0" max="100" />
+      </p>
+      <textarea id="location-details" class="materialize-textarea" placeholder="Location Details"></textarea>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">ADD</a>
+    </div>
+  </div>
+          
 
 <script type="text/javascript" src="../assets/js/home.js"></script>
 <script type="text/javascript" src="../assets/js/auth.js"></script>
