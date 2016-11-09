@@ -1,115 +1,99 @@
 #card-wrapper {
-  background: #c0b3a0;
-  /*box-shadow: 1px 1px 15px #111 inset;*/
-  padding: 20px;
-  height: 100vh;
+    background: #c0b3a0;
+    /*box-shadow: 1px 1px 15px #111 inset;*/
+    padding: 20px;
+    height: 100vh;
 }
 
 .dash-card {
-  background-color: #3f3250;
+    background-color: #3f3250;
 }
 
 #calendar-wrapper {
-  padding: 0;
+    padding: 0;
 }
 
-/*.card-icon {
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  background: #333;
-  border-radius: 5px;
-}*/
-
 .card {
-/*  border: solid 2px white;*/
-  border-bottom: 8px solid #e14658;
-  padding-bottom: 10px;
-  color: white;
+    /*  border: solid 2px white;*/
+    border-bottom: 5px solid #e14658;
+    padding-bottom: 18px;
+    color: white;
 }
 
 .card-content {
-  text-align: center;
-  font-family: 'Lato Semibold';
-  font-style: italic;
-  line-height: 1em;
+    text-align: center;
+    font-family: 'Lato Semibold';
+    font-style: italic;
+    line-height: 1em;
 }
 
 .card-link {
-  border: solid 2px white;
-  border-radius: 25px;
-  padding: 5px 15px;
-  font-style: normal;
-  text-transform: uppercase;
-  color: white;
+    border: solid 2px white;
+    border-radius: 25px;
+    padding: 5px 15px;
+    font-style: normal;
+    text-transform: uppercase;
+    color: white;
 
 }
 
 #view-all-events {
-  background-color: #3f3250;
+    background-color: #3f3250;
 }
 
 #view-all-venues {
-  background-color: #3f3250;
+    background-color: #3f3250;
 }
 
 #view-all-events  .card-link:hover {
-  color: #3f3250;
-  background: white;
+    color: #3f3250;
+    background: white;
 }
 
 #view-all-venues  .card-link:hover {
-  color: #3f3250;
-  background: white;
+    color: #3f3250;
+    background: white;
 }
 
 #activity-log {
-  padding-bottom: 0px;
-  border-bottom: 0px;
+    padding-bottom: 0px;
+    border-bottom: 0px;
 }
 
 #activity-log-header {
-  color: white;
-  font-family: 'Lato Bold';
-  font-size: 18px;
-  padding-top: 15px;
-  text-align: center;
+    color: white;
+    font-family: 'Lato Bold';
+    font-size: 18px;
+    padding-top: 15px;
+    text-align: center;
 }
 
 #activity-log-body {
-  padding: 0px;
-  height: auto;
+    padding: 0px;
+    height: auto;
 }
 
-#activity-log-body > ul{
-  border-bottom: 8px solid #e14658;
-}
-
-.activity {
-  background: #dddddd;
-  padding: 10px 50px;
-  line-height: 5px;
-  font-size: 'Lato Semibold';
-  font-weight: 500;
-  color: #23242B;
+#activity-log-body > ul {
+    border-bottom: 5px solid #e14658;
 }
 
 .activity {
-  background: #e8e5e5;
-  padding: 10px 50px;
-  line-height: 5px;
-  font-size: 'Lato Semibold';
-  font-weight: 500;
-  color: #23242B;
+    background: #e8e5e5;
+    padding: 10px 50px;
+    line-height: 3px;
+    font-family: 'Lato Semibold';
+    font-weight: 500;
+    color: #23242B;
+    font-size: 12px;
 }
 
 .activity:nth-child(2n){
-  background: #dddddd;
+    background: #dddddd;
 }
 
 .activity-title {
-  font-family: 'Lato Black';
-  font-size: 20px;
+    font-family: 'Lato Black';
+    font-size: 15px;
 }
 
 
@@ -121,7 +105,7 @@ ul {list-style-type: none;}
 
 
 #calendar-wrapper{
-   border-bottom: 8px solid #e14658;
+    border-bottom: 5px solid #e14658;
 }
 .month {
     padding: 25.5px 12px;
@@ -191,10 +175,10 @@ ul {list-style-type: none;}
 
 
 .btn-floating{
-  background-color: #e14658;
+    background-color: #e14658;
 }
 
 
 .btn-floating:hover{
-  background-color: #3f3250;
+    background-color: #3f3250;
 }
