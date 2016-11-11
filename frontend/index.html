@@ -9,47 +9,12 @@
 	<link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" >
-	<link href="assets/css/defaults.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/defaults.css">
 	<link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 </head>
-<body>
 
-	<div id="main-wrapper" class="row">
-
-		<div id="sidebar-wrapper" class="row">
-			<div id="sidebar-overlay">
-				<div id="sidebar-brand">
-					<i class="material-icons" id="nav-toggle">menu</i>
-					<h5 id="site-title">Events</h5>
-				</div>
-				<div id="profile">
-					<img src="../assets/images/profile.jpg" id="profile-icon">
-					<p id="profile-name">Marya Aguirre</p>
-				</div>
-				<div id="sidebar-list">
-					<div class="row nav-item active-nav" id="side-nav-home">
-						<!-- <div class="col s1"></div> -->
-
-						<div class="col s3 nav-item-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
-						<div class="col s5 nav-item-text"><a href="/#/home">Home</a></div>
-					</div>
-					<div class="row nav-item" id="side-nav-search">
-						<!--               		<div class="col s1"></div> -->
-						<div class="col s3 nav-item-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
-						<div class="col s5 nav-item-text"><a href="/#/search">Search</a></div>
-					</div>
-					<div class="row nav-item">
-						<div class="col s3 nav-item-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
-						<div class="col s5 nav-item-text"><a onclick="logout()">Logout</a></div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div ng-view id="content-wrapper" class="row"></div>
-
-	</div>
+<body ng-view>
 
 	<script type="text/javascript" src="assets/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="assets/js/materialize.js"></script>
