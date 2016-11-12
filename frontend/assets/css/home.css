@@ -16,10 +16,6 @@
     padding: 0;
 }
 
-/*li {
-    background: red;
-}*/
-
 .card {
     /*  border: solid 2px white;*/
     border-bottom: 5px solid #e14658;
@@ -188,4 +184,32 @@ ul {list-style-type: none;}
 
 .btn-floating:hover{
     background-color: #3f3250;
+}
+
+
+/* Modal */
+#overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,0.9);
+    z-index: 0;
+    /*transition: all 0.3s linear;*/
+    display: none;
+    /*opacity: 0;*/
+}
+
+#add-venue-card {
+}
+
+.modal-card {
+    width: 30%;
+    height: auto;    
+    position: fixed;
+    z-index: 100;
+    right: 35%;
+    top: 50px;
+    display: none;
 }

@@ -1,18 +1,34 @@
 $(document).ready(function(){
 
     console.log("reading script");
-    // $('#add-venue').modal();
     setSideNav();
 
-    $("#add-venue-trig").click(function(){
-        console.log("clicked!");
+    $("#overlay").hover(function(){
+        if(!($(".modal-card").is(":visible"))) {
+            $(this).hide();
+        }
     });
 
-    // $('#hehe').click(function(){
-    //     // $('#add-venue').modal("show");
-    //     console.log("clicked!")
-    // });
+    $("#overlay").click(function(){
+        $(this).hide();
+        $(".modal-card").hide();
+    });
 
+    $('#add-menu').hover(function(){
+        $("#overlay").fadeIn();
+    });
+
+    $("#add-venue-trig").click(function(){
+        $("#overlay").fadeIn();
+        $('.modal-card').hide();
+        $("#add-venue-card").show();
+    });
+
+    $("#add-event-trig").click(function(){
+        $("#overlay").fadeIn();
+        $('.modal-card').hide();
+        $("#add-event-card").show();
+    });
 
 });
 
