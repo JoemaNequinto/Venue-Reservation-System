@@ -19,8 +19,8 @@
                 <div class="card-content">
                     <div class="row" id="tabs">
                         <ul class="tabs">
-                            <li class="tab col s6"><a  href="#login">Login</a></li>
-                            <li class="tab col s6"><a class="active" href="#sign-up">Sign-up</a></li>
+                            <li class="tab col s6"><a  class="active" href="#login">Login</a></li>
+                            <li class="tab col s6"><a href="#sign-up">Sign-up</a></li>
                         </ul>
                     </div>
                     <div class="row" id="login-views">
@@ -37,47 +37,49 @@
                             <p id="forgot-password"><a href="#/">Forgot password?</a></p>
                         </div>
                         <form id="sign-up" class="col s12">
-                            <div class="row">
-                                <div class="input-field col s10">
-                                    <input placeholder="Drew" id="first-name" type="text" class="validate">
-                                    <label for="first-name">First Name</label>
+                            <div class="row" id="form-scroll">
+                                <div class="row">
+                                    <div class="input-field col s10">
+                                        <input placeholder="Drew" id="first-name" type="text" class="validate">
+                                        <label for="first-name">First Name</label>
+                                    </div>
+                                    <div class="input-field col s2">
+                                        <input placeholder="S." id="middle-initial" type="text" class="validate">
+                                        <label for="middle-initial">M.I.</label>
+                                    </div>
                                 </div>
-                                <div class="input-field col s2">
-                                    <input placeholder="S." id="middle-initial" type="text" class="validate">
-                                    <label for="middle-initial">M.I.</label>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Thirty" id="last-name" type="text" class="validate">
+                                        <label for="last-name">Last Name</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="drew30@up.edu.ph" id="email" type="email" class="validate">
+                                        <label for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder=" " id="password" type="password" class="validate">
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="09301233030" id="contact-no" type="text" class="validate">
+                                        <label for="contact-no">Contact No.</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Drew Dirty Squad (DDS)" id="affliation" type="text">
+                                        <label for="affliation">Affliation (Optional)</label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input placeholder="Thirty" id="last-name" type="text" class="validate">
-                                    <label for="last-name">Last Name</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input placeholder="drew30@up.edu.ph" id="email" type="email" class="validate">
-                                    <label for="email">Email</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input placeholder=" " id="password" type="password" class="validate">
-                                    <label for="password">Password</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input placeholder="09301233030" id="contact-no" type="text" class="validate">
-                                    <label for="contact-no">Contact No.</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input placeholder="Drew Dirty Squad (DDS)" id="affliation" type="text">
-                                    <label for="affliation">Affliation (Optional)</label>
-                                </div>
-                            </div>
-                            <div class="row">
+                            <div class="row" id="form-submit">
                                 <submit class="waves-effect waves-light btn" onclick="">SIGN UP</submit>
                             </div>
                         </form>

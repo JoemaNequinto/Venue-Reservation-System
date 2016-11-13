@@ -144,9 +144,9 @@ label{
     text-align: left;
 }
 
-#sign-up{
-        overflow-y: scroll;
-        height: 240px;
+#form-scroll{
+    overflow-y: scroll;
+    height: 195px;
 }
 
 #sign-up .row{
@@ -155,4 +155,8 @@ label{
 
 ::-webkit-scrollbar { 
     display: none; 
+}
+
+#form-submit{
+    margin-top: 15px;
 }
