@@ -1,5 +1,19 @@
-#card-wrapper {
+#overlay {
+    width: calc(100% - 200px);
+    height: 100vh;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    /*display: none;*/
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+#content-wrapper {
     background: #c0b3a0;
+}
+
+#card-wrapper {
     /*box-shadow: 1px 1px 15px #111 inset;*/
     padding: 20px;
     height: 100vh;
@@ -12,6 +26,10 @@
 #calendar-wrapper {
     padding: 0;
 }
+
+/*li {
+    background: red;
+}*/
 
 .card {
     /*  border: solid 2px white;*/
