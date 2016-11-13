@@ -1,24 +1,66 @@
-<div ng-init="getpeople()">
-	<h4> PERSON <small>TABLE</small></h4>
-	<table class="table bordered striped centered">
-		<thead>
-			<th>Person ID</th>
-			<th>Name</th>
-			<th>Email Address</th>
-			<th>Account Type</th>
-			<th>Username</th>
-			<th>Password</th>
-		</thead>
-		<tbody>
-			<tr ng-repeat="person in people">
-				<td>{{ person.PersonId }}</td>
-				<td>{{ person.FirstName }} {{ person.MiddleName }} {{ person.LastName }}</td>
-				<td>{{ person.EmailAddress }}</td>
-				<td>{{ person.AccountType }}</td>
-				<td>{{ person.Username }}</td>
-				<td>{{ person.Password }}</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
 <script type="text/javascript" src="../assets/js/auth.js"></script>
+<script type="text/javascript" src="../assets/js/admin-all-users.js"></script>
+
+<div id="main-wrapper" class="row">
+
+	<div id="sidebar-wrapper" class="row">
+		<div id="sidebar-overlay">
+			<div id="sidebar-brand">
+				<i class="material-icons" id="nav-toggle">menu</i>
+				<h5 id="site-title">Events</h5>
+			</div>
+			<div id="profile">
+				<img src="../assets/images/profile.jpg" id="profile-icon">
+				<p id="profile-name">Marya Aguirre</p>
+			</div>
+			<div id="sidebar-list">
+				<div class="row nav-item active-nav" id="side-nav-home">
+					<div class="col s3 nav-item-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
+					<div class="col s5 nav-item-text"><a href="/#/admin/home">Home</a></div>
+				</div>
+				<div class="row nav-item active-nav" id="side-nav-all-events">
+					<div class="col s3 nav-item-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+					<div class="col s5 nav-item-text"><a href="/#/admin/all-events">Events</a></div>
+				</div>
+				<div class="row nav-item active-nav" id="side-nav-all-venues">
+					<div class="col s3 nav-item-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+					<div class="col s5 nav-item-text"><a href="/#/admin/all-venues">Venues</a></div>
+				</div>
+				<div class="row nav-item active-nav" id="side-nav-all-users">
+					<div class="col s3 nav-item-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+					<div class="col s5 nav-item-text"><a href="/#/admin/all-users">Users</a></div>
+				</div>
+				<div class="row nav-item">
+					<div class="col s3 nav-item-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+					<div class="col s5 nav-item-text"><a onclick="logout()">Logout</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content-wrapper" class="row">
+		<div ng-init="getpeople()">
+			<h4> PERSON <small>TABLE</small></h4>
+			<table class="table bordered striped centered">
+				<thead>
+					<th>Person ID</th>
+					<th>Name</th>
+					<th>Email Address</th>
+					<th>Account Type</th>
+					<th>Username</th>
+					<th>Password</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in people">
+						<td>{{ person.PersonId }}</td>
+						<td>{{ person.FirstName }} {{ person.MiddleName }} {{ person.LastName }}</td>
+						<td>{{ person.EmailAddress }}</td>
+						<td>{{ person.AccountType }}</td>
+						<td>{{ person.Username }}</td>
+						<td>{{ person.Password }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

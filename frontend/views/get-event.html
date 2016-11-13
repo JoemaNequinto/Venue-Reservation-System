@@ -1,24 +1,67 @@
-<div ng-init="getevents()">
-	<h4> EVENT <small>TABLE</small></h4>
- 	<table class="table bordered striped centered">
-		<thead>
-			<th>EventId</th>
-			<th>EventName</th>
-			<th>EventDetails</th>
-			<th>EventDate</th>
-			<th>EventStartTime</th>
-			<th>EventEndTime</th>
-		</thead>
-		<tbody>
-			<tr ng-repeat="event in events">
-				<td>{{ event.EventId }}</td>
-				<td>{{ event.EventName }}</td>
-				<td>{{ event.EventDetails }}</td>
-				<td>{{ event.EventDate | date}}</td>
-				<td>{{ event.EventStartTime }}</td>
-				<td>{{ event.EventEndTime }}</td>
-			</tr>
-		</tbody>
-	</table>
-</div
 <script type="text/javascript" src="../assets/js/auth.js"></script>
+<script type="text/javascript" src="../assets/js/admin-all-events.js"></script>
+
+<div id="main-wrapper" class="row">
+
+	<div id="sidebar-wrapper" class="row">
+		<div id="sidebar-overlay">
+			<div id="sidebar-brand">
+				<i class="material-icons" id="nav-toggle">menu</i>
+				<h5 id="site-title">Events</h5>
+			</div>
+			<div id="profile">
+				<img src="../assets/images/profile.jpg" id="profile-icon">
+				<p id="profile-name">Marya Aguirre</p>
+			</div>
+			<div id="sidebar-list">
+				<div class="row nav-item active-nav" id="side-nav-home">
+					<div class="col s3 nav-item-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
+					<div class="col s5 nav-item-text"><a href="/#/admin/home">Home</a></div>
+				</div>
+				<div class="row nav-item active-nav" id="side-nav-all-events">
+					<div class="col s3 nav-item-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+					<div class="col s5 nav-item-text"><a href="/#/admin/all-events">Events</a></div>
+				</div>
+				<div class="row nav-item active-nav" id="side-nav-all-venues">
+					<div class="col s3 nav-item-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+					<div class="col s5 nav-item-text"><a href="/#/admin/all-venues">Venues</a></div>
+				</div>
+				<div class="row nav-item active-nav" id="side-nav-all-users">
+					<div class="col s3 nav-item-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+					<div class="col s5 nav-item-text"><a href="/#/admin/all-users">Users</a></div>
+				</div>
+				<div class="row nav-item">
+					<div class="col s3 nav-item-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+					<div class="col s5 nav-item-text"><a onclick="logout()">Logout</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content-wrapper" class="row">
+
+		<div ng-init="getevents()">
+			<h4> EVENT <small>TABLE</small></h4>
+			<table class="table bordered striped centered">
+				<thead>
+					<th>EventId</th>
+					<th>EventName</th>
+					<th>EventDetails</th>
+					<th>EventDate</th>
+					<th>EventStartTime</th>
+					<th>EventEndTime</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="event in events">
+						<td>{{ event.EventId }}</td>
+						<td>{{ event.EventName }}</td>
+						<td>{{ event.EventDetails }}</td>
+						<td>{{ event.EventDate | date}}</td>
+						<td>{{ event.EventStartTime }}</td>
+						<td>{{ event.EventEndTime }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
