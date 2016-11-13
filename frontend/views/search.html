@@ -1,4 +1,8 @@
 <link href="assets/css/search.css" rel="stylesheet">
+<script type="text/javascript" src="../assets/js/search.js"></script>
+<script type="text/javascript" src="../assets/js/auth.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSn43crhAL6geKe88vha2Y0IKKFlsElA&callback=renderVenueMap" defer></script>
+
 
 <div id="main-wrapper" class="row">
 
@@ -44,7 +48,21 @@
                 </div>
             </div>
             <div id="results-box">
-                <p>No results to show.</p>
+                <div class="col s12">
+                    <input id="latitude" name="latitude" type="number" placeholder="latitude">
+                </div>
+                <div class="col s12">
+                    <input id="longitude" name="longiutude" type="number" placeholder="longitude">
+                </div>
+                <div class="col s12">
+                    <button id="mapit">Go</button>
+                </div>
+                <div>
+                    Baker Hall (14.1618156, 121.24273979999998)<br>
+                    DL Umali (14.1699121, 121.24406309999995)<br>
+                    CPark (14.1650169, 121.24156289999996)
+
+                </div>
             </div>
         </div>
         <div id="venue-map-wrapper" class="col s8">
@@ -53,7 +71,3 @@
     </div>
 
 </div>
-
-<script type="text/javascript" src="../assets/js/search.js"></script>
-<script type="text/javascript" src="../assets/js/auth.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSn43crhAL6geKe88vha2Y0IKKFlsElA&callback=renderVenueMap" defer></script>
