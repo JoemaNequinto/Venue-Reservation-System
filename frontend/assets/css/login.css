@@ -75,6 +75,8 @@ h1 {
 #login-container {
     width: 400px;
     height: auto;
+    max-height: 378px;
+
     background-color: #FFF;
     margin: auto;
     border-top: 5px solid #3f3250;
@@ -127,4 +129,30 @@ input:focus {
     visibility: hidden;
     display: none;
     width: 0 !important;
+}
+
+
+#login{
+    height: auto;
+}
+
+#login-views{
+    margin-bottom: 0px;
+}
+
+label{
+    text-align: left;
+}
+
+#sign-up{
+        overflow-y: scroll;
+        height: 240px;
+}
+
+#sign-up .row{
+    margin-bottom: 0px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
