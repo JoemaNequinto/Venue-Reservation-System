@@ -164,28 +164,68 @@
                     <i class="large material-icons" id="add-fab">add</i>
                 </a>
                 <ul>
-                    <li id="add-venue-trig"><button class="btn-floating tooltipped" id="add-venue-fab" target-data="add-venue"><i class="material-icons">place</i></button></li>
-                    <!-- <li id="add-venue-trig"><a class="btn-floating tooltipped" id="add-venue-fab" href="#add-venue"><i class="material-icons">place</i></a></li> -->
-                    <li><a class="btn-floating" id="add-event-fab"><i class="material-icons">event</i></a></li>
+                    <li id="add-venue-trig"><button class="btn-floating tooltipped" id="add-venue-fab"><i class="material-icons">place</i></button></li>
+                    <li id="add-event-trig"><button class="btn-floating tooltipped" id="add-venue-fab"><i class="material-icons">event</i></button></li>
                 </ul>
             </div>
 
             <!-- Modal Structure -->
-            <div id="add-venue" class="modal">
+            <div id="add-venue" class="modal-card">
                 <div class="modal-content">
-                    <h4>Add A Venue</h4>
-                    <input placeholder="Location Name" id="location-name" type="text" class="validate">
-                    <label for="location-capacity">Location Capacity</label>
-                    <p class="range-field">
-                        <input type="range" id="location-capacity" min="0" max="100" />
-                    </p>
-                    <textarea id="location-details" class="materialize-textarea" placeholder="Location Details"></textarea>
+                    <h4>Add New Venue</h4>
+                    <div class="input-field col s12">
+                        <input placeholder="Location Name" id="location-name" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Maximum Capacity" id="location-capacity" min="0" type="number" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                      <select>
+                        <option value="1">Available</option>
+                        <option value="2">Disabled</option>
+                        <option value="3">Reserved</option>
+                      </select>
+                      <label>Venue Status</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Longitude" id="longitude" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Latitude" id="latitude" type="text" class="validate">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">ADD</a>
                 </div>
-                <!-- HELLO FUDGE -->
             </div>
+
+            <!-- Modal Structure -->
+            <div id="add-event" class="modal-card">
+                <div class="modal-content">
+                    <h4>Add New Event</h4>
+                    <div class="input-field col s12">
+                        <input placeholder="Event Name" id="event-name" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Event Details" id="event-details" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <label for="date">Event Date</label>
+                        <input type="date" name="date" class="datepicker">
+                    </div>
+                    <div class="input-field col s12">
+                        <!-- <label for="start-time">Start Time</label> -->
+                        <input placeholder="Start Time" name="start-time" id="start-time" type="time" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <!-- <label for="end-time">End Time</label> -->
+                        <input placeholder="End Time" name="end-time" id="end-time" type="time" class="validate">
+                    </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">ADD</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
