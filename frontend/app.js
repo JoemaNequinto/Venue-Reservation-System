@@ -7,11 +7,12 @@
 	function router($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/login.html'
+				templateUrl: 'views/login.html',
+				controller: 'PostCtrl'
 			})
 			.when('/home', {
 				templateUrl: 'views/home.html',
-				controller: 'AddVenueCtrl'
+				controller: 'PostCtrl'
 			})
 			.when('/search', {
 				templateUrl: 'views/search.html'
@@ -24,8 +25,24 @@
 				templateUrl: 'views/get-event.html',
 				controller: 'GetCtrl'
 			})
-			.when('/get-locations', {
-				templateUrl: 'views/get-location.html',
+			.when('/get-venues', {
+				templateUrl: 'views/get-venues.html',
+				controller: 'GetCtrl'
+			})
+			.when('/admin/home', {
+				templateUrl: 'views/admin-home.html',
+				controller: 'PostCtrl'
+			})
+			.when('/admin/all-events', {
+				templateUrl: 'views/get-event.html',
+				controller: 'GetCtrl'
+			})
+			.when('/admin/all-venues', {
+				templateUrl: 'views/get-venues.html',
+				controller: 'GetCtrl'
+			})
+			.when('/admin/all-users', {
+				templateUrl: 'views/get-person.html',
 				controller: 'GetCtrl'
 			})
 			.otherwise({

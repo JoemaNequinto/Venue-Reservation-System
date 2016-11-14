@@ -1,4 +1,5 @@
-<link href="assets/css/home.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/admin-home.css">
+<script type="text/javascript" src="../assets/js/auth.js"></script>
 
 <div id="main-wrapper" class="row">
 
@@ -14,15 +15,20 @@
             </div>
             <div id="sidebar-list">
                 <div class="row nav-item active-nav" id="side-nav-home">
-                    <!-- <div class="col s1"></div> -->
-
                     <div class="col s3 nav-item-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
-                    <div class="col s5 nav-item-text"><a href="/#/home">Home</a></div>
+                    <div class="col s5 nav-item-text"><a href="/#/admin/home">Home</a></div>
                 </div>
-                <div class="row nav-item" id="side-nav-search">
-                    <!--               		<div class="col s1"></div> -->
-                    <div class="col s3 nav-item-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
-                    <div class="col s5 nav-item-text"><a href="/#/search">Search</a></div>
+                <div class="row nav-item active-nav" id="side-nav-all-events">
+                    <div class="col s3 nav-item-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                    <div class="col s5 nav-item-text"><a href="/#/admin/all-events">Events</a></div>
+                </div>
+                <div class="row nav-item active-nav" id="side-nav-all-venues">
+                    <div class="col s3 nav-item-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="col s5 nav-item-text"><a href="/#/admin/all-venues">Venues</a></div>
+                </div>
+                <div class="row nav-item active-nav" id="side-nav-all-users">
+                    <div class="col s3 nav-item-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    <div class="col s5 nav-item-text"><a href="/#/admin/all-users">Users</a></div>
                 </div>
                 <div class="row nav-item">
                     <div class="col s3 nav-item-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
@@ -108,7 +114,7 @@
                             <p>See what's happening on your neighborhood!</p>
                         </div>
                         <div class="card-content card-link-wrapper">
-                            <a href="#/get-events" class="card-link">View All Events</a>
+                            <a href="#" class="card-link">View All Events</a>
                         </div>
                     </div>
                 </div>
@@ -122,7 +128,7 @@
                             <p>More venues for your upcoming events!</p>
                         </div>
                         <div class="card-content card-link-wrapper" style="padding:20px">
-                            <a href="#/get-venues" class="card-link">View All Venues</a>
+                            <a href="#/get-locations" class="card-link">View All Venues</a>
                         </div>
                     </div>
                 </div>
@@ -158,9 +164,15 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="fixed-action-btn horizontal">
-                <button class="btn-floating btn-large" id="add-event-trig"><i class="large material-icons" id="add-fab">event</i></button>
+                <a class="btn-floating btn-large">
+                    <i class="large material-icons" id="add-fab">add</i>
+                </a>
+                <ul>
+                    <li id="add-venue-trig"><button class="btn-floating tooltipped" id="add-venue-fab"><i class="material-icons">place</i></button></li>
+                    <li id="add-event-trig"><button class="btn-floating tooltipped" id="add-venue-fab"><i class="material-icons">event</i></button></li>
+                </ul>
             </div>
 
             <!-- Modal Structure -->
@@ -168,28 +180,31 @@
                 <div class="modal-content">
                     <h4>Add New Venue</h4>
                     <div class="input-field col s12">
-                        <input placeholder="Location Name" id="location-name" type="text" class="validate">
+                        <input placeholder="Venue Name" ng-model="Name" id="venue-name" type="text" class="validate">
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Maximum Capacity" id="location-capacity" min="0" type="number" class="validate">
+                        <input placeholder="Maximum Capacity" ng-model="Capacity" id="venue-capacity" min="0" type="number" class="validate">
                     </div>
                     <div class="input-field col s12">
-                      <select>
-                        <option value="1">Available</option>
-                        <option value="2">Disabled</option>
-                        <option value="3">Reserved</option>
-                      </select>
-                      <label>Venue Status</label>
+                        <input placeholder="Details" ng-model="Details" id="venue-details" type="text" class="validate">
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Longitude" id="longitude" type="text" class="validate">
+                        <select ng-model="Status">
+                            <option ng-value="Available">Available</option>
+                            <option ng-value="Disabled">Disabled</option>
+                            <option ng-value="Reserved">Reserved</option>
+                        </select>
+                        <label>Venue Status</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Latitude" id="latitude" type="text" class="validate">
+                        <input placeholder="Longitude" ng-model="Longitude" id="longitude" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Latitude" ng-model="Latitude" id="latitude" type="text" class="validate">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">ADD</a>
+                    <a href="#/admin/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addVenue()">ADD</a>
                 </div>
             </div>
 
@@ -215,13 +230,12 @@
                         <!-- <label for="end-time">End Time</label> -->
                         <input placeholder="End Time" ng-model="EventEndTime" name="end-time" id="end-time" type="time" class="validate">
                     </div>
-                <div class="modal-footer">
-                    <a href="/#/home" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
+                    <div class="modal-footer">
+                        <a href="#/admin/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
+                    </div>
                 </div>
+
             </div>
-        
         </div>
     </div>
-</div>
-<script type="text/javascript" src="../assets/js/home.js"></script>
-<script type="text/javascript" src="../assets/js/auth.js"></script>
+<script type="text/javascript" src="../assets/js/admin-home.js"></script>

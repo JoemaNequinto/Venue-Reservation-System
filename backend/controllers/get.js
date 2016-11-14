@@ -8,19 +8,3 @@ exports.getAllPerson = (req, res, next) => {
 		res.send(result);
 	});
 };
-
-exports.getAllLocation = (req, res, next) => {
-	const query = "SELECT *"
-		+ " FROM location";
-	db.query(query, (err, result) => {
-		res.send(result);
-	});
-};
-
-exports.getAllEvent = (req, res, next) => {
-	const query = "SELECT *"
-		+ " FROM event";
-	db.query(query, (err, result) => {
-		res.send(result);
-	});
-};

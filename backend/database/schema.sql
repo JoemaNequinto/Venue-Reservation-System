@@ -12,7 +12,7 @@ CREATE TABLE person (
 	EmailAddress VARCHAR(70) NOT NULL,
 	Username VARCHAR(25) NOT NULL,
 	Password VARCHAR(25) NOT NULL,
-	Status BOOLEAN NOT NULL,
+	Status TINYINT(1) NOT NULL,
 	PRIMARY KEY (PersonId)
 );
 

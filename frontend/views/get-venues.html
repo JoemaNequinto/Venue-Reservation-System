@@ -38,29 +38,31 @@
 	</div>
 
 	<div id="content-wrapper" class="row">
-		<div ng-init="getpeople()">
-			<h4> PERSON <small>TABLE</small></h4>
+		<div ng-init="getvenues()">
+			<h4> VENUE <small>TABLE</small></h4>
 			<table class="table bordered striped centered">
 				<thead>
-					<th>Person ID</th>
+					<th>Venue ID</th>
 					<th>Name</th>
-					<th>Email Address</th>
-					<th>Username</th>
-					<th>Password</th>
+					<th>Capacity</th>
+					<th>Details</th>
 					<th>Status</th>
+					<th>Longitude</th>
+					<th>Latitude</th>
 				</thead>
 				<tbody>
-					<tr ng-repeat="person in people">
-						<td>{{ person.PersonId }}</td>
-						<td>{{ person.LastName }}, {{ person.FirstName }} {{ person.MiddleName }}</td>
-						<td>{{ person.EmailAddress }}</td>
-						<td>{{ person.Username }}</td>
-						<td>{{ person.Password }}</td>
-						<td>{{ person.Status }}</td>
+					<tr ng-repeat="venue in venues">
+						<td>{{ venue.VenueId }}</td>
+						<td>{{ venue.Name }}</td>
+						<td>{{ venue.Capacity }}</td>
+						<td>{{ venue.Details }}</td>
+						<td>{{ venue.Status }}</td>
+						<td>{{ venue.Longitude }}</td>
+						<td>{{ venue.Latitude }}</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="../assets/js/admin-all-users.js"></script>
+<script type="text/javascript" src="../assets/js/admin-all-venues.js"></script>

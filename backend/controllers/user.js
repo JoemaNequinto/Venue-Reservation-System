@@ -65,3 +65,23 @@ exports.checkSession = function (req, res, next) {
     };
     start();
 };
+
+exports.signup = (req, res, next) => {
+    const data = {
+        FirstName : req.body.FirstName,
+        MiddleName : req.body.MiddleName,
+        LastName : req.body.LastName,
+        EmailAddress : req.body.EmailAddress,
+        Username : req.body.Username,
+        Password : req.body.Password,
+        Status : 0
+    }
+    const query = "INSERT INTO person(FirstName, MiddleName, LastName, EmailAddress, Username, Password, Status) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    const request = [data.FirstName, data.MiddleName, data.LastName, data.EmailAddress, data.Username, data.Password, data.Status];
+    db.query(query, request, function(err, rows) {
+        if (err) {
+            return res.send(500, {code: err.code});
+        }
+        res.send(rows);
+    });
+};

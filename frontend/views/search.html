@@ -1,20 +1,72 @@
-<link href="assets/css/search.css" rel="stylesheet">
-
-<div id="venue-map"></div>
-<div id="query-panel">
-    <div class="row" id="search-box">
-        <div class="input-field col s11">
-            <input placeholder="search venue or event here" id="first_name" type="text" class="validate">
-        </div>
-        <div class="col s1" id="search-button-wrapper">
-            <i class="material-icons" id="search-button">search</i>
-        </div>
-    </div>
-    <div id="results-box">
-        <p>No results to show.</p>
-    </div>
-</div>
-
+<link href="../assets/css/search.css" rel="stylesheet">
 <script type="text/javascript" src="../assets/js/search.js"></script>
+
+<div id="main-wrapper" class="row">
+
+    <div id="sidebar-wrapper" class="row">
+        <div id="sidebar-overlay">
+            <div id="sidebar-brand">
+                <i class="material-icons" id="nav-toggle">menu</i>
+                <h5 id="site-title">Events</h5>
+            </div>
+            <div id="profile">
+                <img src="../assets/images/profile.jpg" id="profile-icon">
+                <p id="profile-name">Marya Aguirre</p>
+            </div>
+            <div id="sidebar-list">
+                <div class="row nav-item active-nav" id="side-nav-home">
+                    <!-- <div class="col s1"></div> -->
+
+                    <div class="col s3 nav-item-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
+                    <div class="col s5 nav-item-text"><a href="/#/home">Home</a></div>
+                </div>
+                <div class="row nav-item" id="side-nav-search">
+                    <!-- <div class="col s1"></div> -->
+                    <div class="col s3 nav-item-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                    <div class="col s5 nav-item-text"><a href="/#/search">Search</a></div>
+                </div>
+                <div class="row nav-item">
+                    <div class="col s3 nav-item-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+                    <div class="col s5 nav-item-text"><a onclick="logout()">Logout</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content-wrapper" class="row col">
+
+        <div id="query-panel" class="col s4">
+            <div class="row" id="search-box">
+                <div class="input-field col s11">
+                    <input placeholder="search venue or event here" id="first_name" type="text" class="validate">
+                </div>
+                <div class="col s1" id="search-button-wrapper">
+                    <i class="material-icons" id="search-button">search</i>
+                </div>
+            </div>
+            <div id="results-box">
+                <div class="col s12">
+                    <input id="latitude" name="latitude" type="number" placeholder="latitude">
+                </div>
+                <div class="col s12">
+                    <input id="longitude" name="longiutude" type="number" placeholder="longitude">
+                </div>
+                <div class="col s12">
+                    <button id="mapit">Go</button>
+                </div>
+                <div>
+                    Baker Hall (14.1618156, 121.24273979999998)<br>
+                    DL Umali (14.1699121, 121.24406309999995)<br>
+                    CPark (14.1650169, 121.24156289999996)
+
+                </div>
+            </div>
+        </div>
+        <div id="venue-map-wrapper" class="col s8">
+            <div id="venue-map"></div>
+        </div>
+    </div>
+
+</div>
 <script type="text/javascript" src="../assets/js/auth.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSn43crhAL6geKe88vha2Y0IKKFlsElA&callback=renderVenueMap" defer></script>

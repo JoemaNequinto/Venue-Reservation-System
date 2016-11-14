@@ -14,7 +14,7 @@
 		const service = {
 			getpeople: getpeople,
 			getevents: getevents,
-			getlocations: getlocations
+			getvenues: getvenues
 		}
 
 		return service;
@@ -24,7 +24,7 @@
 
 			$http({
 				method: 'GET',
-				url: '/get-people',
+				url: '/api/get-people',
 				headers: headers
 			})
 			.then((res) => {
@@ -41,7 +41,7 @@
 
 			$http({
 				method: 'GET',
-				url: '/get-events',
+				url: '/api/get-events',
 				headers: headers
 			})
 			.then((res) => {
@@ -53,12 +53,12 @@
 
 			return deferred.promise;
 		}
-		function getlocations() {
+		function getvenues() {
 			let deferred = $q.defer();
 
 			$http({
 				method: 'GET',
-				url: '/get-locations',
+				url: '/api/get-venues',
 				headers: headers
 			})
 			.then((res) => {

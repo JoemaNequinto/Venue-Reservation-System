@@ -10,6 +10,7 @@ div {
     height: 100vh;
     padding: 20px;
     padding-top: 50px;
+    margin: 0;
 }
 
 .card {
@@ -74,6 +75,8 @@ h1 {
 #login-container {
     width: 400px;
     height: auto;
+    max-height: 378px;
+
     background-color: #FFF;
     margin: auto;
     border-top: 5px solid #3f3250;
@@ -126,4 +129,34 @@ input:focus {
     visibility: hidden;
     display: none;
     width: 0 !important;
+}
+
+
+#login{
+    height: auto;
+}
+
+#login-views{
+    margin-bottom: 0px;
+}
+
+label{
+    text-align: left;
+}
+
+#form-scroll{
+    overflow-y: scroll;
+    height: 195px;
+}
+
+#sign-up .row{
+    margin-bottom: 0px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+#form-submit{
+    margin-top: 15px;
 }

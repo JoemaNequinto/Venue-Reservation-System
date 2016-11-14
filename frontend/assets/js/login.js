@@ -2,7 +2,7 @@ $('.slider').slider({
 	full_width: true,
 	indicators: false,
 	transition: 1000,
-	interval: 1500
+	interval: 2000
 });
 
 $(document).ready(function(){
@@ -27,7 +27,7 @@ function login() {
 	function log_in() {
 		$.ajax({
 			method: 'POST',
-			url: '/login',
+			url: '/api/login',
 			data: {
 				username: username,
 				password: password
@@ -55,7 +55,7 @@ function logout() {
 	//ajax call to get user credentials
 	$.ajax({
 		method: 'GET',
-		url: '/logout',
+		url: '/api/logout',
 		success: function (data) {
 			//stores data to localStorage
 			if (!data) {

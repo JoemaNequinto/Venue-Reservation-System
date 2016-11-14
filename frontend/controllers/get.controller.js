@@ -7,7 +7,7 @@
 	function GetCtrl($scope, GetService) {
 		$scope.people = [];
 		$scope.events = [];
-		$scope.locations = [];
+		$scope.venues = [];
 
 		$scope.getpeople = () => {
 			GetService.getpeople()
@@ -27,10 +27,10 @@
 					throw new Error(err);
 				});
 		}
-		$scope.getlocations = () => {
-			GetService.getlocations()
+		$scope.getvenues = () => {
+			GetService.getvenues()
 				.then((data) => {
-					$scope.locations = data.data;
+					$scope.venues = data.data;
 					console.log($scope.locations);
 				}, (err) => {
 					throw new Error(err);

@@ -35,7 +35,8 @@ $(document).ready(function(){
     });
 
 });
+
 function setSideNav(){
-    $('#side-nav-search').removeClass('active-nav');
+    $('.nav-item').removeClass('active-nav');
     $('#side-nav-home').addClass('active-nav');
 }
