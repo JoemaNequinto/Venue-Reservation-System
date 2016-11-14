@@ -10,7 +10,8 @@
 				templateUrl: 'views/login.html'
 			})
 			.when('/home', {
-				templateUrl: 'views/home.html'
+				templateUrl: 'views/home.html',
+				controller: 'AddVenueCtrl'
 			})
 			.when('/search', {
 				templateUrl: 'views/search.html'

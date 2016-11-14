@@ -72,7 +72,7 @@
                     <p>See what's happening on your neighborhood!</p>
                 </div>
                 <div class="card-content card-link-wrapper">
-                    <a href="#" class="card-link">View All Events</a>
+                    <a href="#/get-events" class="card-link">View All Events</a>
                 </div>
             </div>
         </div>
@@ -130,16 +130,16 @@
             <i class="large material-icons" id="add-fab">add</i>
         </a>
         <ul>
-            <li><a class="btn-floating tooltipped" id="add-venue-fab" href="home#add-venue-modal"><i class="material-icons">place</i></a></li>
+            <li><a class="btn-floating tooltipped" id="add-venue-fab"><i class="material-icons">place</i></a></li>
             <li><a class="btn-floating" id="add-event-fab"><i class="material-icons">event</i></a></li>
         </ul>
     </div>
 
     <!-- Modal Trigger -->
-    <!-- <a class="waves-effect waves-light btn" href="#modal1">Modal</a> -->
+    <!-- <a class="waves-effect waves-light btn" href="#add-venue">Modal</a> -->
 
     <!-- Modal Structure -->
-    <div id="add-venue" class="modal">
+    <!-- <div id="add-venue" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Add A Venue</h4>
             <input placeholder="Location Name" id="location-name" type="text" class="validate">
@@ -152,8 +152,19 @@
         <div class="modal-footer">
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">ADD</a>
         </div>
+    </div> -->
+    <div class="col s12">
+        <div class="input-field">
+            <input id="locationname" ng-model="locationname" type="text" class="validate" placeholder="Location Name">
+        </div>
+        <div class="input-field">
+            <input id="locationcapacity" ng-model="locationcapacity" type="text" class="validate" placeholder="Location Capacity">
+        </div>
+        <div class="input-field">
+            <input id="locationdetails" ng-model="locationdetails" type="text" class="validate" placeholder="Location Details">
+        </div>
+        <a class="waves-effect waves-light btn" ng-click="addVenue()">ADD VENUE</a>
     </div>
-
 
     <script type="text/javascript" src="../assets/js/home.js"></script>
     <script type="text/javascript" src="../assets/js/auth.js"></script>

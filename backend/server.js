@@ -52,5 +52,4 @@ function start() {
 	return app.listen(config.PORT);
 }
 
-
 handler = start();

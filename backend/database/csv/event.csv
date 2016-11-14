@@ -1,0 +1,32 @@
+EventId,EventName,EventDetails,EventDate,EventStartTime,EventEndTime,VenueId
+1,"Advanced Building Skills Conference","nec luctus felis purus ac tellus.",2017-03-09,"6am","9am",1
+2,"Pharmaceutical Market Access Seminar","commodo tincidunt nibh. Phasellus nulla. Integer",2017-01-11,"11am","5pm",1
+3,"Operators’ Conference","Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac",2017-01-06,"7am","5pm",1
+4,"World ADC Training","diam. Duis mi enim, condimentum eget,",2015-11-18,"12pm","5pm",1
+5,"The structure of clinical trials seminar","ut aliquam",2017-05-31,"9am","4pm",1
+6,"FILTECH 2016","ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in",2016-04-12,"6am","1pm",1
+7,"Concert for a Cause","venenatis lacus. Etiam bibendum",2016-08-27,"11am","10pm",1
+8,"GC Convention","Nam interdum",2015-12-24,"8am","7pm",1
+9,"Pharma Expo","ridiculus mus. Aenean eget magna. Suspendisse tristique neque",2017-04-11,"4pm","10pm",1
+10,"Job Expo","nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer",2017-06-17,"11am","9pm",1
+11,"CONNECT 2016","at",2016-11-16,"12pm","2pm",1
+12,"Hum3 Concert","ornare sagittis felis. Donec",2016-10-20,"12pm","2pm",1
+13,"The 10th National Scientist Forum","Nullam nisl. Maecenas malesuada fringilla est. Mauris eu turpis. Nulla",2016-01-24,"12pm","2pm",1
+14,"A Day with the President","Sed id risus",2017-06-22,"11am","10pm",1
+15,"Miss Bulalacao","magnis dis parturient montes, nascetur",2017-02-13,"4pm","10pm",1
+16,"Ed Sheeran Live in UPLB!","cursus purus. Nullam scelerisque neque sed sem egestas blandit.",2017-04-10,"10am","1pm",1
+17,"Daniel Padilla Live in UPLB!","bibendum. Donec felis",2017-03-21,"5pm","7pm",1
+18,"7th International Workshop on Advances in Nanoscience","adipiscing, enim mi tempor lorem,",2016-11-10,"2pm","9pm",1
+19,"The Symposium","quis arcu vel quam dignissim pharetra. Nam ac nulla.",2016-01-10,"11am","7pm",1
+20,"A Seminar on Big Data Analysis","eu, euismod ac, fermentum vel, mauris. Integer sem",2016-05-28,"2pm","10pm",1
+21,"TED TALK 1","habitant morbi tristique senectus et netus",2016-12-03,"2pm","4pm",1
+22,"TED TALK 2","lorem, luctus ut, pellentesque eget, dictum placerat,",2016-12-03,"4pm","6pm",1
+23,"Cytokines Lecture Series 2016","felis ullamcorper viverra. Maecenas iaculis aliquet",2016-12-09,"8am","11am",1
+24,"Cytokines Lecture Series 2016","augue, eu tempor erat",2016-12-09,"1pm","4pm",1
+25,"IEEE Conference on Cognitive Infocommunications","nisl sem, consequat nec, mollis vitae,",2016-04-14,"10am","5pm",1
+26,"Green Urbanism","et arcu",2017-05-23,"8am","2pm",1
+27,"Syensaya Exhibit","magna. Sed eu eros.",2016-05-04,"6am","2pm",1
+28,"Organic Agriculture Seminar","lacus. Mauris",2016-03-11,"11am","10pm",1
+29,"Streetdance concert","eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis",2017-09-30,"12pm","6pm",1
+30,"Star in Carillion Quarter Finals","et magnis dis parturient",2016-11-09,"7am","3pm",1
+31,"PalaCASan 2016: Finals","mattis. Cras eget nisi dictum augue",2016-11-29,"8am","5pm",1
