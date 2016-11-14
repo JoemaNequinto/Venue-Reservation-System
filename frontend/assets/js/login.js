@@ -5,10 +5,6 @@ $('.slider').slider({
 	interval: 2000
 });
 
-$(document).ready(function(){
-	// $("#sidebar-wrapper").hide();
-	$("#sidebar-wrapper").addClass("hidden");
-});
 
 function login() {
 	const username = $('input#username').val();
@@ -16,9 +12,9 @@ function login() {
 
 
 	if (!username) {
-		Materialize.toast("Username is required.", 2000);//shows the message
+		return utility.errorHandler("Username is required.");
 	} else if (!password) {
-		Materialize.toast("Password is required.", 2000);//shows the message
+		return utility.errorHandler("Password is required.");//shows the message
 	} else {
 		log_in();
 	}
@@ -34,17 +30,18 @@ function login() {
 			},
 			success: function (data) {
 				if (!data || !data.role) {
-					return Materialize.toast("Error in Login. Please try again !", 2500);
+					return utility.errorHandler("Error in Login. Please try again !");
 					location.reload();
 				}
 				//stores data to localStorage
 				localStorage.user = data;
-				document.cookie = data.username;
+				document.cookie = username;
 				window.location.href = "#/home"; //goes to a different page
+				// location.reload();
 			},
 			error: function (error) {
 				if (error.status == 404) {
-					Materialize.toast(error.responseJSON.message, 2000);//shows the message
+					return utility.errorHandler(error.responseJSON.message);
 				}
 			}
 		});
@@ -59,14 +56,21 @@ function logout() {
 		success: function (data) {
 			//stores data to localStorage
 			if (!data) {
-				return Materialize.toast("Error in Logout. Please try again !", 2500);
+				return utility.errorHandler("Error in Logout. Please try again !");
 				location.reload();
 			}
-			localStorage.clear()
+			localStorage.clear();
 			window.location.href = "/"; //goes to a different page
 		},
 		error: function (error) {
-			return Materialize.toast("Something went wrong!", 2500);
+			return utility.errorHandler("Something went wrong!");
 		}
 	});
 }
+
+// const profile_name = localStorage.user.username;
+$('#profile-name').html(document.cookie);
+$(document).ready(function(){
+	// $("#sidebar-wrapper").addClass("hidden");
+	$('#profile-name').html(document.cookie);
+});

@@ -2,7 +2,8 @@ $(document).ready(function(){
 
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
+        selectYears: 15, // Creates a dropdown of 15 years to control year
+        format: 'yyyy-mm-dd'
       });
 
     $('select').material_select();
@@ -33,7 +34,6 @@ $(document).ready(function(){
             $(this).hide();
         }
     });
-
 });
 function setSideNav(){
     $('#side-nav-search').removeClass('active-nav');

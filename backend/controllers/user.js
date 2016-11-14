@@ -2,13 +2,8 @@
 const db            = require(__dirname + '/../lib/mysql');
 
 exports.login = function(req, res, next) {
-  if (!req.body.username) {
-     return res.status(400).send("Username cannot be blank.");
- }
- if (!req.body.password) {
-     return res.status(400).send("Password cannot be blank.");
- }
-    var data = {
+	
+	const data = {
         username: req.body.username,
         password: req.body.password
     };
@@ -16,10 +11,11 @@ exports.login = function(req, res, next) {
     //what to do at the start of the query
     function start() {
         //Do not append the user inputs to string. This eliminates SQL Injection.
-        var queryString = "SELECT *"
+        const queryString = "SELECT *"
             + " FROM person"
-            + " WHERE Username=?"
-            + " AND Password = ?";
+            + " WHERE Username = ?"
+            + " AND Password = ?"
+            + " AND Status = 1";
         db.query(
             queryString,
             [data.username, data.password],
