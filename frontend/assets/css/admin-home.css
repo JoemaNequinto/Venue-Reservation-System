@@ -1,4 +1,4 @@
-s#content-wrapper {
+#content-wrapper {
     background: #c0b3a0;
 }
 
@@ -210,4 +210,42 @@ ul {list-style-type: none;}
     top: 50px;
     right: calc((100% - 400px)/2);
     display: none;
+}
+
+#pending-wrapper {
+    padding: 20px;
+    color: #22252C;
+}
+
+.pending-panel {
+    /*background: white;*/
+    /*padding: 20px;*/
+}
+
+.collapsible-header {
+    color: #666;
+    transition: all 0.3s linear;
+}
+
+.collapsible-header:hover {
+    color: #22252c;
+}
+
+.active-collapsible {
+    color: #e14658;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.active-collapsible:hover {
+    color: #e14658;
+    font-weight: bolder;
+}
+
+.collapsible-body {
+    background: #F9F9F9;
+}
+
+h3 {
+    font-size: 30px;
 }
