@@ -34,15 +34,12 @@ function start() {
 	app.use(require('compression')());
 	// configure the session store
 	app.use(session({
-		resave : false,
+		resave : true,
 		secret : config.COOKIE_SECRET,
 		rolling : true,
-		saveUninitialized : false,
+		saveUninitialized : true,
 		name : config.COOKIE_NAME,
 		cookie : {
-			path: '/',
-			httpOnly:false,
-			secure:false,
 			maxAge: 60 * 1000 * 60 * 2 // 2 hours
 		}
 	}));

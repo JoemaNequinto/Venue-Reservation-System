@@ -1,31 +1,42 @@
-(function(root) {
 
-	const utility = {
+(function(root){
+    'use strict';
 
-		responseHandler : function(response, callback) {
+    const utility = {
 
-			const toastDuration = 3000;
+        /*
+            Handles error in the app.
+            @param {string | object} error
+        
+        */
+        
+        errorHandler :  function(err){
 
-			if (typeof response === 'string') {
+            /*
+                
+                Check if err is an object or string.
+                if it is a string, toast right away
 
-				if (callback) {
+            */
+            return Materialize.toast(err, 2000);
+            
 
-				}
-				
-				return Materialiaze.toast(response, '', toastDuration)
-			}
+                // if(_.isString(err)){
+                //     return Materialize.toast(err, 3000);
+                // }
+                
+                // if(_.isObject(err)){
+                //     return Materialize.toast(err.context, 3000);
+                // }
+                
+                // return console.error("Invalid Error Response format");    
 
-			else if (typeof response === 'object') {
+            
 
-			}
+        }
 
-		}
+    }
 
-	};
-
-
-
-	//expose utility object
-	root.utility = utility;
+    root.utility = utility;
 
 })(this);
