@@ -1,4 +1,6 @@
-<script type="text/javascript" src="../assets/js/auth.js"></script>
+<script type="text/javascript" src="assets/js/auth.js"></script>
+<script type="text/javascript" src="assets/js/admin-all-venues.js"></script>
+<script type="text/javascript" src="assets/js/defaults.js"></script>
 
 <div id="main-wrapper" class="row">
 
@@ -10,26 +12,34 @@
 			</div>
 			<div id="profile">
 				<img src="../assets/images/icon-defaultprofile.png" id="profile-icon">
-                <span id="profile-name" class="white-text"></span>
+				<span id="profile-name" class="white-text"></span>
 			</div>
 			<div id="sidebar-list">
-				<div class="row nav-item active-nav" id="side-nav-home">
-					<div class="col s3 nav-item-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
-					<div class="col s5 nav-item-text"><a href="/#/admin/home">Home</a></div>
-				</div>
-				<div class="row nav-item active-nav" id="side-nav-all-events">
-					<div class="col s3 nav-item-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-					<div class="col s5 nav-item-text"><a href="/#/admin/events">Events</a></div>
-				</div>
-				<div class="row nav-item active-nav" id="side-nav-all-venues">
-					<div class="col s3 nav-item-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-					<div class="col s5 nav-item-text"><a href="/#/admin/venues">Venues</a></div>
-				</div>
-				<div class="row nav-item active-nav" id="side-nav-all-users">
-					<div class="col s3 nav-item-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-					<div class="col s5 nav-item-text"><a href="/#/admin/users">Users</a></div>
-				</div>
-				<div class="row nav-item">
+				<a href="/#/admin/home">
+					<div class="row nav-item active-nav" id="side-nav-home">
+						<div class="col s3 nav-item-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
+						<div class="col s5 nav-item-text"><a href="/#/admin/home">Home</a></div>
+					</div>
+				</a>
+				<a href="/#/admin/events">
+					<div class="row nav-item active-nav" id="side-nav-all-events">
+						<div class="col s3 nav-item-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+						<div class="col s5 nav-item-text"><a href="/#/admin/events">Events</a></div>
+					</div>
+				</a>
+				<a href="/#/admin/venues">
+					<div class="row nav-item active-nav" id="side-nav-all-venues">
+						<div class="col s3 nav-item-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+						<div class="col s5 nav-item-text"><a href="/#/admin/venues">Venues</a></div>
+					</div>
+				</a>
+				<a href="/#/admin/users">
+					<div class="row nav-item active-nav" id="side-nav-all-users">
+						<div class="col s3 nav-item-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+						<div class="col s5 nav-item-text"><a href="/#/admin/users">Users</a></div>
+					</div>
+				</a>
+				<div class="row nav-item" ng-click="logout()">
 					<div class="col s3 nav-item-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
 					<div class="col s5 nav-item-text"><a ng-click="logout()">Logout</a></div>
 				</div>
@@ -65,4 +75,3 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="../assets/js/admin-all-venues.js"></script>

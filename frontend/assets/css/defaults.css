@@ -35,6 +35,11 @@ body {
 border: solid red 1px;
 }*/
 
+#view-wrapper {
+    padding: 0;
+    margin: 0;
+}
+
 #main-wrapper {
     padding: 0;
     margin: 0;

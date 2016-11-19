@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html ng-app="datababes">
 
-	<head>
-		<title> Event.io </title>
-		<base href="/" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<title> Event.io </title>
+	<base href="/" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
-		<link rel="stylesheet" href="assets/css/defaults.css" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-	</head>
+	<link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+	<link rel="stylesheet" href="assets/css/defaults.css" />
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+</head>
 
 
-	<body ng-view>
-		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
-		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
-		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+<body>
+	<div ng-view id="view-wrapper">
+	</div>
 
-		<script type="text/javascript" src="app.js"></script>
-		<script type="text/javascript" src="assets/js/defaults.js"></script>
-		<script type="text/javascript" src="assets/js/utility.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
 
-		<!-- Services -->
-		<script type="text/javascript" src="services/user.service.js"></script>
-		<script type="text/javascript" src="services/admin.service.js"></script>
-		<!-- Controllers -->
-		<script type="text/javascript" src="controllers/user.controller.js"></script>
-		<script type="text/javascript" src="controllers/admin.controller.js"></script>
-	</body>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="assets/js/utility.js"></script>
+	<script type="text/javascript" src="assets/js/defaults.js"></script>
+
+	<!-- Services -->
+	<script type="text/javascript" src="services/user.service.js"></script>
+	<script type="text/javascript" src="services/admin.service.js"></script>
+	<!-- Controllers -->
+	<script type="text/javascript" src="controllers/user.controller.js"></script>
+	<script type="text/javascript" src="controllers/admin.controller.js"></script>
+</body>
+
 </html>
