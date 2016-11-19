@@ -249,3 +249,24 @@ ul {list-style-type: none;}
 h3 {
     font-size: 30px;
 }
+
+.event-content, .profile-content {
+    padding: 10px;
+}
+
+.action-panel {
+    text-align: right;
+}
+
+.action-button {
+    background: #3F3250;
+    border: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.action-button:hover {
+    background-color: #e14658;
+}

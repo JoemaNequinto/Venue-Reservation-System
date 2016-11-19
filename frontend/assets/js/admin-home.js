@@ -39,6 +39,11 @@ $(document).ready(function(){
         $(this).toggleClass('active-collapsible');
     });
 
+    $(".modal-close").click(function(){
+        $("#overlay").hide();
+        $(".modal-card").fadeOut("fast");
+    });
+
 });
 
 function setSideNav(){

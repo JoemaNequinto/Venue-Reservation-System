@@ -8,8 +8,21 @@
     height: 100vh;
 }
 
-.dash-card {
+#requests-wrapper {
+    padding: 10px;
+}
+
+#notification-wrapper {
     background-color: #3f3250;
+    color: white;
+    padding: 10px;
+}
+
+.notification {
+    background: #DEDEDE;
+    margin: 10px;
+    padding: 5px;
+    color: #22252C;
 }
 
 #calendar-wrapper {
@@ -46,10 +59,12 @@
 
 #view-all-events {
     background-color: #3f3250;
+    height: 300px;
 }
 
 #view-all-venues {
     background-color: #3f3250;
+    height: 300px;
 }
 
 #view-all-events  .card-link:hover {
@@ -65,10 +80,13 @@
 #activity-log {
     padding-bottom: 0px;
     border-bottom: 0px;
+    height: 300px;
+    overflow: hidden;
+    border-bottom: 5px solid #e14658;
 }
 
 #activity-log-header {
-    color: white;
+    color: #22252C;
     font-family: 'Lato Bold';
     font-size: 18px;
     padding-top: 15px;
@@ -77,11 +95,6 @@
 
 #activity-log-body {
     padding: 0px;
-    height: auto;
-}
-
-#activity-log-body > ul {
-    border-bottom: 5px solid #e14658;
 }
 
 .activity {

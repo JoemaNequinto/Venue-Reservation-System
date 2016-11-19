@@ -7,15 +7,10 @@ $(document).ready(function(){
       });
 
     $('select').material_select();
-    // $('#add-venue').modal();
     setSideNav();
 
-    $("#add-venue-trig").click(function(){
-        $(".modal-card").fadeOut("fast");
-        $("#add-venue").fadeIn("fast");
-    });
-
-    $("#add-event-trig").click(function(){
+    $("#add-fab").click(function(){
+        $("#overlay").fadeTo(100, 0.8);
         $(".modal-card").fadeOut("fast");
         $("#add-event").fadeIn("fast");
     });
@@ -25,15 +20,17 @@ $(document).ready(function(){
         $(".modal-card").fadeOut("fast");
     });
 
-    $("#add-fab").hover(function(){
-        $("#overlay").fadeTo(100, 0.8);
-    });
-
     $("#overlay").hover(function(){
         if(!$(".modal-card").is(":visible")) {
             $(this).hide();
         }
     });
+
+    $(".modal-close").click(function(){
+        $("#overlay").hide();
+        $(".modal-card").fadeOut("fast");
+    });
+
 });
 function setSideNav(){
     $('#side-nav-search').removeClass('active-nav');
