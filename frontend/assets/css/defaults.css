@@ -170,6 +170,7 @@ border: solid red 1px;
 #profile-icon {
     width: 150px;
     border-radius: 100%;
+    margin-bottom: 20px;
     /*border: solid 2px white;*/
 }
 

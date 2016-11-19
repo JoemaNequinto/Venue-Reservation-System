@@ -42,200 +42,145 @@
 
         <div id="overlay"></div>
 
-        <div id="card-wrapper">
-            <div class="col s12">
+        <div id="pending-wrapper">
 
-                <div class="col s6">
-                    <div class="card-panel dash-card" id="calendar-wrapper">
-                        <div class="month">
-                            <ul>
-                                <li class="prev">❮</li>
-                                <li class="next">❯</li>
-                                <li style="text-align:center">
-                                    August
-                                    <span style="font-size:18px">2016</span>
-                                </li>
-                            </ul>
+            <div class="pending-panel col s6">
+                <h3>Pending Events</h3>
+                <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-calendar-o" aria-hidden="true"></i>Harmonya Concert</div>
+                        <div class="collapsible-body">
+                            <div class="event-content">
+                            Name: Harmonya Concert <br>
+                            Description: HEY HEY HEY yehey<br>
+                            <div>
+                            <div class="action-panel">
+                                <button class="action-button"><i class="fa fa-check" aria-hidden="true"></i></button>
+                                <button class="action-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            </div>
                         </div>
-
-                        <ul class="weekdays">
-                            <li>Mo</li>
-                            <li>Tu</li>
-                            <li>We</li>
-                            <li>Th</li>
-                            <li>Fr</li>
-                            <li>Sa</li>
-                            <li>Su</li>
-                        </ul>
-
-                        <ul class="days">
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
-                            <li>9</li>
-                            <li><span class="active">10</span></li>
-                            <li>11</li>
-                            <li>12</li>
-                            <li>13</li>
-                            <li>14</li>
-                            <li>15</li>
-                            <li>16</li>
-                            <li>17</li>
-                            <li>18</li>
-                            <li>19</li>
-                            <li>20</li>
-                            <li>21</li>
-                            <li>22</li>
-                            <li>23</li>
-                            <li>24</li>
-                            <li>25</li>
-                            <li>26</li>
-                            <li>27</li>
-                            <li>28</li>
-                            <li>29</li>
-                            <li>30</li>
-                            <li>31</li>
-                        </ul>
-
-                    </div>
-                </div>
-
-                <div class="col s3">
-                    <div class="card" id="view-all-events">
-                        <div class="card-image">
-                            <img alt="events" src="assets/images/events-img.jpg"/>
-                        </div>
-                        <div class="card-content">
-                            <p>See what's happening on your neighborhood!</p>
-                        </div>
-                        <div class="card-content card-link-wrapper">
-                            <a href="#/admin/events" class="card-link">View All Events</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s3">
-                    <div class="card" id="view-all-venues">
-                        <div class="card-image">
-                            <img alt="events" src="assets/images/venues-img.jpg"/>
-                        </div>
-                        <div class="card-content">
-                            <p>More venues for your upcoming events!</p>
-                        </div>
-                        <div class="card-content card-link-wrapper" style="padding:20px">
-                            <a href="#/admin/venues" class="card-link">View All Venues</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12">
-                <div class="col s4">
-                    <div class="card-panel dash-card"></div>
-                </div>
-                <div class="col s8">
-                    <div class="card dash-card" id="activity-log">
-                        <div class="s12" id="activity-log-header">Activity Log</div>
-                        <div class="s12" id="activity-log-body">
-                            <ul>
-                                <li class="activity">
-                                    <p class="activity-title">UP Bugkos Pizza Party</p>
-                                    <p>November 11, 2016 &bullet; 77 Events Place</p>
-                                </li>
-                                <li class="activity">
-                                    <p class="activity-title">Open Air Screen</p>
-                                    <p>November 9, 2016 &bullet; Freedom Park</p>
-                                </li>
-                                <li class="activity">
-                                    <p class="activity-title">VR in UPLB</p>
-                                    <p>November 7, 2016 &bullet; Institute of Computer Science</p>
-                                </li>
-                                <li class="activity">
-                                    <p class="activity-title">Hydro Laguna</p>
-                                    <p>November 4, 2016 &bullet; Calamba, Laguna</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fixed-action-btn horizontal">
-                <a class="btn-floating btn-large">
-                    <i class="large material-icons" id="add-fab">add</i>
-                </a>
-                <ul>
-                    <li id="add-venue-trig"><button class="btn-floating tooltipped" id="add-venue-fab"><i class="material-icons">place</i></button></li>
-                    <li id="add-event-trig"><button class="btn-floating tooltipped" id="add-venue-fab"><i class="material-icons">event</i></button></li>
+                    </li>
                 </ul>
             </div>
 
-            <!-- Modal Structure -->
-            <div id="add-venue" class="modal-card">
-                <div class="modal-content">
-                    <h4>Add New Venue</h4>
-                    <div class="input-field col s12">
-                        <input placeholder="Venue Name" ng-model="Name" id="venue-name" type="text" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Maximum Capacity" ng-model="Capacity" id="venue-capacity" min="0" type="number" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Details" ng-model="Details" id="venue-details" type="text" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <select ng-model="Status">
-                            <option ng-value="Available">Available</option>
-                            <option ng-value="Disabled">Disabled</option>
-                            <option ng-value="Reserved">Reserved</option>
-                        </select>
-                        <label>Venue Status</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Longitude" ng-model="Longitude" id="longitude" type="text" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Latitude" ng-model="Latitude" id="latitude" type="text" class="validate">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="#/admin/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addVenue()">ADD</a>
-                </div>
+            <div class="pending-panel col s6">
+                <h3>Pending Accounts</h3>
+                <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i>Angelo C. Guiam</div>
+                        <div class="collapsible-body">
+                            <div class="profile-content">
+                            Name: Angelo C. Guiam <br>
+                            Username: gellguiam <br>
+                            Email: acguiam@gmail.com<br>
+                            <div>
+                            <div class="action-panel">
+                                <button class="action-button"><i class="fa fa-check" aria-hidden="true"></i></button>
+                                <button class="action-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i>Angelo C. Guiam</div>
+                        <div class="collapsible-body">
+                            <div class="profile-content">
+                            Name: Angelo C. Guiam <br>
+                            Username: gellguiam <br>
+                            Email: acguiam@gmail.com<br>
+                            <div>
+                            <div class="action-panel">
+                                <button class="action-button"><i class="fa fa-check" aria-hidden="true"></i></button>
+                                <button class="action-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i>Angelo C. Guiam</div>
+                        <div class="collapsible-body">
+                            <div class="profile-content">
+                            Name: Angelo C. Guiam <br>
+                            Username: gellguiam <br>
+                            Email: acguiam@gmail.com<br>
+                            <div>
+                            <div class="action-panel">
+                                <button class="action-button"><i class="fa fa-check" aria-hidden="true"></i></button>
+                                <button class="action-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Modal Structure -->
-            <div id="add-event" class="modal-card">
-                <div class="modal-content">
-                    <h4>Add New Event</h4>
-                    <div class="input-field col s12">
-                        <input placeholder="Event Name" ng-model="EventName" id="event-name" type="text" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Event Details" ng-model="EventDetails" id="event-details" type="text" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <label for="date">Event Date</label>
-                        <input type="date" ng-model="EventDate" name="date" class="datepicker">
-                    </div>
-                    <div class="input-field col s12">
-                        <!-- <label for="start-time">Start Time</label> -->
-                        <input placeholder="Start Time" ng-model="EventStartTime" name="start-time" id="start-time" type="time" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <!-- <label for="end-time">End Time</label> -->
-                        <input placeholder="End Time" ng-model="EventEndTime" name="end-time" id="end-time" type="time" class="validate">
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#/admin/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
-                    </div>
-                </div>
+        </div>
 
+        <div class="fixed-action-btn horizontal">
+            <a class="btn-floating btn-large">
+                <i class="large material-icons" id="add-fab">add</i>
+            </a>
+            <ul>
+                <li id="add-venue-trig"><button class="btn-floating tooltipped" id="add-venue-fab"><i class="material-icons">place</i></button></li>
+                <li id="add-event-trig"><button class="btn-floating tooltipped" id="add-venue-fab"><i class="material-icons">event</i></button></li>
+            </ul>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="add-venue" class="modal-card">
+            <div class="modal-content">
+                <h4>Add New Venue</h4>
+                <div class="input-field col s12">
+                    <input placeholder="Location Name" id="location-name" type="text" class="validate">
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="Maximum Capacity" id="location-capacity" min="0" type="number" class="validate">
+                </div>
+                <div class="input-field col s12">
+                    <select>
+                        <option value="1">Available</option>
+                        <option value="2">Disabled</option>
+                        <option value="3">Reserved</option>
+                    </select>
+                    <label>Venue Status</label>
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="Longitude" id="longitude" type="text" class="validate">
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="Latitude" id="latitude" type="text" class="validate">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#/admin/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addVenue()">ADD</a>
             </div>
         </div>
+
+        <!-- Modal Structure -->
+        <div id="add-event" class="modal-card">
+            <div class="modal-content">
+                <h4>Add New Event</h4>
+                <div class="input-field col s12">
+                    <input placeholder="Event Name" ng-model="EventName" id="event-name" type="text" class="validate">
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="Event Details" ng-model="EventDetails" id="event-details" type="text" class="validate">
+                </div>
+                <div class="input-field col s12">
+                    <label for="date">Event Date</label>
+                    <input type="date" ng-model="EventDate" name="date" class="datepicker">
+                </div>
+                <div class="input-field col s12">
+                    <!-- <label for="start-time">Start Time</label> -->
+                    <input placeholder="Start Time" ng-model="EventStartTime" name="start-time" id="start-time" type="time" class="validate">
+                </div>
+                <div class="input-field col s12">
+                    <!-- <label for="end-time">End Time</label> -->
+                    <input placeholder="End Time" ng-model="EventEndTime" name="end-time" id="end-time" type="time" class="validate">
+                </div>
+                <div class="modal-footer">
+                    <a href="#/admin/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 <script type="text/javascript" src="../assets/js/admin-home.js"></script>

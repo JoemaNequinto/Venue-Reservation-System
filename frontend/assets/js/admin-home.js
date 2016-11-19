@@ -34,6 +34,16 @@ $(document).ready(function(){
         }
     });
 
+    $('.collapsible-header').click(function(){
+        // $('.collapsible-header').removeClass('active-collapsible');
+        $(this).toggleClass('active-collapsible');
+    });
+
+    $(".modal-close").click(function(){
+        $("#overlay").hide();
+        $(".modal-card").fadeOut("fast");
+    });
+
 });
 
 function setSideNav(){
