@@ -20,19 +20,19 @@
                 </div>
                 <div class="row nav-item active-nav" id="side-nav-all-events">
                     <div class="col s3 nav-item-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                    <div class="col s5 nav-item-text"><a href="/#/admin/all-events">Events</a></div>
+                    <div class="col s5 nav-item-text"><a href="/#/admin/events">Events</a></div>
                 </div>
                 <div class="row nav-item active-nav" id="side-nav-all-venues">
                     <div class="col s3 nav-item-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                    <div class="col s5 nav-item-text"><a href="/#/admin/all-venues">Venues</a></div>
+                    <div class="col s5 nav-item-text"><a href="/#/admin/venues">Venues</a></div>
                 </div>
                 <div class="row nav-item active-nav" id="side-nav-all-users">
                     <div class="col s3 nav-item-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-                    <div class="col s5 nav-item-text"><a href="/#/admin/all-users">Users</a></div>
+                    <div class="col s5 nav-item-text"><a href="/#/admin/users">Users</a></div>
                 </div>
                 <div class="row nav-item">
                     <div class="col s3 nav-item-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
-                    <div class="col s5 nav-item-text"><a onclick="logout()">Logout</a></div>
+                    <div class="col s5 nav-item-text"><a ng-click="logout()">Logout</a></div>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
                             <p>See what's happening on your neighborhood!</p>
                         </div>
                         <div class="card-content card-link-wrapper">
-                            <a href="#" class="card-link">View All Events</a>
+                            <a href="#/admin/events" class="card-link">View All Events</a>
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                             <p>More venues for your upcoming events!</p>
                         </div>
                         <div class="card-content card-link-wrapper" style="padding:20px">
-                            <a href="#/get-locations" class="card-link">View All Venues</a>
+                            <a href="#/admin/venues" class="card-link">View All Venues</a>
                         </div>
                     </div>
                 </div>
@@ -238,5 +238,4 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="../assets/js/login.js"></script>
 <script type="text/javascript" src="../assets/js/admin-home.js"></script>

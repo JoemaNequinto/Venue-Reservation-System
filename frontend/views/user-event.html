@@ -15,55 +15,49 @@
 			<div id="sidebar-list">
 				<div class="row nav-item active-nav" id="side-nav-home">
 					<div class="col s3 nav-item-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
-					<div class="col s5 nav-item-text"><a href="/#/admin/home">Home</a></div>
+					<div class="col s5 nav-item-text"><a href="/#/user/home">Home</a></div>
 				</div>
 				<div class="row nav-item active-nav" id="side-nav-all-events">
 					<div class="col s3 nav-item-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-					<div class="col s5 nav-item-text"><a href="/#/admin/all-events">Events</a></div>
+					<div class="col s5 nav-item-text"><a href="/#/user/events">Events</a></div>
 				</div>
 				<div class="row nav-item active-nav" id="side-nav-all-venues">
 					<div class="col s3 nav-item-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-					<div class="col s5 nav-item-text"><a href="/#/admin/all-venues">Venues</a></div>
-				</div>
-				<div class="row nav-item active-nav" id="side-nav-all-users">
-					<div class="col s3 nav-item-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-					<div class="col s5 nav-item-text"><a href="/#/admin/all-users">Users</a></div>
+					<div class="col s5 nav-item-text"><a href="/#/user/venues">Venues</a></div>
 				</div>
 				<div class="row nav-item">
 					<div class="col s3 nav-item-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
-					<div class="col s5 nav-item-text"><a onclick="logout()">Logout</a></div>
+					<div class="col s5 nav-item-text"><a ng-click="logout()">Logout</a></div>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div id="content-wrapper" class="row">
-		<div ng-init="getvenues()">
-			<h4> VENUE <small>TABLE</small></h4>
-			<table class="table bordered striped centered">
+
+		<div ng-init="getevents()">
+			<h4> EVENT <small>TABLE</small></h4>
+			<table class="table bordered striped">
 				<thead>
-					<th>Venue ID</th>
+					<th>Id</th>
 					<th>Name</th>
-					<th>Capacity</th>
 					<th>Details</th>
-					<th>Status</th>
-					<th>Longitude</th>
-					<th>Latitude</th>
+					<th>Date</th>
+					<th>StartTime</th>
+					<th>EndTime</th>
 				</thead>
 				<tbody>
-					<tr ng-repeat="venue in venues">
-						<td>{{ venue.VenueId }}</td>
-						<td>{{ venue.Name }}</td>
-						<td>{{ venue.Capacity }}</td>
-						<td>{{ venue.Details }}</td>
-						<td>{{ venue.Status }}</td>
-						<td>{{ venue.Longitude }}</td>
-						<td>{{ venue.Latitude }}</td>
+					<tr ng-repeat="event in events">
+						<td>{{ event.EventId }}</td>
+						<td>{{ event.EventName }}</td>
+						<td>{{ event.EventDetails }}</td>
+						<td>{{ event.EventDate | date : "fullDate"}}</td>
+						<td>{{ event.EventStartTime }}</td>
+						<td>{{ event.EventEndTime }}</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="../assets/js/login.js"></script>
-<script type="text/javascript" src="../assets/js/admin-all-venues.js"></script>
+]<script type="text/javascript" src="../assets/js/admin-all-events.js"></script>

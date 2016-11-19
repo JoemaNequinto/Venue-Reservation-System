@@ -8,42 +8,39 @@
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/login.html',
-				controller: 'PostCtrl'
+				controller: 'UserCtrl'
 			})
-			.when('/home', {
+			.when('/user/home', {
 				templateUrl: 'views/home.html',
-				controller: 'PostCtrl'
+				controller: 'UserCtrl'
 			})
 			.when('/search', {
-				templateUrl: 'views/search.html'
+				templateUrl: 'views/search.html',
+				controller: 'UserCtrl'
 			})
-			.when('/get-people', {
-				templateUrl: 'views/get-person.html',
-				controller: 'GetCtrl'
+			.when('/user/events', {
+				templateUrl: 'views/user-event.html',
+				controller: 'UserCtrl'
 			})
-			.when('/get-events', {
-				templateUrl: 'views/get-event.html',
-				controller: 'GetCtrl'
-			})
-			.when('/get-venues', {
-				templateUrl: 'views/get-venues.html',
-				controller: 'GetCtrl'
+			.when('/user/venues', {
+				templateUrl: 'views/user-venue.html',
+				controller: 'UserCtrl'
 			})
 			.when('/admin/home', {
 				templateUrl: 'views/admin-home.html',
-				controller: 'PostCtrl'
+				controller: 'AdminCtrl'
 			})
-			.when('/admin/all-events', {
-				templateUrl: 'views/get-event.html',
-				controller: 'GetCtrl'
+			.when('/admin/events', {
+				templateUrl: 'views/admin-event.html',
+				controller: 'UserCtrl'
 			})
-			.when('/admin/all-venues', {
-				templateUrl: 'views/get-venues.html',
-				controller: 'GetCtrl'
+			.when('/admin/venues', {
+				templateUrl: 'views/admin-venue.html',
+				controller: 'UserCtrl'
 			})
-			.when('/admin/all-users', {
-				templateUrl: 'views/get-person.html',
-				controller: 'GetCtrl'
+			.when('/admin/users', {
+				templateUrl: 'views/admin-person.html',
+				controller: 'UserCtrl'
 			})
 			.otherwise({
 				redirectTo: '/'

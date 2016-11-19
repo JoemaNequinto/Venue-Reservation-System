@@ -36,7 +36,7 @@ exports.login = function(req, res, next) {
                 username: result[0].username,
                 role:"USER"
             };
-                result[0].role = "USER"
+            result[0].role = "USER";
             return res.send(result[0]);
         }
     };

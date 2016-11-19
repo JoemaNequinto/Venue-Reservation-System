@@ -2,9 +2,17 @@
 
 (() => {
 	angular.module('datababes')
-		.controller('PostCtrl', PostCtrl);
+		.controller('AdminCtrl', AdminCtrl);
 
-	function PostCtrl($scope, $filter, PostService) {
+	function AdminCtrl($scope, $filter, $location, AdminService) {
+		$scope.logout = () => {
+			AdminService.logout().then(function(res){
+				localStorage.clear();
+				$location.url('/');
+			}, function(err){
+				return utility.errorHandler("Something went wrong!");
+			});
+		}
 		$scope.addVenue = () => {
 			const data = {
 				Name : $scope.Name,
@@ -14,7 +22,7 @@
 				Longitude : $scope.Longitude,
 				Latitude : $scope.Latitude
 			}
-			PostService.addVenue(data);
+			AdminService.addVenue(data);
 		}
 		$scope.addEvent = () => {
 			const date = $filter('date')($scope.EventDate, "yyyy-MM-dd");
@@ -27,18 +35,7 @@
 				EventStartTime : starttime,
 				EventEndTime : endtime
 			}
-			PostService.addEvent(data);
-		}
-		$scope.signup = () => {
-			const data = {
-		        FirstName : $scope.FirstName,
-		        MiddleName : $scope.MiddleName,
-		        LastName : $scope.LastName,
-		        EmailAddress : $scope.EmailAddress,
-		        Username : $scope.Username,
-		        Password : $scope.Password
-		    }
-			PostService.signup(data);
+			AdminService.addEvent(data);
 		}
 	}
 })();

@@ -1,4 +1,5 @@
 <link href="../assets/css/home.css" rel="stylesheet">
+<script type="text/javascript" src="../assets/js/auth.js"></script>
 
 <div id="main-wrapper" class="row">
 
@@ -17,16 +18,16 @@
                     <!-- <div class="col s1"></div> -->
 
                     <div class="col s3 nav-item-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
-                    <div class="col s5 nav-item-text"><a href="/#/home">Home</a></div>
+                    <div class="col s5 nav-item-text"><a href="/#/user/home">Home</a></div>
                 </div>
                 <div class="row nav-item" id="side-nav-search">
-                    <!--               		<div class="col s1"></div> -->
+                    <!--                    <div class="col s1"></div> -->
                     <div class="col s3 nav-item-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
                     <div class="col s5 nav-item-text"><a href="/#/search">Search</a></div>
                 </div>
                 <div class="row nav-item">
                     <div class="col s3 nav-item-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
-                    <div class="col s5 nav-item-text"><a onclick="logout()">Logout</a></div>
+                    <div class="col s5 nav-item-text"><a ng-click="logout()">Logout</a></div>
                 </div>
             </div>
         </div>
@@ -108,7 +109,7 @@
                             <p>See what's happening on your neighborhood!</p>
                         </div>
                         <div class="card-content card-link-wrapper">
-                            <a href="#/get-events" class="card-link">View All Events</a>
+                            <a href="#/user/events" class="card-link">View All Events</a>
                         </div>
                     </div>
                 </div>
@@ -122,7 +123,7 @@
                             <p>More venues for your upcoming events!</p>
                         </div>
                         <div class="card-content card-link-wrapper" style="padding:20px">
-                            <a href="#/get-venues" class="card-link">View All Venues</a>
+                            <a href="#/user/venues" class="card-link">View All Venues</a>
                         </div>
                     </div>
                 </div>
@@ -164,36 +165,6 @@
             </div>
 
             <!-- Modal Structure -->
-            <div id="add-venue" class="modal-card">
-                <div class="modal-content">
-                    <h4>Add New Venue</h4>
-                    <div class="input-field col s12">
-                        <input placeholder="Location Name" id="location-name" type="text" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Maximum Capacity" id="location-capacity" min="0" type="number" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                      <select>
-                        <option value="1">Available</option>
-                        <option value="2">Disabled</option>
-                        <option value="3">Reserved</option>
-                      </select>
-                      <label>Venue Status</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Longitude" id="longitude" type="text" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Latitude" id="latitude" type="text" class="validate">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">ADD</a>
-                </div>
-            </div>
-
-            <!-- Modal Structure -->
             <div id="add-event" class="modal-card">
                 <div class="modal-content">
                     <h4>Add New Event</h4>
@@ -216,13 +187,11 @@
                         <input placeholder="End Time" ng-model="EventEndTime" name="end-time" id="end-time" type="time" class="validate">
                     </div>
                 <div class="modal-footer">
-                    <a href="/#/home" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
+                    <a href="/#/user/home" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
                 </div>
             </div>
         
         </div>
     </div>
 </div>
-<script type="text/javascript" src="../assets/js/login.js"></script>
 <script type="text/javascript" src="../assets/js/home.js"></script>
-<script type="text/javascript" src="../assets/js/auth.js"></script>

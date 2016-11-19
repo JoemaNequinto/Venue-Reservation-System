@@ -2,33 +2,32 @@
 
 (() => {
 	angular.module('datababes')
-			.factory('GetService', GetService);
+			.factory('AdminService', AdminService);
 
-	GetService.$inject = ['$http', '$q'];
+	AdminService.$inject = ['$http', '$q'];
 
 	const headers = {
 	    'content-type': 'application/x-www-form-urlencoded'
 	};
 
-	function GetService($http, $q) {
+	function AdminService($http, $q) {
 		const service = {
-			getpeople: getpeople,
-			getevents: getevents,
-			getvenues: getvenues
+			logout: logout,
+			addVenue: addVenue,
+			addEvent: addEvent
 		}
 
 		return service;
 
-		function getpeople() {
+		function logout() {
 			let deferred = $q.defer();
 
 			$http({
 				method: 'GET',
-				url: '/api/get-people',
+				url: '/api/logout',
 				headers: headers
 			})
 			.then((res) => {
-					console.log(res);
 					deferred.resolve(res);
 				}, (err) => {
 					deferred.reject(err);
@@ -36,16 +35,16 @@
 
 			return deferred.promise;
 		}
-		function getevents() {
+		function addVenue(data) {
 			let deferred = $q.defer();
 
 			$http({
-				method: 'GET',
-				url: '/api/get-events',
+				method: 'POST',
+				data: $.param(data),
+				url: '/api/addVenue',
 				headers: headers
 			})
 			.then((res) => {
-					console.log(res);
 					deferred.resolve(res);
 				}, (err) => {
 					deferred.reject(err);
@@ -53,16 +52,16 @@
 
 			return deferred.promise;
 		}
-		function getvenues() {
+		function addEvent(data) {
 			let deferred = $q.defer();
 
 			$http({
-				method: 'GET',
-				url: '/api/get-venues',
+				method: 'POST',
+				data: $.param(data),
+				url: '/api/addEvent',
 				headers: headers
 			})
 			.then((res) => {
-					console.log(res);
 					deferred.resolve(res);
 				}, (err) => {
 					deferred.reject(err);
@@ -71,4 +70,5 @@
 			return deferred.promise;
 		}
 	}
+
 })();
