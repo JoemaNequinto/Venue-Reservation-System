@@ -128,6 +128,7 @@ CREATE TABLE event (
 	EventDate DATE NOT NULL,
 	EventStartTime VARCHAR(10) NOT NULL,
 	EventEndTime VARCHAR(10) NOT NULL,
+	Status TINYINT(1) NOT NULL,
 	VenueId INT NOT NULL,
 	PRIMARY KEY (EventId),
 	FOREIGN KEY (VenueId) REFERENCES venue(VenueId)

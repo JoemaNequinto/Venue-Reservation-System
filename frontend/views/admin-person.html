@@ -1,6 +1,9 @@
+<link href="assets/css/home.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/admin-home.css">
 <script type="text/javascript" src="assets/js/auth.js"></script>
 <script type="text/javascript" src="assets/js/admin-all-users.js"></script>
 <script type="text/javascript" src="assets/js/defaults.js"></script>
+<script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
 
 <div id="main-wrapper" class="row">
 
@@ -47,29 +50,31 @@
         </div>
     </div>
 
-	<div id="content-wrapper" class="row">
-		<div ng-init="getpeople()">
-			<h4> PERSON <small>TABLE</small></h4>
-			<table class="table bordered striped">
-				<thead>
-					<th>Person ID</th>
-					<th>Name</th>
-					<th>Email Address</th>
-					<th>Username</th>
-					<th>Password</th>
-					<th>Status</th>
-				</thead>
-				<tbody>
-					<tr ng-repeat="person in people">
-						<td>{{ person.PersonId }}</td>
-						<td>{{ person.LastName }}, {{ person.FirstName }} {{ person.MiddleName }}</td>
-						<td>{{ person.EmailAddress }}</td>
-						<td>{{ person.Username }}</td>
-						<td>{{ person.Password }}</td>
-						<td>{{ person.Status }}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+    <div id="content-wrapper" class="row">
+
+        <div id="overlay"></div>
+
+        <div id="pending-wrapper">
+            <div class="pending-panel col s12" ng-init="getpeople()">
+                <h3>All Users</h3>
+                <ul class="collapsible" data-collapsible="expandable">
+                    <li ng-repeat="person in people">
+                        <div class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i>{{ person.LastName }}, {{ person.FirstName }} {{ person.MiddleName }}</div>
+                        <div class="collapsible-body">
+                            <div class="profile-content">
+                                {{ person.EmailAddress }} <br>
+                                {{ person.Username }} <br>
+                                Status (1 - Approved | 0 - Not yet Approved): {{ person.Status }}<br>
+                                <div class="action-panel">
+                                    <button class="action-button"><i class="fa fa-check" aria-hidden="true"></i></button>
+                                    <button class="action-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </div>
