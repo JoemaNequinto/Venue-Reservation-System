@@ -15,7 +15,7 @@ exports.login = function(req, res, next) {
             + " FROM person"
             + " WHERE Username = ?"
             + " AND Password = ?"
-            + " AND Status = 1";
+            + " AND Status != 0";
         db.query(
             queryString,
             [data.username, data.password],
@@ -32,11 +32,19 @@ exports.login = function(req, res, next) {
             //Do not send which one is wrong. This eliminates user enumeration.
             return res.status(404).send({message: 'Wrong username or password.'});
         } else {
-            req.session.user = {
-                username: result[0].username,
-                role:"USER"
-            };
-            result[0].role = "USER";
+            if (result[0].Status == 1) {
+                req.session.user = {
+                    username: result[0].username,
+                    role:"USER"
+                };
+                result[0].role = "USER";
+            } else if (result[0].Status == 2) {
+                req.session.user = {
+                    username: result[0].username,
+                    role:"ADMIN"
+                };
+                result[0].role = "ADMIN";
+            }
             return res.send(result[0]);
         }
     };
@@ -79,5 +87,45 @@ exports.signup = (req, res, next) => {
             return res.send(500, {code: err.code});
         }
         res.send(rows);
+    });
+};
+
+exports.getAllPerson = (req, res, next) => {
+    const query = "SELECT *"
+        + " FROM person";
+    db.query(query, (err, result) => {
+        res.send(result);
+    });
+};
+
+exports.getPendingAccount = (req, res, next) => {
+    const query = "SELECT *"
+        + " FROM person"
+        + " WHERE Status = 0";
+    db.query(query, (err, result) => {
+        res.send(result);
+    });
+};
+
+exports.updatePendingAccount = (req, res, next) => {
+    const query = "UPDATE person"
+        + " SET Status = 1"
+        + " WHERE PersonId = ?";
+    db.query(query, [req.params.accountid], (err, result) => {
+        if (err) {
+            return res.status(500).send({code: err.code});
+        }
+        res.send(result);
+    });
+};
+
+exports.deleteAccount = (req, res, next) => {
+    const query = "DELETE FROM person"
+        + " WHERE PersonId = ?";
+    db.query(query, [req.params.accountid], (err, result) => {
+        if (err) {
+            return res.status(500).send({code: err.code});
+        }
+        res.send(result);
     });
 };

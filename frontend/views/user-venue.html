@@ -44,7 +44,7 @@
 
         <div id="pending-wrapper">
 			<div class="pending-panel col s12" ng-init="getvenues()">
-                <h3>All Events</h3>
+                <h3>All Venues</h3>
                 <ul class="collapsible" data-collapsible="expandable">
                     <li ng-repeat="venue in venues">
                         <div class="collapsible-header"><i class="fa fa-map-marker" aria-hidden="true"></i>{{ venue.Name }}</div>
@@ -53,10 +53,6 @@
                                 {{ venue.Details }} <br>
                                 {{ venue.Status }} <br>
                                 Capacity: {{ venue.Capacity }}<br>
-                                <div class="action-panel">
-                                    <button class="action-button"><i class="fa fa-check" aria-hidden="true"></i></button>
-                                    <button class="action-button"><i class="fa fa-times" aria-hidden="true"></i></button>
-                                </div>
                             </div>
                         </div>
                     </li>

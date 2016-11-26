@@ -1,9 +1,8 @@
-<link href="assets/css/home.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/admin-home.css">
-<script type="text/javascript" src="assets/js/admin-all-events.js"></script>
 <script type="text/javascript" src="../assets/js/auth.js"></script>
-<script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
 <script type="text/javascript" src="assets/js/defaults.js"></script>
+<script type="text/javascript" src="assets/js/admin-all-events.js"></script>
+<script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
 
 <div id="main-wrapper" class="row">
 
@@ -66,8 +65,8 @@
                                 {{ event.EventDate | date : "fullDate"}} <br>
                                 {{ event.EventStartTime }} - {{ event.EventEndTime }}<br>
                                 <div class="action-panel">
-                                    <button class="action-button"><i class="fa fa-check" aria-hidden="true"></i></button>
-                                    <button class="action-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                    <button class="btn-floating waves-effect waves-light tooltipped red" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                    <button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -76,5 +75,9 @@
             </div>
         </div>
     </div>
-
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+    });
+</script>

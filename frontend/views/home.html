@@ -3,7 +3,6 @@
 <script type="text/javascript" src="assets/js/home.js"></script>
 <script type="text/javascript" src="assets/js/defaults.js"></script>
 
-
 <div id="main-wrapper" class="row">
 
     <div id="sidebar-wrapper" class="row">
@@ -46,7 +45,7 @@
 
                 <div class="col s6" class="top-panel">
                     <div class="card dash-card" id="activity-log">
-                        <div class="s12" id="activity-log-header">Major Events</div>
+                        <div class="s12" id="activity-log-header">Pinned Events</div>
                         <div class="s12" id="activity-log-body">
                             <ul>
                                 <li class="activity">
@@ -111,7 +110,7 @@
             </div>
 
             <div class="fixed-action-btn horizontal">
-                <button class="btn-floating btn-large" id="add-event-trig"><i class="large material-icons" id="add-fab">event</i></button>
+                <button class="btn-floating btn-large waves-effect waves-light tooltipped" data-position="left" data-delay="50" data-tooltip="Add Event" id="add-event-trig"><i class="large material-icons" id="add-fab">event</i></button>
             </div>
 
             <!-- Modal Structure -->
@@ -145,3 +144,8 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+    });
+</script>

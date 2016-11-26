@@ -42,10 +42,7 @@
 		    }
 			UserService.signup(data)
 				.then((res) => {
-					const r = confirm("Pending account. Wait for the admin to approve your sign-up. Thank you!");
-			        if(r == true){
-		                location.reload();
-			        }
+					return Materialize.toast("Pending account! Wait for admin's confirmation", 3000, '', function(){location.reload();});
 				}, (err) => {
 					throw new Error(err);
 				});
@@ -63,11 +60,16 @@
 			UserService.login(data)
 				.then((res) => {
 					localStorage.user = {
+						username : res.data.Username,
 						firstname : res.data.FirstName,
 						middlename : res.data.MiddleName,
 						lastname : res.data.LastName
 					};
-					$location.url('/user/home');
+					if (res.data.role == "ADMIN") {
+						$location.url('/admin/home');
+					} else if (res.data.role == "USER") {
+						$location.url('/user/home');
+					}
 				}, (err) => {
 					if (err.status == 404) {
 						Materialize.toast(err.data.message,1000,'',function(){location.reload();});
@@ -94,7 +96,12 @@
 				EventStartTime : starttime,
 				EventEndTime : endtime
 			}
-			UserService.addEvent(data);
+			UserService.addEvent(data)
+				.then((data) => {
+					return Materialize.toast("Add Event Successful! Wait for admin's confirmation", 3000, '', function(){location.reload();});
+				}, (err) => {
+					throw new Error(err);
+				});
 		}
 
 		$scope.getevents = () => {
