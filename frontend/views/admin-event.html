@@ -13,7 +13,7 @@
                 <h5 id="site-title">Events</h5>
             </div>
             <div id="profile">
-                <img src="../assets/images/icon-defaultprofile.png" id="profile-icon">
+                <img src="../assets/images/pusheen.gif" id="profile-icon">
                 <span id="profile-name" class="white-text"></span>
             </div>
             <div id="sidebar-list">
@@ -65,8 +65,8 @@
                                 {{ event.EventDate | date : "fullDate"}} <br>
                                 {{ event.EventStartTime }} - {{ event.EventEndTime }}<br>
                                 <div class="action-panel">
-                                    <button class="btn-floating waves-effect waves-light tooltipped red" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                    <button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    <button class="btn-floating waves-effect waves-light tooltipped red" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil edit-event-icon" aria-hidden="true"></i></button>
+									<button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -75,9 +75,14 @@
             </div>
         </div>
     </div>
+
 </div>
+
 <script type="text/javascript">
     $(document).ready(function(){
+		$('.edit-event-icon').click(function(){
+			console.log("clicked!");
+		});
         $('.tooltipped').tooltip({delay: 50});
     });
 </script>

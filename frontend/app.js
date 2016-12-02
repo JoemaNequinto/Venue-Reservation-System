@@ -14,6 +14,10 @@
 				templateUrl: 'views/home.html',
 				controller: 'UserCtrl'
 			})
+			.when('/user/profile', {
+				templateUrl: 'views/user-profile.html',
+				controller: 'UserCtrl'
+			})
 			.when('/search', {
 				templateUrl: 'views/search.html',
 				controller: 'UserCtrl'

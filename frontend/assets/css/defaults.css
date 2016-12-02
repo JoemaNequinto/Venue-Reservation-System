@@ -54,6 +54,7 @@ border: solid red 1px;
     margin: 0;
     background: url('../images/sidebar.png');
     background-size: auto 100%;
+    background-position: center;
     float: left;
     transition: all 0.3s linear;
     position: fixed;
@@ -68,7 +69,7 @@ border: solid red 1px;
 
 #sidebar-overlay {
     height: 100vh;
-    background: rgba(62,49,77,0.85);
+    background: rgba(62,49,77,0.75);
 }
 
 #sidebar-brand {
@@ -174,6 +175,7 @@ border: solid red 1px;
 
 #profile-icon {
     width: 150px;
+    height: 150px;
     border-radius: 100%;
     margin-bottom: 20px;
     /*border: solid 2px white;*/

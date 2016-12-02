@@ -19,8 +19,8 @@ function renderVenueMap() {
 }
 
 function setSideNav(){
-    $("#side-nav-home").removeClass("active-nav");
-    $("#side-nav-search").addClass("active-nav");
+    $('.nav-item').removeClass('active-nav');
+    $('#side-nav-search').addClass('active-nav');
 }
 
 function setMap() {

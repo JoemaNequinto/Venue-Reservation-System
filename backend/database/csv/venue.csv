@@ -1,32 +1,33 @@
 VenueId,Name,Capacity,Details,Status,Longitude,Latitude
-1,"DevCom LH",218,"dapibus gravida. Aliquam tincidunt, nunc","Available",,
-2,"CEM FH",129,"dictum placerat, augue. Sed molestie.","Available",,
-3,"CHE LH",103,"suscipit, est ac facilisis facilisis,","Available",,
-4,"Physci LHA",334,"leo, in lobortis tellus justo sit","Available",,
-5,"Physci LHB",410,"diam. Proin dolor. Nulla semper tellus id nunc","Available",,
-6,"Physci LHC",155,"risus. Nunc ac sem ut dolor dapibus gravida. Aliquam","Available",,
-7,"ICS LH3",297,"dictum ultricies ligula. Nullam enim. Sed nulla ante, iaculis","Available",,
-8,"ICS LH4",157,"Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna","Available",,
-9,"ICS MH",470,"malesuada vel, convallis in, cursus","Available",,
-10,"IBS LH",141,"orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras","Available",,
-11,"CPS LH",423,"Nullam vitae diam. Proin dolor. Nulla semper tellus","Available",,
-12,"CPC Audi",413,"justo. Proin non massa non ante bibendum ullamcorper. Duis","Available",,
-13,"EE Audi",388,"ut dolor dapibus gravida. Aliquam","Available",,
-14,"CEAT LH",246,"quis urna. Nunc quis arcu","Available",,
-15,"ASCLH",398,"Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus","Available",,
-16,"ASLH",317,"consectetuer adipiscing elit. Etiam laoreet, libero et tristique","Available",,
-17,"CAS MPH1",200,"Integer id magna et ipsum cursus vestibulum. Mauris","Available",,
-18,"CAS MPH2",200,"eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est.","Available",,
-19,"DL Umali Hall",465,"ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam","Available",,
-20,"SEARCA",412,"lorem eu metus. In lorem. Donec elementum, lorem","Available",,
-21,"MCBLH",376,"sed sem egestas blandit. Nam nulla magna, malesuada vel,","Available",,
-22,"SU Ballroom Hall",180,"Ut tincidunt vehicula risus. Nulla eget metus","Available",,
-23,"Senior's Social Garden",500,"sem, vitae aliquam eros turpis non enim.","Available",,
-24,"Baker Hall.",100,"risus quis diam luctus lobortis. Class aptent taciti sociosqu ad","Available",,
-25,"Grand Stand",100,"eu eros. Nam consequat dolor vitae dolor. Donec fringilla.","Available",,
-26,"FT LH",492,"rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac","Available",,
-27,"Agro LH",200,"erat eget ipsum. Suspendisse sagittis. Nullam vitae","Available",,
-28,"MPLH",300,"convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit","Available",,
-29,"SU Bldg",100,"ante dictum cursus. Nunc mauris","Available",,
-30,"Physci Parking Lot",500,"eu, eleifend nec, malesuada ut, sem.","Available",,
-31,"NCAS Audi",300,"eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed","Available",,
+1,"DevCom LH",218,"dapibus gravida. Aliquam tincidunt, nunc","Available",121.242553,14.167054
+2,"CEM FH",129,"dictum placerat, augue. Sed molestie.","Available",121.241110,14.167242
+3,"CHE LH",103,"suscipit, est ac facilisis facilisis,","Available",121.241636,14.167304
+4,"Physci LHA",334,"leo, in lobortis tellus justo sit","Available",121.242038,14.164620
+5,"Physci LHB",410,"diam. Proin dolor. Nulla semper tellus id nunc","Available",121.242038,14.164620
+6,"Physci LHC",155,"risus. Nunc ac sem ut dolor dapibus gravida. Aliquam","Available",121.242038,14.164620
+7,"ICS LH3",297,"dictum ultricies ligula. Nullam enim. Sed nulla ante, iaculis","Available",121.242038,14.164620
+8,"ICS LH4",157,"Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna","Available",121.242038,14.164620
+9,"ICS MH",470,"malesuada vel, convallis in, cursus","Available",121.242767,14.164620
+10,"IBS LH",141,"orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras","Available",121.240718,14.166253
+11,"CPS LH",423,"Nullam vitae diam. Proin dolor. Nulla semper tellus","Available",121.242767,14.165723
+12,"CPC Audi",413,"justo. Proin non massa non ante bibendum ullamcorper. Duis","Available",121.240670,14.165999
+13,"EE Audi",388,"ut dolor dapibus gravida. Aliquam","Available",121.247740,14.161291
+14,"CEAT LH",246,"quis urna. Nunc quis arcu","Available",121.245149,14.161094
+15,"ASCLH",398,"Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus","Available",121.245713,14.160261
+16,"ASLH",317,"consectetuer adipiscing elit. Etiam laoreet, libero et tristique","Available",121.244313,14.158982
+17,"CAS MPH1",200,"Integer id magna et ipsum cursus vestibulum. Mauris","Available",121.241786,14.165697
+18,"CAS MPH2",200,"eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est.","Available",121.241786,14.165697
+19,"DL Umali Hall",465,"ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam","Available",121.240193,14.163866
+20,"SEARCA",412,"lorem eu metus. In lorem. Donec elementum, lorem","Available",121.240407,14.165088
+21,"MCBLH",376,"sed sem egestas blandit. Nam nulla magna, malesuada vel,","Available",121.240107,14.166404
+22,"SU Ballroom Hall",180,"Ut tincidunt vehicula risus. Nulla eget metus","Available",121.241292,14.163372
+23,"Senior's Social Garden",500,"sem, vitae aliquam eros turpis non enim.","Available",121.243733,14.162511
+24,"Baker Hall.",100,"risus quis diam luctus lobortis. Class aptent taciti sociosqu ad","Available",121.242810,14.161791
+25,"Grand Stand",100,"eu eros. Nam consequat dolor vitae dolor. Donec fringilla.","Available",121.242784,14.160740
+26,"FSC ANNEX",492,"rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac","Available",121.244039,14.160464
+27,"CSCLH",200,"erat eget ipsum. Suspendisse sagittis. Nullam vitae","Available",121.244447,14.159934
+28,"MPLH",300,"convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit","Available",121.243991,14.164532
+29,"SU Bldg",100,"ante dictum cursus. Nunc mauris","Available",121.241249,14.163424
+30,"Physci Parking Lot",500,"eu, eleifend nec, malesuada ut, sem.","Available",121.241636,14.164308
+31,"NCAS Audi",300,"eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed","Available",121.241024,14.165634
+32,"Copeland Gym",500,"eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed","Available",121.242596,14.156948
