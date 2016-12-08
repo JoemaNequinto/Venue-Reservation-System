@@ -224,3 +224,8 @@ ul {list-style-type: none;}
     right: calc((100% - 400px)/2);
     display: none;
 }
+
+.cancel-event {
+    float: right;
+    margin-top: -25px;
+}

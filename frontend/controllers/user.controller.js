@@ -13,6 +13,8 @@
 		$scope.mapResult = [];
 		$scope.searchmaptext;
 
+		$scope.userid;
+
 		let eventid;
 		let venueid;
 		let userid;
@@ -21,9 +23,11 @@
 			UserService.getCurrentUserInfo()
 			.then((data) => {
 				userid = data.data.id;
+				$scope.userid = data.data.id;
 				$scope.userinfo = data.data;
 				$scope.updateProfile();
 				$scope.getReservation(data.data.id);
+				console.log(data);
 			}, (err) => {
 				throw new Error(err);
 			});
@@ -46,6 +50,7 @@
 				throw new Error(err);
 			});
 		}
+
 
 		$scope.signup = () => {
 			if (!$scope.FirstName) {
@@ -76,6 +81,7 @@
 				throw new Error(err);
 			});
 		}
+
 		$scope.login = () => {
 			if (!$scope.username) {
 				return utility.errorHandler("Username is required!");
@@ -114,6 +120,7 @@
 				}
 			});
 		}
+
 		$scope.logout = () => {
 			UserService.logout()
 			.then((res) => {
@@ -123,6 +130,7 @@
 				return utility.errorHandler("Something went wrong!");
 			});
 		}
+
 		$scope.addEvent = () => {
 			const date = $filter('date')($scope.EventDate, "yyyy-MM-dd");
 			const starttime = $filter('date')($scope.EventStartTime, "h:mm a");
@@ -134,23 +142,15 @@
 				EventStartTime : starttime,
 				EventEndTime : endtime,
 			}
-			UserService.addEvent(data)
+			UserService.addEvent(data, $scope.userid)
 			.then((data) => {
-				// $addEventToUser();
 				return Materialize.toast("Add Event Successful! Wait for admin's confirmation", 3000, '', function(){location.reload();});
 			}, (err) => {
 				throw new Error(err);
 			});
 
 		}
-		// $scope.addEventToUser = () => {
-		// 	UserService.addEventToUsert(data)
-		// 		.then((data) => {
-		// 			console.log("succ:" + data);
-		// 		}, (err) => {
-		// 			throw new Error(err);
-		// 		});
-		// }
+
 		$scope.getevents = () => {
 			UserService.getevents()
 			.then((data) => {
@@ -309,11 +309,21 @@
 		}
 
 		$scope.searchMap = () => {
-			console.log($scope.searchmaptext);
+			// console.log($scope.searchmaptext);
 			UserService.searchMap($scope.searchmaptext)
 			.then((data) => {
 				$scope.mapResult = data.data;
-				console.log($scope.mapResult);
+				// console.log($scope.mapResult);
+			}, (err) => {
+				throw new Error(err);
+			});
+		}
+
+		$scope.cancelRequest = (eventid) => {
+			UserService.cancelRequest(eventid)
+			.then((data) => {
+				console.log(data);
+				// $scope.mapResult = data.data;
 			}, (err) => {
 				throw new Error(err);
 			});

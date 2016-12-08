@@ -107,7 +107,12 @@
                         <div class="s12" id="activity-log-body">
                             <ul>
                                 <li class="activity" ng-repeat="event in reservation">
-                                    <h5 class="activity-title">{{ event.EventName }}</h5>
+                                    <div class="action-panel">
+                                        <h5 class="activity-title">{{ event.EventName }}</h5>
+                                        <button class="btn-floating waves-effect waves-light tooltipped grey cancel-event"
+                                        data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true"
+                                        ng-click="cancelRequest(event.EventId)"></i></button>
+                                    </div>
                                     <p>{{ event.EventDetails }}</p>
                                     <p>Requested: {{ event.DateRequested }}</p>
                                 </li>
