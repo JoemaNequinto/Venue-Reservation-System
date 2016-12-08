@@ -9,6 +9,7 @@
 		$scope.events = [];
 		$scope.venues = [];
 		$scope.people = [];
+		$scope.reservation = [];
 		let eventid;
 		let venueid;
 
@@ -16,6 +17,14 @@
 			UserService.getpeople()
 				.then((data) => {
 					$scope.people = data.data;
+				}, (err) => {
+					throw new Error(err);
+				});
+		}
+		$scope.getReservation = () => {
+			UserService.getReservation($scope.userid)
+				.then((data) => {
+					$scope.reservation = data.data;
 				}, (err) => {
 					throw new Error(err);
 				});

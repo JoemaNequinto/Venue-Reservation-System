@@ -23,12 +23,30 @@
 			deleteEvent: deleteEvent,
 			editVenue: editVenue,
 			deleteVenue: deleteVenue,
-			getCurrentUserInfo: getCurrentUserInfo
+			getCurrentUserInfo: getCurrentUserInfo,
+			getReservation: getReservation
 		}
 
 		return service;
 
-		
+		function getReservation(data) {
+			let deferred = $q.defer();
+
+			$http({
+				method: 'GET',
+				data: $.param(data),
+				url: '/api/getPendingRequestOfUser',
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
+
 		function getCurrentUserInfo() {
 			let deferred = $q.defer();
 
