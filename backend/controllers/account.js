@@ -36,13 +36,23 @@ exports.login = function(req, res, next) {
             if (result[0].Status == 1) {
                 user = {
                     id: result[0].PersonId,
-                    username: result[0].Username
+                    firstname: result[0].FirstName,
+                    middlename: result[0].MiddleName,
+                    lastname: result[0].LastName,
+                    email: result[0].EmailAddress,
+                    username: result[0].Username,
+                    password: result[0].Password
                 };
                 result[0].role = "USER";
             } else if (result[0].Status == 2) {
                 user = {
                     id: result[0].PersonId,
-                    username: result[0].Username
+                    firstname: result[0].FirstName,
+                    middlename: result[0].MiddleName,
+                    lastname: result[0].LastName,
+                    email: result[0].EmailAddress,
+                    username: result[0].Username,
+                    password: result[0].Password
                 };
                 result[0].role = "ADMIN";
             }
@@ -124,6 +134,18 @@ exports.deleteAccount = (req, res, next) => {
     const query = "DELETE FROM person"
         + " WHERE PersonId = ?";
     db.query(query, [req.params.accountid], (err, result) => {
+        if (err) {
+            return res.status(500).send({code: err.code});
+        }
+        res.send(result);
+    });
+};
+
+exports.updateProfile = (req, res, next) => {
+    const query = "UPDATE person"
+        + " SET ?"
+        + " WHERE PersonId = ?";
+    db.query(query, [req.body, req.params.accountid], (err, result) => {
         if (err) {
             return res.status(500).send({code: err.code});
         }

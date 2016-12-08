@@ -26,6 +26,7 @@
 			getCurrentUserInfo: getCurrentUserInfo,
 			getReservation: getReservation,
 			searchMap: searchMap
+			editProfile: editProfile
 		}
 
 		return service;
@@ -53,6 +54,23 @@
 			$http({
 				method: 'GET',
 				url: '/api/checkSession',
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
+		function editProfile(data, id) {
+			let deferred = $q.defer();
+
+			$http({
+				method: 'PUT',
+				data: $.param(data),
+				url: '/api/updateProfile/' + id,
 				headers: headers
 			})
 			.then((res) => {

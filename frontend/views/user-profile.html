@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div id="content-wrapper" class="row">
+    <div id="content-wrapper" class="row" ng-init="getCurrentUserInfo()">
         <div id="profile-content">
             <div class="row">
                 <div class="col s3"></div>
@@ -55,41 +55,47 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s5">
-                                <input value="Rainier Francis" id="first_name" type="text" class="validate" disabled>
+                                <input id="first_name" ng-model="first_name" type="text" class="validate" disabled>
                                 <label class="active" for="first_name">First Name</label>
                             </div>
                             <div class="input-field col s2">
-                                <input value="S." id="middle_name" type="text" class="validate" disabled>
+                                <input id="middle_name" ng-model="middle_name" type="text" class="validate" disabled>
                                 <label class="active" for="middle_name">M.I.</label>
                             </div>
                             <div class="input-field col s5">
-                                <input value="Tomista" id="last_name" type="text" class="validate" disabled>
+                                <input id="last_name" ng-model="last_name" type="text" class="validate" disabled>
                                 <label class="active" for="last_name">Last Name</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s5">
-                                <input value="raintomista" id="user_name" type="text" class="validate" disabled>
+                                <input id="user_name" type="text" class="validate" disabled>
                                 <label class="active" for="user_name">Username</label>
                             </div>
                             <div class="input-field col s7">
-                                <input value="rstomista@up.edu.ph" id="email" type="email" class="validate" disabled>
+                                <input id="email" ng-model="email" type="email" class="validate" disabled>
                                 <label class="active" for="email">Email Address</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
-                                <input value="password" id="password1" type="password" class="validate" disabled>
+                                <input id="password1" ng-model="password1" type="password" class="validate" disabled>
                                 <label class="active" for="password1">Password</label>
                             </div>
                             <div class="input-field col s6">
-                                <input value="" id="password2" type="password" class="validate" disabled>
+                                <input id="password2" ng-model="password2" type="password" class="validate" disabled>
                                 <label class="active" for="password2">Confirm Password</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col s12">
-                                <input type="submit" class="btn" value="Edit Profile" style="width: 100%;" />
+                                <input id="edit" onclick="edit()" type="submit" class="btn" value="Edit Profile" style="width: 100%;" />
+                            </div>
+                            <div class="col s6">
+                                <input id="update" ng-click="editProfile()" type="submit" class="btn" value="Update Profile" style="width: 100%;display:none;"/>
+                            </div>
+                            <div class="col s6">
+                                <input id="cancel" onclick="cancel()" type="submit" class="btn" value="Cancel" style="width: 100%;display:none;"/>                                    
                             </div>
                         </div>
                     </div>
@@ -101,7 +107,30 @@
     </div>
 
 </div>
-
+<script type="text/javascript">
+    function edit() {
+        $('#first_name').removeAttr('disabled');
+        $('#middle_name').removeAttr('disabled');
+        $('#last_name').removeAttr('disabled');
+        $('#email').removeAttr('disabled');
+        $('#password2').removeAttr('disabled');
+        $('#password1').removeAttr('disabled');
+        document.getElementById('edit').style.display = "none";   
+        document.getElementById('update').style.display = "block";
+        document.getElementById('cancel').style.display = "block";
+    }
+    function cancel() {
+        $('#first_name').attr('disabled', 'true');
+        $('#middle_name').attr('disabled', 'true');
+        $('#last_name').attr('disabled', 'true');
+        $('#email').attr('disabled', 'true');
+        $('#password1').attr('disabled', 'true');
+        $('#password2').attr('disabled', 'true');
+        document.getElementById('edit').style.display = "block";
+        document.getElementById('update').style.display = "none";
+        document.getElementById('cancel').style.display = "none";
+    }
+</script>
 <!-- 
 <form class="col s12">
     <div class="row input-wrapper">

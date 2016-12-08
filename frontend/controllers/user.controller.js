@@ -12,8 +12,11 @@
 		$scope.reservation = [];
 		$scope.mapResult = [];
 		$scope.searchmaptext;
+		$scope.query;
+
 		let eventid;
 		let venueid;
+		let userid;
 
 		$scope.getpeople = () => {
 			UserService.getpeople()
@@ -24,10 +27,9 @@
 				});
 		}
 		$scope.getReservation = () => {
-			UserService.getReservation($scope.userid)
+			UserService.getReservation(userid)
 				.then((data) => {
 					$scope.reservation = data.data;
-					console.log($scope.reservation);
 				}, (err) => {
 					throw new Error(err);
 				});
@@ -35,8 +37,14 @@
 		$scope.getCurrentUserInfo = () => {
 			UserService.getCurrentUserInfo()
 				.then((data) => {
+<<<<<<< HEAD
 					$scope.userid = data.data.id;
 					$scope.getReservation();
+=======
+					userid = data.data.id;
+					$scope.userinfo = data.data;
+					$scope.updateProfile();
+>>>>>>> 3a9d2b7cc95218da9609671b690da5206862671a
 				}, (err) => {
 					throw new Error(err);
 				});
@@ -93,15 +101,13 @@
 					document.getElementById("preloader").style.display = "block";
 
 					if (res.data.role == "ADMIN") {
-						// setTimeout(function(){$location.url('/admin/home');}, 2000);
 						setTimeout(function(){
 							window.location.href='/#/admin/home';
-						}, 2000);
+						}, 1500);
 					} else if (res.data.role == "USER") {
-						// setTimeout(function(){$location.url('/user/home');}, 2000);
 						setTimeout(function(){
 							window.location.href='/#/user/home';
-						}, 2000);
+						}, 1500);
 					}
 
 				}, (err) => {
@@ -192,7 +198,55 @@
 			$('input#latitude').val(latitude);
 			$('.labelText').addClass('active');
 		}
-
+		$scope.updateProfile = () => {
+			const data = {
+				firstname: $scope.userinfo.firstname,
+				middlename: $scope.userinfo.middlename,
+				lastname: $scope.userinfo.lastname,
+				username: $scope.userinfo.username,
+				email: $scope.userinfo.email,
+				password: $scope.userinfo.password
+			};
+			$('#first_name').val(data.firstname);
+			$('#middle_name').val(data.middlename);
+			$('#last_name').val(data.lastname);
+			$('#user_name').val(data.username);
+			$('#email').val(data.email);
+			$('#password1').val(data.password);
+		}
+		$scope.editProfile = () => {
+			if (!$scope.first_name) {
+				return utility.errorHandler("First name is required!");
+			} else if (!$scope.middle_name) {
+				return utility.errorHandler("Middle name is required!");
+			} else if (!$scope.last_name) {
+				return utility.errorHandler("Last name is required!");
+			} else if (!$scope.email) {
+				return utility.errorHandler("Email address is required!");
+			} else if (!$scope.password1) {
+				return utility.errorHandler("Password is required!");
+			} else if (!$scope.password2) {
+				return utility.errorHandler("Password is required!");
+			}
+			if($scope.password1 != $scope.password2){
+				return utility.errorHandler("Password do not match!");
+			} else {
+				const password = $scope.password1;
+				const data = {
+					FirstName: $scope.first_name,
+					MiddleName: $scope.middle_name,
+					LastName: $scope.last_name,
+					EmailAddress: $scope.email,
+					Password: password
+				};
+				UserService.editProfile(data, userid)
+					.then((data) => {
+						return Materialize.toast("Profile Updated.", 2000, '', function(){window.location.href="/#/user/home";});
+					}, (err) => {
+						throw new Error(err);
+					});
+			}
+		}
 		$scope.editEvent = () => {
 			const date = $filter('date')($scope.EventDate2, "yyyy-MM-dd");
 			const starttime = $filter('date')($scope.EventStartTime2, "h:mm a");
