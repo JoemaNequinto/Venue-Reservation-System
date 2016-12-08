@@ -41,7 +41,7 @@ exports.reserveEvent = (req, res, next) => {
 		EventStartTime : req.body.EventStartTime,
 		EventEndTime : req.body.EventEndTime,
 		Status : 0,
-		VenueId : 1
+		VenueId : req.body.VenueId
 	}
 
 	var query = "INSERT INTO event(EventName, EventDetails, EventDate, EventStartTime, EventEndTime, Status, VenueId) VALUES (?, ?, ?, ?, ?, ?, ?)";

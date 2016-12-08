@@ -306,6 +306,7 @@
 			UserService.getvenues()
 			.then((data) => {
 				$scope.venues = data.data;
+				// console.log($scope.venues);
 			}, (err) => {
 				throw new Error(err);
 			});

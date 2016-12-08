@@ -144,11 +144,10 @@
                         <input placeholder="Event Details" ng-model="EventDetails" id="event-details" type="text" class="validate" style="margin:0px;">
                     </div>
                     <div class="input-field col s12" style="margin-top: 30px;">
-                        <select>
-                        <option value="" disabled selected ng-options=>Choose your option</option>
-                        <option ng-repeat="venue in venues" value="{{ venue.VenueId }}">{{ venue.Name }}</option>
-                        </select>
                         <label>Event Location</label>
+                        <select class="browser-default" ng-model="VenueId">
+                            <option ng-repeat="item in venues" value="{{ item.VenueId }}">{{ item.Name }}</option>
+                        </select>
                     </div>
                     <div class="input-field col s12">
                         <label class="active" for="date">Event Date</label>
@@ -167,7 +166,7 @@
                 <div class="modal-footer" style="margin-top: 20px;">
                     <a href="#/user/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
                 </div>
-               
+
             </div>
         </div>
     </div>

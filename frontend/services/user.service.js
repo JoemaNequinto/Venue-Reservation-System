@@ -153,6 +153,7 @@
 
 		function addEvent(data, userid) {
 			let deferred = $q.defer();
+			console.log(data);
 			$http({
 				method: 'POST',
 				data: $.param(data),
