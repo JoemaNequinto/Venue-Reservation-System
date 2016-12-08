@@ -44,58 +44,109 @@
 
     <div id="content-wrapper" class="row">
         <div id="profile-content">
-            <div class="row card" id="edit-profile-wrapper">
-                <form class="col s12">
-                    <div class="row input-wrapper">
-                        <div class="input-field col s12">
-                            <input id="first_name" type="text" class="validate">
-                            <label for="first_name">First Name</label>
+            <div class="row">
+                <div class="col s3"></div>
+                <div class="col s6 card" id="profile-card-container">
+                    <div class="card-content black-text" >
+                        <div class="row">
+                            <div class="col s12" id="profile-info-header">
+                                Account Information
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s5">
+                                <input value="Rainier Francis" id="first_name" type="text" class="validate" disabled>
+                                <label class="active" for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input value="S." id="middle_name" type="text" class="validate" disabled>
+                                <label class="active" for="middle_name">M.I.</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <input value="Tomista" id="last_name" type="text" class="validate" disabled>
+                                <label class="active" for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s5">
+                                <input value="raintomista" id="user_name" type="text" class="validate" disabled>
+                                <label class="active" for="user_name">Username</label>
+                            </div>
+                            <div class="input-field col s7">
+                                <input value="rstomista@up.edu.ph" id="email" type="email" class="validate" disabled>
+                                <label class="active" for="email">Email Address</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input value="password" id="password1" type="password" class="validate" disabled>
+                                <label class="active" for="password1">Password</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input value="" id="password2" type="password" class="validate" disabled>
+                                <label class="active" for="password2">Confirm Password</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input type="submit" class="btn" value="Edit Profile" style="width: 100%;" />
+                            </div>
                         </div>
                     </div>
-                    <div class="row input-wrapper">
-                        <div class="input-field col s12">
-                            <input id="last_name" type="text" class="validate">
-                            <label for="last_name">Last Name</label>
-                        </div>
-                    </div>
-                    <div class="row input-wrapper">
-                        <div class="input-field col s12">
-                            <input id="middle_name" type="text" class="validate">
-                            <label for="middle_name">Middle Name</label>
-                        </div>
-                    </div>
-                    <div class="row input-wrapper">
-                        <div class="input-field col s12">
-                            <input id="user_name" type="text" class="validate">
-                            <label for="user_name">User Name</label>
-                        </div>
-                    </div>
-                    <div class="row input-wrapper">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row input-wrapper">
-                        <div class="input-field col s12">
-                            <input id="password1" type="password" class="validate">
-                            <label for="password1">Password</label>
-                        </div>
-                    </div>
-                    <div class="row input-wrapper">
-                        <div class="input-field col s12">
-                            <input id="password2" type="password" class="validate">
-                            <label for="password2">Confirm Password</label>
-                        </div>
-                    </div>
-                    <div class="row input-wrapper">
-                        <div class="input-field col s12">
-                            <input type="submit" class="btn" value="Update Profile"/>
-                        </div>
-                    </div>
-                </form>
+    
+                </div>
+                
             </div>
         </div>
     </div>
 
 </div>
+
+<!-- 
+<form class="col s12">
+    <div class="row input-wrapper">
+        <div class="input-field col s5">
+            <input id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+        </div>
+    </div>
+    <div class="row input-wrapper">
+        <div class="input-field col s12">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+        </div>
+    </div>
+    <div class="row input-wrapper">
+        <div class="input-field col s12">
+            <input id="middle_name" type="text" class="validate">
+            <label for="middle_name">Middle Name</label>
+        </div>
+    </div>
+    <div class="row input-wrapper">
+        <div class="input-field col s12">
+            <input id="user_name" type="text" class="validate">
+            <label for="user_name">User Name</label>
+        </div>
+    </div>
+    <div class="row input-wrapper">
+        <div class="input-field col s12">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+        </div>
+    </div>
+    <div class="row input-wrapper">
+        <div class="input-field col s12">
+            <input id="password1" type="password" class="validate">
+            <label for="password1">Password</label>
+        </div>
+    </div>
+    <div class="row input-wrapper">
+        <div class="input-field col s12">
+            <input id="password2" type="password" class="validate">
+            <label for="password2">Confirm Password</label>
+        </div>
+    </div>
+    <div class="row input-wrapper">
+        
+    </div>
+</form> -->
