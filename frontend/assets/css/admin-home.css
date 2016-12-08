@@ -270,3 +270,59 @@ h3 {
 .action-button:hover {
     background-color: #e14658;
 }
+
+
+
+.pending-header{
+    background-color: #3f3250;
+    color: white;
+    border-bottom: 5px solid #e14658;
+}
+
+
+.pending-header h3{
+    font-family: 'Lato Bold';
+    font-size: 18px;
+    text-align: center;
+}
+
+.collapsible{
+    margin-top: 0px;
+}
+
+
+.event-content{
+    font-family: 'Lato Bold';
+}
+
+.event-content #event-details{
+        font-family: 'Lato Black';
+    font-size: 15px;
+}
+
+.event-content #event-time{
+    font-family: 'Lato Semibold';
+    font-style: italic;
+}
+
+.approve-btn{
+    background-color: #3f3250;
+}
+
+.approve-btn:hover{
+    background-color: #2F243C;
+}
+
+.disapprove-btn:hover{
+    background-color: #AA2F3D;
+}
+
+.pending-email{
+    font-family: 'Lato Black';
+    font-size: 15px;
+}
+
+.pending-user{
+    font-family: 'Lato Semibold';
+    font-style: italic;
+}

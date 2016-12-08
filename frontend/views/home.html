@@ -144,10 +144,11 @@
                         <input placeholder="Event Details" ng-model="EventDetails" id="event-details" type="text" class="validate" style="margin:0px;">
                     </div>
                     <div class="input-field col s12" style="margin-top: 30px;">
-                        <label>Event Location</label>
                         <select class="browser-default" ng-model="VenueId">
                             <option ng-repeat="item in venues" value="{{ item.VenueId }}">{{ item.Name }}</option>
                         </select>
+                        <label class="active" >Event Location</label>
+
                     </div>
                     <div class="input-field col s12">
                         <label class="active" for="date">Event Date</label>
@@ -163,7 +164,7 @@
                         <input placeholder="End Time" ng-model="EventEndTime" name="end-time" id="end-time" type="time" class="validate" style="margin:0px;">
                     </div>
                 </div>
-                <div class="modal-footer" style="margin-top: 20px;">
+                <div class="modal-footer" style="margin-top: 15px;">
                     <a href="#/user/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
                 </div>
 
