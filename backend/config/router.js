@@ -9,6 +9,7 @@ module.exports = (router) => {
 	router.post('/api/signup', __.account.signup);
 	router.post('/api/login', __.account.login);
 	router.get('/api/logout', __.account.logout);
+	router.get('/api/checkSession', __.account.checkSession);
 	router.get('/api/get-people', __.account.getAllPerson);
 	router.get('/api/get-pending-account', __.account.getPendingAccount);
 	router.put('/api/pending-account/:accountid', __.account.updatePendingAccount);

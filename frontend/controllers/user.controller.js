@@ -20,6 +20,14 @@
 					throw new Error(err);
 				});
 		}
+		$scope.getCurrentUserInfo = () => {
+			UserService.getCurrentUserInfo()
+				.then((data) => {
+					$scope.userid = data.data.id;
+				}, (err) => {
+					throw new Error(err);
+				});
+		}
 		$scope.signup = () => {
 			if (!$scope.FirstName) {
 				return utility.errorHandler("First name is required!");

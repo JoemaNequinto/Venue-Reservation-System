@@ -1,6 +1,6 @@
 'use strict';
 const db            = require(__dirname + '/../lib/mysql');
-
+let user;
 exports.login = function(req, res, next) {
 	
 	const data = {
@@ -32,16 +32,17 @@ exports.login = function(req, res, next) {
             //Do not send which one is wrong. This eliminates user enumeration.
             return res.status(404).send({message: 'Wrong username or password.'});
         } else {
+            user = req.session.user;
             if (result[0].Status == 1) {
-                req.session.user = {
-                    username: result[0].username,
-                    role:"USER"
+                user = {
+                    id: result[0].PersonId,
+                    username: result[0].Username
                 };
                 result[0].role = "USER";
             } else if (result[0].Status == 2) {
-                req.session.user = {
-                    username: result[0].username,
-                    role:"ADMIN"
+                user = {
+                    id: result[0].PersonId,
+                    username: result[0].Username
                 };
                 result[0].role = "ADMIN";
             }
@@ -61,10 +62,10 @@ exports.logout = function(req, res, next) {
 
 exports.checkSession = function (req, res, next) {
     function  start() {
-        if (!req.session.username) {
+        if (!user) {
             return res.send("NO_SESSION");
         } else {
-            return res.send("SESSION");
+            return res.send(user);
         }
     };
     start();

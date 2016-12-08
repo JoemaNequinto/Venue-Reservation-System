@@ -22,10 +22,29 @@
 			editEvent: editEvent,
 			deleteEvent: deleteEvent,
 			editVenue: editVenue,
-			deleteVenue: deleteVenue
+			deleteVenue: deleteVenue,
+			getCurrentUserInfo: getCurrentUserInfo
 		}
 
 		return service;
+
+		
+		function getCurrentUserInfo() {
+			let deferred = $q.defer();
+
+			$http({
+				method: 'GET',
+				url: '/api/checkSession',
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
 
 		function signup(data) {
 			let deferred = $q.defer();

@@ -9,6 +9,14 @@
 		$scope.pendingAccounts = [];
 		$scope.pendingEvents = [];
 		
+		$scope.getCurrentUserInfo = () => {
+			AdminService.getCurrentUserInfo()
+				.then((data) => {
+					$scope.userid = data.data.id;
+				}, (err) => {
+					throw new Error(err);
+				});
+		}
 		$scope.logout = () => {
 			AdminService.logout()
 				.then((res) => {
