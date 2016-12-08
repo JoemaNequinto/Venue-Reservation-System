@@ -16,7 +16,7 @@ CREATE TABLE person (
 	PRIMARY KEY (PersonId)
 );
 
-LOAD DATA LOCAL INFILE 'csv/person.csv'
+LOAD DATA INFILE 'csv/person.csv'
 INTO TABLE person
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -26,12 +26,12 @@ IGNORE 1 ROWS;
 DROP TABLE IF EXISTS person_contactno;
 CREATE TABLE person_contactno (
 	PersonId INT NOT NULL,
-	ContactNo VARCHAR(11) NOT NULL,
+	ContactNo VARCHAR(15) NOT NULL,
 	PRIMARY KEY (PersonId, ContactNo),
 	FOREIGN KEY (PersonId) REFERENCES person(PersonId)
 );
 
-LOAD DATA LOCAL INFILE 'csv/person_contactno.csv'
+LOAD DATA INFILE 'csv/person_contactno.csv'
 INTO TABLE person_contactno
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -46,7 +46,7 @@ CREATE TABLE person_affiliation (
 	FOREIGN KEY (PersonId) REFERENCES person(PersonId)
 );
 
-LOAD DATA LOCAL INFILE 'csv/person_affiliation.csv'
+LOAD DATA INFILE 'csv/person_affiliation.csv'
 INTO TABLE person_affiliation
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -61,7 +61,7 @@ CREATE TABLE admin (
 	FOREIGN KEY (PersonId) REFERENCES person(PersonId)
 );
 
-LOAD DATA LOCAL INFILE 'csv/admin.csv'
+LOAD DATA INFILE 'csv/admin.csv'
 INTO TABLE admin
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -77,7 +77,7 @@ CREATE TABLE admin_manages_person (
 	FOREIGN KEY (AdminId) REFERENCES admin(AdminId)
 );
 
-LOAD DATA LOCAL INFILE 'csv/admin_manages_person.csv'
+LOAD DATA INFILE 'csv/admin_manages_person.csv'
 INTO TABLE admin_manages_person
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -92,7 +92,7 @@ CREATE TABLE user (
 	FOREIGN KEY (PersonId) REFERENCES person(PersonId)
 );
 
-LOAD DATA LOCAL INFILE 'csv/user.csv'
+LOAD DATA INFILE 'csv/user.csv'
 INTO TABLE user
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -113,7 +113,7 @@ CREATE TABLE venue (
 
 ALTER TABLE venue AUTO_INCREMENT = 1000;
 
-LOAD DATA LOCAL INFILE 'csv/venue.csv'
+LOAD DATA INFILE 'csv/venue.csv'
 INTO TABLE venue
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -136,7 +136,7 @@ CREATE TABLE event (
 
 ALTER TABLE event AUTO_INCREMENT = 100;
 
-LOAD DATA LOCAL INFILE 'csv/event.csv'
+LOAD DATA INFILE 'csv/event.csv'
 INTO TABLE event
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -152,7 +152,7 @@ CREATE TABLE user_manages_event (
 	FOREIGN KEY (EventId) REFERENCES event(EventId)
 );
 
-LOAD DATA LOCAL INFILE 'csv/user_manages_event.csv'
+LOAD DATA INFILE 'csv/user_manages_event.csv'
 INTO TABLE user_manages_event
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -170,7 +170,7 @@ CREATE TABLE admin_manages_event (
 	FOREIGN KEY (AdminId) REFERENCES admin(AdminId)
 );
 
-LOAD DATA LOCAL INFILE 'csv/admin_manages_event.csv'
+LOAD DATA INFILE 'csv/admin_manages_event.csv'
 INTO TABLE admin_manages_event
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -181,12 +181,14 @@ DROP TABLE IF EXISTS admin_manages_venue;
 CREATE TABLE admin_manages_venue (
 	AdminId INT NOT NULL,
 	VenueId INT NOT NULL,
+	DateRequested DATE NOT NULL,
+	DateEvaluated DATE,
 	PRIMARY KEY (AdminId, VenueId),
 	FOREIGN KEY (AdminId) REFERENCES admin(AdminId),
 	FOREIGN KEY (VenueId) REFERENCES venue(VenueId)
 );
 
-LOAD DATA LOCAL INFILE 'csv/admin_manages_venue.csv'
+LOAD DATA INFILE 'csv/admin_manages_venue.csv'
 INTO TABLE admin_manages_venue
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'

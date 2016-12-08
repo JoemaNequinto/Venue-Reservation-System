@@ -3,9 +3,10 @@
 const importer = require('anytv-node-importer');
 
 module.exports = (router) => {
-	
+
 	const __ = importer.dirloadSync(__dirname + '/../controllers/');
-	
+
+	router.get('/api/fetchpending', __.request.getPendingRequestOfUser);
 	router.post('/api/signup', __.account.signup);
 	router.post('/api/login', __.account.login);
 	router.get('/api/logout', __.account.logout);
@@ -19,7 +20,7 @@ module.exports = (router) => {
 	router.get('/api/get-pending-event', __.event.getPendingEvent);
 	router.put('/api/pending-event/:eventid', __.event.updatePendingEvent);
 	router.delete('/api/pending-event/:eventid', __.event.deleteEvent);
-	
+
 	router.get('/api/get-venues', __.venue.getAll);
 	router.post('/api/addVenue', __.venue.addVenue);
 
