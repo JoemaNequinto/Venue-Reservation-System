@@ -305,15 +305,15 @@ h3 {
     font-style: italic;
 }
 
-.approve-btn{
+.left-btn{
     background-color: #3f3250;
 }
 
-.approve-btn:hover{
+.left-btn:hover{
     background-color: #2F243C;
 }
 
-.disapprove-btn:hover{
+.right-btn:hover{
     background-color: #AA2F3D;
 }
 
@@ -324,5 +324,55 @@ h3 {
 
 .pending-user{
     font-family: 'Lato Semibold';
+    font-style: italic; 
+}
+
+
+.panel-header{
+    background-color: #3f3250;
+    color: white;
+    border-bottom: 5px solid #e14658;
+}
+
+.panel-header h3{
+    font-family: 'Lato Bold';
+    font-size: 20px;
+    margin: 29.5px 0px;
+}
+
+
+.input-field{
+    margin: 0px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 0px 62px 0px 17px;
+
+}
+
+.panel-header input{
+    margin: 0px;
+    color: #22252C;
+}
+
+.panel-header i{
+    line-height: 50px;
+}
+
+.col.s4.search-bar{
+    padding: 17.5px 0px;
+}
+
+
+.entry-b{
+        font-family: 'Lato Black';
+    font-size: 15px;
+}
+
+.entry-i{
+    font-family: 'Lato Semibold';
     font-style: italic;
+}
+
+.event-content #event-time{
+    
 }

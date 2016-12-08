@@ -70,8 +70,8 @@
                                     <span>{{ event.EventDate | date : "fullDate"}}</span> <br>
                                     <span id="event-time">{{ event.EventStartTime }} - {{ event.EventEndTime }}</span><br>
                                     <div class="action-panel">
-                                        <button class="btn-floating waves-effect waves-light tooltipped approve-btn z-depth-0" data-position="top" data-delay="50" data-tooltip="Approve"><i class="fa fa-thumbs-up" aria-hidden="true" ng-click="approveEvent(event.EventId)"></i></button>
-                                        <button class="btn-floating waves-effect waves-light tooltipped disapprove-btn z-depth-0" data-position="top" data-delay="50" data-tooltip="Disapprove"><i class="fa fa-thumbs-down" aria-hidden="true" ng-click="disapproveEvent(event.EventId)"></i></button>
+                                        <button class="btn-floating waves-effect waves-light tooltipped left-btn z-depth-0" data-position="top" data-delay="50" data-tooltip="Approve"><i class="fa fa-thumbs-up" aria-hidden="true" ng-click="approveEvent(event.EventId)"></i></button>
+                                        <button class="btn-floating waves-effect waves-light tooltipped right-btn z-depth-0" data-position="top" data-delay="50" data-tooltip="Disapprove"><i class="fa fa-thumbs-down" aria-hidden="true" ng-click="disapproveEvent(event.EventId)"></i></button>
                                     </div>
                                 </div>
                             </div>

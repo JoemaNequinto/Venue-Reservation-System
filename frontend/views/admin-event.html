@@ -55,17 +55,16 @@
 
         <div id="pending-wrapper">
             <div class="pending-panel col s12" ng-init="getevents()">
-                <div class="row">
+                <div class="row  panel-header">
                     <div class="col s12">
                         <div class="row">
-                            <div class="col s6">
+                            <div class="col s8">
                                 <h3>All Events</h3>
                             </div>
-                            <div class="col s6">
+                            <div class="col s4 search-bar" >
                                 <div class="input-field">
-                                    <i class="material-icons prefix">search</i>
-                                    <input type="text" id="search-input" ng-model="query">
-                                    <label for="search-input">Search</label>
+                                    <i class="material-icons prefix black-text">search</i>
+                                    <input type="text" id="search-input" ng-model="query" placeholder="Search Events">
                                 </div>
                             </div>
                         </div>
@@ -76,13 +75,12 @@
                         <div class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i>{{ event.EventName }}</div>
                         <div class="collapsible-body">
                             <div class="profile-content">
-                                {{ event.EventDetails }} <br>
+                                <span class="entry-b">{{ event.EventDetails }}</span> <br>
                                 {{ event.EventDate | date : "fullDate"}} <br>
-                                {{ event.EventStartTime }} - {{ event.EventEndTime }}<br>
-								{{ event.Name }}<br>
+                                <span class="entry-i">{{ event.EventStartTime }} - {{ event.EventEndTime }} &nbsp;&bullet;&nbsp; {{ event.Name }}</span><br>
                                 <div class="action-panel">
-                                    <button class="btn-floating waves-effect waves-light tooltipped red modal-trigger" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil" aria-hidden="true" ng-click="updateEventModal(event.EventId, event.EventName, event.EventDetails, event.EventDate, event.EventStartTime, event.EventEndTime)" onclick="update()"></i></button>
-                                    <button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true" ng-click="deleteEvent(event.EventId)"></i></button>
+                                    <button class="btn-floating waves-effect waves-light tooltipped modal-trigger left-btn  z-depth-0" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil" aria-hidden="true" ng-click="updateEventModal(event.EventId, event.EventName, event.EventDetails, event.EventDate, event.EventStartTime, event.EventEndTime)" onclick="update()"></i></button>
+                                    <button class="btn-floating waves-effect waves-light tooltipped z-depth-0 right-btn" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true" ng-click="deleteEvent(event.EventId)"></i></button>
                                 </div>
                             </div>
                         </div>
