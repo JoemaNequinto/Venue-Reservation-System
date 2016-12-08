@@ -29,7 +29,7 @@ module.exports = (router) => {
 	router.put('/api/venue/:venueid', __.venue.editVenue);
 	router.delete('/api/venue/:venueid', __.venue.deleteVenue);
 
-	router.get('/api/getPendingRequestOfUser/:userid', __.request.getReservation);
+	router.get('/api/get-pending-reservations/:userid', __.request.getReservation);
 
 	router.get('/api/search-map/:text', __.search.searchMap);
 	router.all('*', (req, res) => {

@@ -25,18 +25,19 @@
 			deleteVenue: deleteVenue,
 			getCurrentUserInfo: getCurrentUserInfo,
 			getReservation: getReservation,
-			searchMap: searchMap
+			searchMap: searchMap,
 			editProfile: editProfile
 		}
 
 		return service;
 
 		function getReservation(data) {
+			console.log("service " + data);
 			let deferred = $q.defer();
 
 			$http({
 				method: 'GET',
-				url: '/api/getPendingRequestOfUser/'+data,
+				url: '/api/get-pending-reservations/'+data,
 				headers: headers
 			})
 			.then((res) => {

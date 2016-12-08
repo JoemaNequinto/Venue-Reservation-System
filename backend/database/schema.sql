@@ -147,6 +147,8 @@ DROP TABLE IF EXISTS user_manages_event;
 CREATE TABLE user_manages_event (
 	UserId INT NOT NULL,
 	EventId INT NOT NULL,
+	DateRequested DATE NOT NULL,
+	DateEvaluated DATE,
 	PRIMARY KEY (UserId, EventId),
 	FOREIGN KEY (UserId) REFERENCES user(UserId),
 	FOREIGN KEY (EventId) REFERENCES event(EventId)
