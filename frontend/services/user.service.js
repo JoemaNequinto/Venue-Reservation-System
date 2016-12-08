@@ -170,7 +170,6 @@
 
 		function getevents() {
 			let deferred = $q.defer();
-
 			$http({
 				method: 'GET',
 				url: '/api/get-events',
@@ -203,11 +202,11 @@
 		}
 		function editEvent(data, id) {
 			let deferred = $q.defer();
-
+			// console.log(data);
 			$http({
-				method: 'PUT',
-				data: $.param(data),
-				url: '/api/event/'+id,
+				method: 'GET',
+				params: data,
+				url: '/api/edit-event/'+id,
 				headers: headers
 			})
 			.then((res) => {

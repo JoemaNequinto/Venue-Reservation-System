@@ -79,6 +79,7 @@
                                 {{ event.EventDetails }} <br>
                                 {{ event.EventDate | date : "fullDate"}} <br>
                                 {{ event.EventStartTime }} - {{ event.EventEndTime }}<br>
+								{{ event.Name }}<br>
                                 <div class="action-panel">
                                     <button class="btn-floating waves-effect waves-light tooltipped red modal-trigger" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil" aria-hidden="true" ng-click="updateEventModal(event.EventId, event.EventName, event.EventDetails, event.EventDate, event.EventStartTime, event.EventEndTime)" onclick="update()"></i></button>
                                     <button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true" ng-click="deleteEvent(event.EventId)"></i></button>
@@ -95,38 +96,38 @@
                 <h4>Update Event</h4>
                 <div class="row">
                     <div class="input-field col s12 required">
-                        <input ng-model="EventName2" id="event-name" type="text" class="validate">
+                        <input ng-model="NewEventName" id="event-name" type="text" class="validate">
                         <label class="labelText" for="event-name">Event Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input ng-model="EventDetails2" id="event-details" type="text" class="validate">
+                        <input ng-model="NewEventDetails" id="event-details" type="text" class="validate">
                         <label class="labelText" for="event-details">Event Details</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="date" ng-model="EventDate2" id="event-date" class="datepicker">
+                        <input type="date" ng-model="NewEventDate" id="event-date" class="datepicker">
                         <label class="labelText" for="date">Event Date</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input ng-model="EventStartTime2" id="start-time" type="text" class="validate">
+                        <input ng-model="NewEventStartTime" id="start-time" type="text" class="validate">
                         <label class="labelText" for="start-time">Start Time</label>
                     </div>
                     <div class="input-field col s6">
-                        <input ng-model="EventEndTime2" id="end-time" type="text" class="validate">
+                        <input ng-model="NewEventEndTime" id="end-time" type="text" class="validate">
                         <label class="labelText" for="end-time">End Time</label>
                     </div>
                 </div>
             </div>
-            
+
             <div class="modal-footer">
                 <a href="#/admin/events" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="editEvent()">UPDATE</a>
             </div>
-            
+
         </div>
     </div>
 

@@ -22,7 +22,7 @@ module.exports = (router) => {
 	router.get('/api/get-pending-event', __.event.getPendingEvent);
 	router.put('/api/pending-event/:eventid', __.event.updatePendingEvent);
 	router.delete('/api/event/:eventid', __.event.deleteEvent);
-	router.put('/api/event/:eventid', __.event.editEvent);
+	router.get('/api/edit-event/:eventid', __.event.editEvent);
 	router.get('/api/cancel-request/:eventid', __.event.cancelRequest);
 
 	router.get('/api/get-venues', __.venue.getAll);

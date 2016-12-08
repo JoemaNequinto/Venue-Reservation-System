@@ -141,6 +141,7 @@
 				EventDate : date,
 				EventStartTime : starttime,
 				EventEndTime : endtime,
+				VenueId : $scope.VenueId
 			}
 			UserService.addEvent(data, $scope.userid)
 			.then((data) => {
@@ -155,6 +156,7 @@
 			UserService.getevents()
 			.then((data) => {
 				$scope.events = data.data;
+				console.log($scope.events);
 			}, (err) => {
 				throw new Error(err);
 			});
@@ -166,12 +168,11 @@
 			const time2 = $filter('date')(endtime, "shortTime");
 
 			eventid = id;
-
-			$('input#event-name').val(name);
-			$('input#event-details').val(details);
-			$('input#event-date').val(date);
-			$('input#start-time').val(time1);
-			$('input#end-time').val(time2);
+			$scope.NewEventName = name;
+			$scope.NewEventDetails = details;
+			$scope.NewEventDate = date;
+			$scope.NewEventStartTime = time1;
+			$scope.NewEventEndTime = time2;
 			$('.labelText').addClass('active');
 		}
 
@@ -246,16 +247,17 @@
 			}
 		}
 		$scope.editEvent = () => {
-			const date = $filter('date')($scope.EventDate2, "yyyy-MM-dd");
-			const starttime = $filter('date')($scope.EventStartTime2, "h:mm a");
-			const endtime = $filter('date')($scope.EventEndTime2, "h:mm a");
+			const date = $filter('date')($scope.NewEventDate, "yyyy-MM-dd");
+			const starttime = $filter('date')($scope.NewEventStartTime, "h:mm a");
+			const endtime = $filter('date')($scope.NewEventEndTime, "h:mm a");
 			const data = {
-				EventName : $scope.EventName2,
-				EventDetails : $scope.EventDetails2,
+				EventName : $scope.NewEventName,
+				EventDetails : $scope.NewEventDetails,
 				EventDate : date,
 				EventStartTime : starttime,
 				EventEndTime : endtime
 			};
+			// console.log(data);
 			UserService.editEvent(data, eventid)
 			.then((data) => {
 				return Materialize.toast("Event Updated.", 2000, '', function(){$scope.getevents();});
