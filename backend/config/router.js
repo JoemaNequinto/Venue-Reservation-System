@@ -27,6 +27,7 @@ module.exports = (router) => {
 	router.put('/api/venue/:venueid', __.venue.editVenue);
 	router.delete('/api/venue/:venueid', __.venue.deleteVenue);
 
+	router.get('/api/getPendingRequestOfUser/:userid', __.request.getReservation);
 	router.all('*', (req, res) => {
 		res.status(404).send({message : 'Unmatched route. =(('});
 	});
