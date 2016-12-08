@@ -270,3 +270,109 @@ h3 {
 .action-button:hover {
     background-color: #e14658;
 }
+
+
+
+.pending-header{
+    background-color: #3f3250;
+    color: white;
+    border-bottom: 5px solid #e14658;
+}
+
+
+.pending-header h3{
+    font-family: 'Lato Bold';
+    font-size: 18px;
+    text-align: center;
+}
+
+.collapsible{
+    margin-top: 0px;
+}
+
+
+.event-content{
+    font-family: 'Lato Bold';
+}
+
+.event-content #event-details{
+        font-family: 'Lato Black';
+    font-size: 15px;
+}
+
+.event-content #event-time{
+    font-family: 'Lato Semibold';
+    font-style: italic;
+}
+
+.left-btn{
+    background-color: #3f3250;
+}
+
+.left-btn:hover{
+    background-color: #2F243C;
+}
+
+.right-btn:hover{
+    background-color: #AA2F3D;
+}
+
+.pending-email{
+    font-family: 'Lato Black';
+    font-size: 15px;
+}
+
+.pending-user{
+    font-family: 'Lato Semibold';
+    font-style: italic; 
+}
+
+
+.panel-header{
+    background-color: #3f3250;
+    color: white;
+    border-bottom: 5px solid #e14658;
+}
+
+.panel-header h3{
+    font-family: 'Lato Bold';
+    font-size: 20px;
+    margin: 29.5px 0px;
+}
+
+
+.input-field{
+    margin: 0px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 0px 62px 0px 17px;
+
+}
+
+.panel-header input{
+    margin: 0px;
+    color: #22252C;
+}
+
+.panel-header i{
+    line-height: 50px;
+}
+
+.col.s4.search-bar{
+    padding: 17.5px 0px;
+}
+
+
+.entry-b{
+        font-family: 'Lato Black';
+    font-size: 15px;
+}
+
+.entry-i{
+    font-family: 'Lato Semibold';
+    font-style: italic;
+}
+
+.event-content #event-time{
+    
+}
