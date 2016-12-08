@@ -27,6 +27,7 @@
 				$scope.userinfo = data.data;
 				$scope.updateProfile();
 				$scope.getReservation(data.data.id);
+				$scope.getvenues();
 				console.log(data);
 			}, (err) => {
 				throw new Error(err);

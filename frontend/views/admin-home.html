@@ -55,7 +55,7 @@
 
         <div id="pending-wrapper">
             <div class="pending-panel col s12">
-                <div class="pending-panel col s6" ng-init="getpendingEvents()">
+                <div class="pending-panel col s4" ng-init="getpendingEvents()">
                     <h3>Pending Events</h3>
                     <ul class="collapsible" data-collapsible="expandable">
                         <li ng-repeat="event in pendingEvents">
@@ -74,8 +74,7 @@
                         </li>
                     </ul>
                 </div>
-
-                <div class="pending-panel col s6" ng-init="getpendingAccounts()">
+                <div class="pending-panel col s4" ng-init="getpendingAccounts()">
                     <h3>Pending Accounts</h3>
                     <ul class="collapsible" data-collapsible="expandable">
                         <li ng-repeat="account in pendingAccounts">
@@ -92,6 +91,24 @@
                             </div>
                         </li>
                     </ul>
+                </div>
+                <div class="pending-panel col s4" >
+                    <h3>Pending Cancellation</h3>
+                    <!-- <ul class="collapsible" data-collapsible="expandable">
+                        <li ng-repeat="account in pendingAccounts">
+                            <div class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i>{{ account.LastName }}, {{ account.FirstName }} {{ account.MiddleName }}</div>
+                            <div class="collapsible-body">
+                                <div class="profile-content">
+                                    {{ account.EmailAddress }} <br>
+                                    {{ account.Username }} <br>
+                                    <div class="action-panel">
+                                        <button class="btn-floating waves-effect waves-light tooltipped red" data-position="top" data-delay="50" data-tooltip="Approve"><i class="fa fa-thumbs-up" aria-hidden="true" ng-click="approveAccount(account.PersonId)"></i></button>
+                                        <button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Disapprove"><i class="fa fa-thumbs-down" aria-hidden="true" ng-click="disapproveAccount(account.PersonId)"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul> -->
                 </div>
             </div>
 
