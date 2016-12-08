@@ -1,0 +1,101 @@
+<link href="assets/css/profile.css" rel="stylesheet">
+<script type="text/javascript" src="assets/js/auth.js"></script>
+<script type="text/javascript" src="assets/js/profile.js"></script>
+<script type="text/javascript" src="assets/js/defaults.js"></script>
+
+<div id="main-wrapper" class="row">
+
+    <div id="sidebar-wrapper" class="row card">
+        <div id="sidebar-overlay">
+            <div id="sidebar-brand">
+                <i class="material-icons" id="nav-toggle">menu</i>
+                <h5 id="site-title">Events</h5>
+            </div>
+            <div id="profile">
+                <img src="../assets/images/pusheen.gif" id="profile-icon">
+                <span id="profile-name" class="white-text"></span>
+            </div>
+            <div id="sidebar-list">
+                <a href="/#/user/home">
+                    <div class="row nav-item active-nav" id="side-nav-home">
+                        <div class="col s3 nav-item-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
+                        <div class="col s5 nav-item-text"><a href="/#/user/home">Home</a></div>
+                    </div>
+                </a>
+                <a href="/#/user/profile">
+                    <div class="row nav-item" id="side-nav-profile">
+                        <div class="col s3 nav-item-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                        <div class="col s5 nav-item-text"><a href="/#/user/profile">Profile</a></div>
+                    </div>
+                </a>
+                <a href="/#/search">
+                    <div class="row nav-item" id="side-nav-search">
+                        <div class="col s3 nav-item-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                        <div class="col s5 nav-item-text"><a href="/#/search">Search</a></div>
+                    </div>
+                </a>
+                <div class="row nav-item" ng-click="logout()">
+                    <div class="col s3 nav-item-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+                    <div class="col s5 nav-item-text"><a ng-click="logout()">Logout</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content-wrapper" class="row">
+        <div id="profile-content">
+            <div class="row card" id="edit-profile-wrapper">
+                <form class="col s12">
+                    <div class="row input-wrapper">
+                        <div class="input-field col s12">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                    </div>
+                    <div class="row input-wrapper">
+                        <div class="input-field col s12">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row input-wrapper">
+                        <div class="input-field col s12">
+                            <input id="middle_name" type="text" class="validate">
+                            <label for="middle_name">Middle Name</label>
+                        </div>
+                    </div>
+                    <div class="row input-wrapper">
+                        <div class="input-field col s12">
+                            <input id="user_name" type="text" class="validate">
+                            <label for="user_name">User Name</label>
+                        </div>
+                    </div>
+                    <div class="row input-wrapper">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row input-wrapper">
+                        <div class="input-field col s12">
+                            <input id="password1" type="password" class="validate">
+                            <label for="password1">Password</label>
+                        </div>
+                    </div>
+                    <div class="row input-wrapper">
+                        <div class="input-field col s12">
+                            <input id="password2" type="password" class="validate">
+                            <label for="password2">Confirm Password</label>
+                        </div>
+                    </div>
+                    <div class="row input-wrapper">
+                        <div class="input-field col s12">
+                            <input type="submit" class="btn" value="Update Profile"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

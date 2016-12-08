@@ -4,6 +4,7 @@ div {
 
 #content-wrapper {
     width: 100vw;
+    position: fixed;
 }
 
 #main-container {
@@ -24,13 +25,18 @@ div {
 #slider-overlay {
     width: 100%;
     height: 100vh;
-    background: rgba(36, 36, 44, 0.7);;
+    background: rgba(36, 36, 44, 0.7);
     z-index: 10;
-    position: absolute;
+    position: fixed;
+}
+
+#slider-photo {
+    position: fixed;
 }
 
 .slider .fullscreen img {
     background-size: cover;
+    position: fixed;
 }
 
 @keyframes brand {
@@ -153,8 +159,8 @@ label{
     margin-bottom: 0px;
 }
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
 #form-submit{

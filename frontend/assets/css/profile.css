@@ -1,0 +1,41 @@
+#content-wrapper {
+    background-image: url("/assets/images/profile-cover.jpg");
+    height: 100vh;
+}
+
+#profile-content {
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.4);
+    padding: 20px 50px;
+    color: white;
+}
+
+#edit-profile-wrapper {
+    background-color: white;
+    padding: 20px 10px;
+    width: 500px;
+    /*float: right;*/
+}
+
+.input-wrapper {
+    margin-bottom: -5px;
+    padding: 0;
+    color: black;
+}
+
+.input-field input:focus + label {
+  color: #3F3250 !important;
+}
+
+.row .input-field input:focus {
+  border-bottom: 1px solid #3F3250 !important;
+  box-shadow: 0 1px 0 0 #3F3250 !important
+}
+
+.btn {
+    background-color: #3F3250;
+}
+
+.btn:hover {
+    background-color: #E14658;
+}

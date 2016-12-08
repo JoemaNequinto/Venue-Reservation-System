@@ -1,6 +1,6 @@
 PersonId,FirstName,MiddleName,LastName,EmailAddress,Username,Password,Status
 1,"Drew",,"Thirty",,"panginoondthirty","1234",2
-2,"Lei",,"Lalima",,"Ilalima","Ilalima",2
+2,"Angelo","Capa","Guiam","acguiam@gmail.com","gelloguiam","password",2
 3,"Rick",,"Dorgon",,"rdorgon","rdorgon",2
 4,"Tony",,"Milliones",,"tmilliones","tmilliones",2
 5,"Carter","I","Dillon","aliquet.lobortis.nisi@Cumsociisnatoque.com","Gareth","6454",1
@@ -23,3 +23,4 @@ PersonId,FirstName,MiddleName,LastName,EmailAddress,Username,Password,Status
 22,"John","H","Case","purus@orciquislectus.co.uk","Alma","1987",1
 23,"Rebecca","A","Colon","dolor.Quisque.tincidunt@eueratsemper.net","Edward","9362",1
 24,"Armand","B","Peterson","justo@Nuncpulvinararcu.co.uk","Pandora","4283",1
+25,"Gello","C","Guiam","acguiam@up.edu.phk","acguiam","password",1

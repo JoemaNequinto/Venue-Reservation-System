@@ -13,7 +13,7 @@
                 <h5 id="site-title">Events</h5>
             </div>
             <div id="profile">
-                <img src="../assets/images/icon-defaultprofile.png" id="profile-icon">
+                <img src="../assets/images/pusheen.gif" id="profile-icon">
                 <span id="profile-name" class="white-text"></span>
             </div>
             <div id="sidebar-list">
@@ -114,9 +114,14 @@
             
         </div>
     </div>
+
 </div>
+
 <script type="text/javascript">
     $(document).ready(function(){
+		$('.edit-event-icon').click(function(){
+			console.log("clicked!");
+		});
         $('.tooltipped').tooltip({delay: 50});
         $('.datepicker').pickadate({
             selectMonths: true, // Creates a dropdown to control month
