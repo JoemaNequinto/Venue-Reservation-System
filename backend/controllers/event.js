@@ -85,6 +85,17 @@ exports.getPendingEvent = (req, res, next) => {
 	});
 };
 
+exports.getPendingCancellations = (req, res, next) => {
+	const query = "SELECT *"
+		+ " FROM event"
+		+ " WHERE Status = 2";
+	db.query(query, (err, result) => {
+		console.log(result);
+		res.send(result);
+	});
+};
+
+
 exports.updatePendingEvent = (req, res, next) => {
 	var query = "UPDATE event"
 		+ " SET Status = 1"

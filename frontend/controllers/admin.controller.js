@@ -5,10 +5,11 @@
 		.controller('AdminCtrl', AdminCtrl);
 
 	function AdminCtrl($scope, $filter, $location, AdminService) {
-		
+
 		$scope.pendingAccounts = [];
 		$scope.pendingEvents = [];
-		
+		$scope.pendingCancellations = [];
+
 		$scope.getCurrentUserInfo = () => {
 			AdminService.getCurrentUserInfo()
 				.then((data) => {
@@ -72,6 +73,14 @@
 			AdminService.getpendingEvents()
 				.then((data) => {
 					$scope.pendingEvents = data.data;
+				}, (err) => {
+					throw new Error(err);
+				});
+		}
+		$scope.getPendingCancellations = () => {
+			AdminService.getPendingCancellations()
+				.then((data) => {
+					$scope.pendingCancellations = data.data;
 				}, (err) => {
 					throw new Error(err);
 				});

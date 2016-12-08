@@ -20,6 +20,7 @@ module.exports = (router) => {
 	router.post('/api/addEvent', __.event.addEvent);
 	router.post('/api/reserve-event/:userid', __.event.reserveEvent);
 	router.get('/api/get-pending-event', __.event.getPendingEvent);
+	router.get('/api/get-pending-cancellations', __.event.getPendingCancellations);
 	router.put('/api/pending-event/:eventid', __.event.updatePendingEvent);
 	router.delete('/api/event/:eventid', __.event.deleteEvent);
 	router.get('/api/edit-event/:eventid', __.event.editEvent);
