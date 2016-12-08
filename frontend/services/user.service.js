@@ -34,8 +34,7 @@
 
 			$http({
 				method: 'GET',
-				data: $.param(data),
-				url: '/api/getPendingRequestOfUser',
+				url: '/api/getPendingRequestOfUser/'+data,
 				headers: headers
 			})
 			.then((res) => {
