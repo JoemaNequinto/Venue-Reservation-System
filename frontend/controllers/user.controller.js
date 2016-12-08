@@ -10,6 +10,7 @@
 		$scope.venues = [];
 		$scope.people = [];
 		$scope.reservation = [];
+		$scope.query;
 		let eventid;
 		let venueid;
 		let userid;
