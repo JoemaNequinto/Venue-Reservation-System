@@ -25,6 +25,7 @@ module.exports = (router) => {
 	router.delete('/api/event/:eventid', __.event.deleteEvent);
 	router.get('/api/edit-event/:eventid', __.event.editEvent);
 	router.get('/api/cancel-request/:eventid', __.event.cancelRequest);
+	router.get('/api/get-user-events/:userid', __.event.getUserEvent);
 
 	router.get('/api/get-venues', __.venue.getAll);
 	router.post('/api/addVenue', __.venue.addVenue);

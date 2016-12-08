@@ -27,7 +27,8 @@
 			getReservation: getReservation,
 			searchMap: searchMap,
 			editProfile: editProfile,
-			cancelRequest: cancelRequest
+			cancelRequest: cancelRequest,
+			getMyEvents: getMyEvents
 		}
 
 		return service;
@@ -174,6 +175,22 @@
 			$http({
 				method: 'GET',
 				url: '/api/get-events',
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
+
+		function getMyEvents(userid) {
+			let deferred = $q.defer();
+			$http({
+				method: 'GET',
+				url: '/api/get-user-events/' + userid,
 				headers: headers
 			})
 			.then((res) => {

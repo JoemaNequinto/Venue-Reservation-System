@@ -7,6 +7,7 @@
 	function UserCtrl($scope, $filter, $location, UserService) {
 
 		$scope.events = [];
+		$scope.myevents = [];
 		$scope.venues = [];
 		$scope.people = [];
 		$scope.reservation = [];
@@ -25,9 +26,12 @@
 				userid = data.data.id;
 				$scope.userid = data.data.id;
 				$scope.userinfo = data.data;
+
 				$scope.updateProfile();
 				$scope.getReservation(data.data.id);
 				$scope.getvenues();
+				$scope.getMyEvents();
+
 				console.log(data);
 			}, (err) => {
 				throw new Error(err);
@@ -158,6 +162,16 @@
 			.then((data) => {
 				$scope.events = data.data;
 				console.log($scope.events);
+			}, (err) => {
+				throw new Error(err);
+			});
+		}
+
+		$scope.getMyEvents = () => {
+			UserService.getMyEvents($scope.userid)
+			.then((data) => {
+				$scope.myevents = data.data;
+				console.log($scope.myevents);
 			}, (err) => {
 				throw new Error(err);
 			});
