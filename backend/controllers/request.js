@@ -1,12 +1,15 @@
 'use strict';
 const db            = require(__dirname + '/../lib/mysql');
 
-exports.getPendingRequestOfUser = (req, res, next) => {
-    const userid = req.body;
-    console.log(userid);
-    const query = "SELECT *"
-        + " FROM user_manages_event u natural join event e where u.Userid = " + userid + " and status = 0";
-    db.query(query, (err, result) => {
+exports.getReservation = (req, res, next) => {
+	const query = "SELECT *"
+        + " FROM user_manages_event u NATURAL JOIN event e WHERE u.UserId = ? AND e.Status = 1";
+    console.log(req.params.userid);
+    db.query(query, [req.params.userid],(err, result) => {
+    	if (err) {
+			return res.status(500).send({code: err.code});
+		}
+    	console.log(result);
         res.send(result);
     });
-};
+}

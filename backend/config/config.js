@@ -5,9 +5,9 @@ const winston   = require('winston');
 
 const config  = {
     APP_NAME: 'DATABABES',
-    APP_URL: 'http://localhost:8000',
+    APP_URL: 'http://localhost:7000',
 
-    PORT: 8000,
+    PORT: 7000,
     COOKIE_SECRET: 'D@t@B@b35',
     COOKIE_NAME: 'dAtAB@B3S',
     // Directories

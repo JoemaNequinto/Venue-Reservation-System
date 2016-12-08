@@ -6,7 +6,6 @@ module.exports = (router) => {
 
 	const __ = importer.dirloadSync(__dirname + '/../controllers/');
 
-	router.get('/api/fetchpending', __.request.getPendingRequestOfUser);
 	router.post('/api/signup', __.account.signup);
 	router.post('/api/login', __.account.login);
 	router.get('/api/logout', __.account.logout);
@@ -28,6 +27,7 @@ module.exports = (router) => {
 	router.put('/api/venue/:venueid', __.venue.editVenue);
 	router.delete('/api/venue/:venueid', __.venue.deleteVenue);
 
+	router.get('/api/getPendingRequestOfUser/:userid', __.request.getReservation);
 	router.all('*', (req, res) => {
 		res.status(404).send({message : 'Unmatched route. =(('});
 	});

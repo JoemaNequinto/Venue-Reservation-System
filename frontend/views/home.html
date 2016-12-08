@@ -102,8 +102,17 @@
 
             <div class="col s12">
                 <div class="col s6">
-                    <div class="card-panel" id="requests-wrapper">
-                        Reservation Request
+                    <div class="card dash-card" id="request-wrapper">
+                        <div class="s12" id="activity-log-header">Reservation Requests</div>
+                        <div class="s12" id="activity-log-body">
+                            <ul>
+                                <li class="activity" ng-repeat="event in reservation">
+                                    <h5 class="activity-title">{{ event.EventName }}</h5>
+                                    <p>{{ event.EventDetails }}</p>
+                                    <p>Requested: {{ event.DateRequested }}</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col s6">

@@ -25,6 +25,7 @@
 			UserService.getReservation($scope.userid)
 				.then((data) => {
 					$scope.reservation = data.data;
+					console.log($scope.reservation);
 				}, (err) => {
 					throw new Error(err);
 				});
@@ -33,6 +34,8 @@
 			UserService.getCurrentUserInfo()
 				.then((data) => {
 					$scope.userid = data.data.id;
+					console.log($scope.userid);
+					$scope.getReservation();
 				}, (err) => {
 					throw new Error(err);
 				});
