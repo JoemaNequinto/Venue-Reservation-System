@@ -20,11 +20,29 @@
 			approveEvent: approveEvent,
 			disapproveEvent: disapproveEvent,
 			approveAccount: approveAccount,
-			disapproveAccount: disapproveAccount
+			disapproveAccount: disapproveAccount,
+			getCurrentUserInfo: getCurrentUserInfo
 		}
 
 		return service;
 
+		function getCurrentUserInfo() {
+			let deferred = $q.defer();
+
+			$http({
+				method: 'GET',
+				url: '/api/checkSession',
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
+		
 		function logout() {
 			let deferred = $q.defer();
 
@@ -127,7 +145,7 @@
 
 			$http({
 				method: 'DELETE',
-				url: '/api/pending-event/'+data,
+				url: '/api/event/'+data,
 				headers: headers
 			})
 			.then((res) => {

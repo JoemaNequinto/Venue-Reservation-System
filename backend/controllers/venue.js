@@ -27,3 +27,26 @@ exports.getAll = (req, res, next) => {
 		res.send(result);
 	});
 };
+
+exports.editVenue = (req, res, next) => {
+	const query = "UPDATE venue"
+		+ " SET ?"
+		+ " WHERE VenueId = ?";
+	db.query(query, [req.body, req.params.venueid], (err, result) => {
+		if (err) {
+			return res.status(500).send({code: err.code});
+		}
+		res.send(result);
+	});
+};
+
+exports.deleteVenue = (req, res, next) => {
+	const query = "DELETE FROM venue"
+		+ " WHERE VenueId = ?";
+	db.query(query, [req.params.venueid], (err, result) => {
+		if (err) {
+			return res.status(500).send({code: err.code});
+		}
+		res.send(result);
+	});
+};

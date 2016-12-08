@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="assets/css/admin-home.css">
 <script type="text/javascript" src="../assets/js/auth.js"></script>
 <script type="text/javascript" src="assets/js/defaults.js"></script>
-<script type="text/javascript" src="assets/js/admin-all-events.js"></script>
+<script type="text/javascript" src="../assets/js/admin-all-events.js"></script>
 <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
 
 <div id="main-wrapper" class="row">
@@ -65,14 +65,53 @@
                                 {{ event.EventDate | date : "fullDate"}} <br>
                                 {{ event.EventStartTime }} - {{ event.EventEndTime }}<br>
                                 <div class="action-panel">
-                                    <button class="btn-floating waves-effect waves-light tooltipped red" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil edit-event-icon" aria-hidden="true"></i></button>
-									<button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    <button class="btn-floating waves-effect waves-light tooltipped red modal-trigger" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil" aria-hidden="true" ng-click="updateEventModal(event.EventId, event.EventName, event.EventDetails, event.EventDate, event.EventStartTime, event.EventEndTime)" onclick="update()"></i></button>
+                                    <button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true" ng-click="deleteEvent(event.EventId)"></i></button>
                                 </div>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
+        </div>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Update Event</h4>
+                <div class="row">
+                    <div class="input-field col s12 required">
+                        <input ng-model="EventName2" id="event-name" type="text" class="validate">
+                        <label class="labelText" for="event-name">Event Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input ng-model="EventDetails2" id="event-details" type="text" class="validate">
+                        <label class="labelText" for="event-details">Event Details</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="date" ng-model="EventDate2" id="event-date" class="datepicker">
+                        <label class="labelText" for="date">Event Date</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input ng-model="EventStartTime2" id="start-time" type="text" class="validate">
+                        <label class="labelText" for="start-time">Start Time</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input ng-model="EventEndTime2" id="end-time" type="text" class="validate">
+                        <label class="labelText" for="end-time">End Time</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <a href="#/admin/events" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="editEvent()">UPDATE</a>
+            </div>
+            
         </div>
     </div>
 
@@ -84,5 +123,13 @@
 			console.log("clicked!");
 		});
         $('.tooltipped').tooltip({delay: 50});
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year
+            format: 'yyyy-mm-dd'
+        });
     });
+    function update(){
+        $('#modal1').openModal();
+    };
 </script>

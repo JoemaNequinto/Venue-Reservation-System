@@ -65,8 +65,8 @@
                                 {{ venue.Status }} <br>
                                 Capacity: {{ venue.Capacity }}<br>
                                 <div class="action-panel">
-                                    <button class="btn-floating waves-effect waves-light tooltipped red" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                    <button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    <button class="btn-floating waves-effect waves-light tooltipped red" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil" aria-hidden="true" ng-click="updateVenueModal(venue.VenueId, venue.Name, venue.Capacity, venue.Details, venue.Status, venue.Longitude, venue.Latitude)" onclick="update()"></i></button>
+                                    <button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true" ng-click="deleteVenue(venue.VenueId)"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -74,10 +74,60 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal modal-fixed-footer">
+	        <div class="modal-content">
+	            <h4>Update Venue</h4>
+	            <div class="row">
+		            <div class="input-field col s12 required">
+		                <input ng-model="Name" id="venue-name" type="text" class="validate">
+		                <label class="labelText" for="venue-name">Venue Name</label>
+		            </div>
+	            </div>
+	            <div class="row">
+		            <div class="input-field col s12 required">
+		                <input ng-model="Details" id="details" type="text" class="validate">
+		                <label class="labelText" for="details">Venue Details</label>
+		            </div>
+	            </div>
+	            <div class="row">
+		            <div class="input-field col s6 required">
+		                <input ng-model="Capacity" id="venue-capacity" min="0" type="number" class="validate">
+		                <label class="labelText" for="venue-capacity">Maximum Capacity</label>
+		            </div>
+		            <div class="input-field col s6 required">
+		                <select id="status" ng-model="Status">
+		                    <option value="Available" id="a_option">Available</option>
+		                    <option value="Disabled" id="d_option">Disabled</option>
+		                    <option value="Reserved" id="r_option">Reserved</option>
+		                </select>
+		                <label class="labelText" for="status">Venue Status</label>
+		            </div>
+	            </div>
+	            <div class="row">
+		            <div class="input-field col s6 required">
+		                <input ng-model="Longitude" id="longitude" type="text" class="validate">
+		                <label class="labelText" for="longitude">Longitude</label>
+		            </div>
+		            <div class="input-field col s6 required">
+		                <input ng-model="Latitude" id="latitude" type="text" class="validate">
+		                <label class="labelText" for="latitude">Latitude</label>
+		            </div>
+	            </div>
+	        </div>
+	        <div class="modal-footer">
+	            <a href="#/admin/venues" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="editVenue()">UPDATE</a>
+	        </div>
+	    </div>
+
     </div>
 </div>
 <script type="text/javascript">
     $(document).ready(function(){
         $('.tooltipped').tooltip({delay: 50});
     });
+    function update(){
+        $('#modal1').openModal();
+    };
 </script>

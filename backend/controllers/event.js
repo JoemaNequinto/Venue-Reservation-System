@@ -51,6 +51,18 @@ exports.updatePendingEvent = (req, res, next) => {
 	});
 };
 
+exports.editEvent = (req, res, next) => {
+	const query = "UPDATE event"
+		+ " SET ?"
+		+ " WHERE EventId = ?";
+	db.query(query, [req.body, req.params.eventid], (err, result) => {
+		if (err) {
+			return res.status(500).send({code: err.code});
+		}
+		res.send(result);
+	});
+};
+
 exports.deleteEvent = (req, res, next) => {
 	const query = "DELETE FROM event"
 		+ " WHERE EventId = ?";

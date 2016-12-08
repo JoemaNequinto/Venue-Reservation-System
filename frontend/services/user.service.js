@@ -18,10 +18,33 @@
 			addEvent: addEvent,
 			getpeople: getpeople,
 			getevents: getevents,
-			getvenues: getvenues
+			getvenues: getvenues,
+			editEvent: editEvent,
+			deleteEvent: deleteEvent,
+			editVenue: editVenue,
+			deleteVenue: deleteVenue,
+			getCurrentUserInfo: getCurrentUserInfo
 		}
 
 		return service;
+
+		
+		function getCurrentUserInfo() {
+			let deferred = $q.defer();
+
+			$http({
+				method: 'GET',
+				url: '/api/checkSession',
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
 
 		function signup(data) {
 			let deferred = $q.defer();
@@ -128,6 +151,72 @@
 			$http({
 				method: 'GET',
 				url: '/api/get-venues',
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
+		function editEvent(data, id) {
+			let deferred = $q.defer();
+
+			$http({
+				method: 'PUT',
+				data: $.param(data),
+				url: '/api/event/'+id,
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
+		function editVenue(data, id) {
+			let deferred = $q.defer();
+
+			$http({
+				method: 'PUT',
+				data: $.param(data),
+				url: '/api/venue/'+id,
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
+		function deleteEvent(data) {
+			let deferred = $q.defer();
+
+			$http({
+				method: 'DELETE',
+				url: '/api/event/'+data,
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
+		function deleteVenue(data) {
+			let deferred = $q.defer();
+
+			$http({
+				method: 'DELETE',
+				url: '/api/venue/'+data,
 				headers: headers
 			})
 			.then((res) => {
