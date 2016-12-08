@@ -16,6 +16,7 @@ module.exports = (router) => {
 	router.delete('/api/pending-account/:accountid', __.account.deleteAccount);
 
 	router.get('/api/get-events', __.event.getAll);
+	router.get('/api/add-event-to-user/:userid', __.event.linkEventToUser);
 	router.post('/api/addEvent', __.event.addEvent);
 	router.get('/api/get-pending-event', __.event.getPendingEvent);
 	router.put('/api/pending-event/:eventid', __.event.updatePendingEvent);
@@ -28,6 +29,8 @@ module.exports = (router) => {
 	router.delete('/api/venue/:venueid', __.venue.deleteVenue);
 
 	router.get('/api/getPendingRequestOfUser/:userid', __.request.getReservation);
+
+	router.get('/api/search-map/:text', __.search.searchMap);
 	router.all('*', (req, res) => {
 		res.status(404).send({message : 'Unmatched route. =(('});
 	});

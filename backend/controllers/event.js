@@ -11,11 +11,25 @@ exports.addEvent = (req, res, next) => {
 		Status : 0,
 		VenueId : 1
 	}
+
 	const query = "INSERT INTO event(EventName, EventDetails, EventDate, EventStartTime, EventEndTime, Status, VenueId) VALUES (?, ?, ?, ?, ?, ?, ?)";
 	const request = [data.EventName, data.EventDetails, data.EventDate, data.EventStartTime, data.EventEndTime, data.Status, data.VenueId];
 	db.query(query, request, function(err, rows) {
 		if (err) {
-			return res.send(500, {code: err.code});
+			console.log("error");
+			return res.status(500).send({code: err.code});
+		}
+		res.send(rows);
+	});
+};
+
+exports.linkEventToUser = (req, res, next) => {
+	const userid = req.params.userid;
+	const query = "INSERT INTO user_manages_event(UserId, EventId, DateRequested) VALUES("+userid+", (SELECT max(EventId) from event), NOW())";
+	db.query(query, (err, result) => {
+		if (err) {
+			console.log("error in linkEventToUser")
+			return res.status(500).send({code: err.code});
 		}
 		res.send(rows);
 	});

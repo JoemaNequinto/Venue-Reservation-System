@@ -10,6 +10,8 @@
 		$scope.venues = [];
 		$scope.people = [];
 		$scope.reservation = [];
+		$scope.mapResult = [];
+		$scope.searchmaptext;
 		let eventid;
 		let venueid;
 
@@ -34,7 +36,6 @@
 			UserService.getCurrentUserInfo()
 				.then((data) => {
 					$scope.userid = data.data.id;
-					console.log($scope.userid);
 					$scope.getReservation();
 				}, (err) => {
 					throw new Error(err);
@@ -87,7 +88,7 @@
 						middlename : res.data.MiddleName,
 						lastname : res.data.LastName
 					};
-					
+
 					document.getElementById("loginbutton").style.display = "none";
 					document.getElementById("preloader").style.display = "block";
 
@@ -127,16 +128,25 @@
 				EventDetails : $scope.EventDetails,
 				EventDate : date,
 				EventStartTime : starttime,
-				EventEndTime : endtime
+				EventEndTime : endtime,
 			}
 			UserService.addEvent(data)
 				.then((data) => {
+					// $addEventToUser();
 					return Materialize.toast("Add Event Successful! Wait for admin's confirmation", 3000, '', function(){location.reload();});
 				}, (err) => {
 					throw new Error(err);
 				});
-		}
 
+		}
+		// $scope.addEventToUser = () => {
+		// 	UserService.addEventToUsert(data)
+		// 		.then((data) => {
+		// 			console.log("succ:" + data);
+		// 		}, (err) => {
+		// 			throw new Error(err);
+		// 		});
+		// }
 		$scope.getevents = () => {
 			UserService.getevents()
 				.then((data) => {
@@ -150,9 +160,9 @@
 			const date = $filter('date')(eventdate, "yyyy-MM-dd");
 			const time1 = $filter('date')(starttime, "shortTime");
 			const time2 = $filter('date')(endtime, "shortTime");
-			
+
 			eventid = id;
-			
+
 			$('input#event-name').val(name);
 			$('input#event-details').val(details);
 			$('input#event-date').val(date);
@@ -164,7 +174,7 @@
 		$scope.updateVenueModal = (id, name, capacity, details, status, longitude, latitude) => {
 
 			venueid = id;
-			
+
 			if (status === $('#a_option').text()) {
 	            $('#status').val($('#a_option').val());
 	        } else if (status === $('#d_option').text()) {
@@ -227,6 +237,7 @@
 					throw new Error(err);
 				});
 		}
+
 		$scope.deleteVenue = (data) => {
 			UserService.deleteVenue(data)
 				.then((data) => {
@@ -240,6 +251,17 @@
 			UserService.getvenues()
 				.then((data) => {
 					$scope.venues = data.data;
+				}, (err) => {
+					throw new Error(err);
+				});
+		}
+
+		$scope.searchMap = () => {
+			console.log($scope.searchmaptext);
+			UserService.searchMap($scope.searchmaptext)
+				.then((data) => {
+					$scope.mapResult = data.data;
+					console.log($scope.mapResult);
 				}, (err) => {
 					throw new Error(err);
 				});

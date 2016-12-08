@@ -20,22 +20,58 @@
 }
 
 #search-box {
-    height: 200px;
-    /*padding: 10px;*/
+    height: auto;
     color: white;
     margin: 0;
 }
 
 #results-box {
+    height: calc(100% - 100px);
     padding: 10px;
+    overflow: scroll;
+    margin-top: 10px;
 }
 
-#search-button-wrapper {
-    padding: 20px;
+#results-box::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+#results-box::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }
 
-#search-button {
-    background-color: #e14658;
-    padding: 10px;
-    border-radius: 100%;
+
+.result-item {
+    background: white;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.result-item h5 {
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.result-item p {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.result-item p.status {
+    color:#e14658;
+    font-weight: bold;
+}
+
+.result-item p.longitude, .result-item p.latitude {
+    display: none;
+}
+
+#search-text {
+    width: calc(100% - 30px);
+}
+
+#search-icon {
+    margin: 15px;
+    width: 100px;
 }

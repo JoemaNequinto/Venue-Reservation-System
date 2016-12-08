@@ -24,7 +24,8 @@
 			editVenue: editVenue,
 			deleteVenue: deleteVenue,
 			getCurrentUserInfo: getCurrentUserInfo,
-			getReservation: getReservation
+			getReservation: getReservation,
+			searchMap: searchMap
 		}
 
 		return service;
@@ -146,6 +147,23 @@
 
 			return deferred.promise;
 		}
+		// function addEventToUser(data) {
+		// 	let deferred = $q.defer();
+		// 	console.log("add: " + data.userid);
+		// 	$http({
+		// 		method: 'GET',
+		// 		url: '/api/add-event-to-user/' + data.userid,
+		// 		headers: headers
+		// 	})
+		// 	.then((res) => {
+		// 			deferred.resolve(res);
+		// 		}, (err) => {
+		// 			deferred.reject(err);
+		// 		});
+		//
+		// 	return deferred.promise;
+		//
+		// }
 		function getevents() {
 			let deferred = $q.defer();
 
@@ -244,6 +262,22 @@
 
 			return deferred.promise;
 		}
+		function searchMap(data) {
+			let deferred = $q.defer();
+			$http({
+				method: 'GET',
+				url: '/api/search-map/' + data,
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
+
 	}
 
 })();

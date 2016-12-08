@@ -31,10 +31,29 @@ function setMap() {
     mark(lat, long)
 }
 
+var markers = [];
+
+function clearMarkers() {
+    markers.forEach(function(item){
+        item.setMap(null);
+    });
+    markers = [];
+}
+
 function mark(lat, long) {
     var position = new google.maps.LatLng(lat, long);
     var marker = new google.maps.Marker( {position: position, map: map} );
-    marker.setMap(map);
-    marker.setPosition(position);
+    clearMarkers();
+    markers.push(marker);
+    markers[0].setMap(map);
+    markers[0].setPosition(position);
     map.panTo(position);
+}
+
+function markThis(element) {
+    $(".result-item").removeClass("mapped");
+    var active = $(element).addClass("mapped");
+    var longitude = $(".mapped .longitude").html();
+    var latitude = $(".mapped .latitude").html();
+    mark(latitude, longitude);
 }

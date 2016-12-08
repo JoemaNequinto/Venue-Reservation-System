@@ -48,28 +48,20 @@
         <div id="query-panel" class="col s4">
             <div class="row" id="search-box">
                 <div class="input-field col s11">
-                    <input placeholder="search venue or event here" id="first_name" type="text" class="validate">
-                </div>
-                <div class="col s1" id="search-button-wrapper">
-                    <i class="material-icons" id="search-button">search</i>
+                    <input id="search-text" type="text" class="validate" placeholder="search venue or event here" ng-model="searchmaptext">
+                    <i id="search-icon" class="material-icons prefix" ng-click="searchMap()">search</i>
                 </div>
             </div>
             <div id="results-box">
-                <div class="col s12">
-                    <input id="latitude" name="latitude" type="number" placeholder="latitude">
-                </div>
-                <div class="col s12">
-                    <input id="longitude" name="longiutude" type="number" placeholder="longitude">
-                </div>
-                <div class="col s12">
-                    <button id="mapit">Go</button>
-                </div>
-                <div>
-                    Baker Hall (14.1618156, 121.24273979999998)<br>
-                    DL Umali (14.1699121, 121.24406309999995)<br>
-                    CPark (14.1650169, 121.24156289999996)
-
-                </div>
+                <ul>
+                    <li ng-repeat="result in mapResult" class="result-item" onclick="markThis(this)">
+                        <h5>{{ result.Name }}<h5>
+                        <p>{{ result.Details }}<p>
+                        <p class="status">{{ result.Status }}<p>
+                        <p class="latitude">{{ result.Latitude }}<p>
+                        <p class="longitude">{{ result.Longitude }}<p>
+                    </li>
+                </ul>
             </div>
         </div>
         <div id="venue-map-wrapper" class="col s8">

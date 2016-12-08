@@ -9,7 +9,7 @@ exports.getReservation = (req, res, next) => {
     	if (err) {
 			return res.status(500).send({code: err.code});
 		}
-    	console.log(result);
+    	// console.log(result);
         res.send(result);
     });
 }
