@@ -9,6 +9,8 @@
 		$scope.events = [];
 		$scope.venues = [];
 		$scope.people = [];
+		let eventid;
+		let venueid;
 
 		$scope.getpeople = () => {
 			UserService.getpeople()
@@ -65,11 +67,22 @@
 						middlename : res.data.MiddleName,
 						lastname : res.data.LastName
 					};
+					
+					document.getElementById("loginbutton").style.display = "none";
+					document.getElementById("preloader").style.display = "block";
+
 					if (res.data.role == "ADMIN") {
-						$location.url('/admin/home');
+						// setTimeout(function(){$location.url('/admin/home');}, 2000);
+						setTimeout(function(){
+							window.location.href='/#/admin/home';
+						}, 2000);
 					} else if (res.data.role == "USER") {
-						$location.url('/user/home');
+						// setTimeout(function(){$location.url('/user/home');}, 2000);
+						setTimeout(function(){
+							window.location.href='/#/user/home';
+						}, 2000);
 					}
+
 				}, (err) => {
 					if (err.status == 404) {
 						Materialize.toast(err.data.message,1000,'',function(){location.reload();});
@@ -112,6 +125,97 @@
 					throw new Error(err);
 				});
 		}
+
+		$scope.updateEventModal = (id, name, details, eventdate, starttime, endtime) => {
+			const date = $filter('date')(eventdate, "yyyy-MM-dd");
+			const time1 = $filter('date')(starttime, "shortTime");
+			const time2 = $filter('date')(endtime, "shortTime");
+			
+			eventid = id;
+			
+			$('input#event-name').val(name);
+			$('input#event-details').val(details);
+			$('input#event-date').val(date);
+			$('input#start-time').val(time1);
+			$('input#end-time').val(time2);
+			$('.labelText').addClass('active');
+		}
+
+		$scope.updateVenueModal = (id, name, capacity, details, status, longitude, latitude) => {
+
+			venueid = id;
+			
+			if (status === $('#a_option').text()) {
+	            $('#status').val($('#a_option').val());
+	        } else if (status === $('#d_option').text()) {
+	            $('#status').val($('#d_option').val());
+	        } else if (status === $('#r_option').text()) {
+	            $('#status').val($('#r_option').val());
+	        }
+	        $(document).ready(function () {
+	            $('select').material_select();
+	        });
+			$('input#venue-name').val(name);
+			$('input#venue-capacity').val(capacity);
+			$('input#details').val(details);
+			$('input#longitude').val(longitude);
+			$('input#latitude').val(latitude);
+			$('.labelText').addClass('active');
+		}
+
+		$scope.editEvent = () => {
+			const date = $filter('date')($scope.EventDate2, "yyyy-MM-dd");
+			const starttime = $filter('date')($scope.EventStartTime2, "h:mm a");
+			const endtime = $filter('date')($scope.EventEndTime2, "h:mm a");
+			const data = {
+				EventName : $scope.EventName2,
+				EventDetails : $scope.EventDetails2,
+				EventDate : date,
+				EventStartTime : starttime,
+				EventEndTime : endtime
+			};
+			UserService.editEvent(data, eventid)
+				.then((data) => {
+					return Materialize.toast("Event Updated.", 2000, '', function(){$scope.getevents();});
+				}, (err) => {
+					throw new Error(err);
+				});
+		}
+
+		$scope.editVenue = () => {
+			const data = {
+				Name : $scope.Name,
+				Capacity : $scope.Capacity,
+				Details : $scope.Details,
+				Status : $scope.Status,
+				Longitude : $scope.Longitude,
+				Latitude : $scope.Latitude
+			};
+			UserService.editVenue(data, venueid)
+				.then((data) => {
+					return Materialize.toast("Venue Updated.", 2000, '', function(){$scope.getvenues();});
+				}, (err) => {
+					throw new Error(err);
+				});
+		}
+
+		$scope.deleteEvent = (data) => {
+			UserService.deleteEvent(data)
+				.then((data) => {
+					return Materialize.toast("Event Deleted.", 2000, '', function(){$scope.getevents();});
+				}, (err) => {
+					throw new Error(err);
+				});
+		}
+		$scope.deleteVenue = (data) => {
+			UserService.deleteVenue(data)
+				.then((data) => {
+					return Materialize.toast("Venue Deleted.", 2000, '', function(){$scope.getvenues();});
+				}, (err) => {
+					throw new Error(err);
+				});
+		}
+
 		$scope.getvenues = () => {
 			UserService.getvenues()
 				.then((data) => {

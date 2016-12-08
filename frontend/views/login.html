@@ -24,7 +24,7 @@
                 <div class="card-content">
                     <div class="row" id="tabs">
                         <ul class="tabs">
-                            <li class="tab col s6"><a  class="active" href="#login">Login</a></li>
+                            <li class="tab col s6"><a class="active" href="#login">Login</a></li>
                             <li class="tab col s6"><a href="#sign-up">Sign-up</a></li>
                         </ul>
                     </div>
@@ -38,7 +38,14 @@
                                 <i class="material-icons prefix">lock</i>
                                 <input ng-model="password" name="password" type="password" class="validate" placeholder="Password">
                             </div>
-                            <a class="waves-effect waves-light btn" ng-click="login()">LOGIN</a>
+                            <a id="loginbutton" class="waves-effect waves-light btn" ng-click="login()">LOGIN</a>
+                            <div id="preloader" style="display:none; margin:auto" class="preloader-wrapper small active">
+                                <div class="spinner-layer spinner-green-only">
+                                    <div class="circle-clipper left"><div class="circle"></div></div>
+                                    <div class="gap-patch"><div class="circle"></div></div>
+                                    <div class="circle-clipper right"><div class="circle"></div></div>
+                                </div>
+                            </div>
                             <p id="forgot-password"><a href="#/">Forgot password?</a></p>
                         </div>
                         <form id="sign-up" class="col s12">

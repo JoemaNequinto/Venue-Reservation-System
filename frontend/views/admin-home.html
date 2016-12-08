@@ -110,24 +110,27 @@
                 <div class="modal-content">
                     <h4>Add New Venue</h4>
                     <div class="input-field col s12">
-                        <input placeholder="Location Name" id="location-name" type="text" class="validate">
+                        <input ng-model="Name" placeholder="Location Name" id="location-name" type="text" class="validate">
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Maximum Capacity" id="location-capacity" min="0" type="number" class="validate">
+                        <input ng-model="Capacity" placeholder="Maximum Capacity" id="location-capacity" min="0" type="number" class="validate">
                     </div>
                     <div class="input-field col s12">
-                        <select>
-                            <option value="1">Available</option>
-                            <option value="2">Disabled</option>
-                            <option value="3">Reserved</option>
+                        <input ng-model="Details" placeholder="Details" id="details" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <select ng-model="Status">
+                            <option value="Available">Available</option>
+                            <option value="Disabled">Disabled</option>
+                            <option value="Reserved">Reserved</option>
                         </select>
                         <label>Venue Status</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Longitude" id="longitude" type="text" class="validate">
+                        <input ng-model="Longitude" placeholder="Longitude" id="longitude" type="text" class="validate">
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="Latitude" id="latitude" type="text" class="validate">
+                        <input ng-model="Latitude" placeholder="Latitude" id="latitude" type="text" class="validate">
                     </div>
                 </div>
                 <div class="modal-footer">

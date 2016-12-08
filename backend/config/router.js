@@ -18,10 +18,13 @@ module.exports = (router) => {
 	router.post('/api/addEvent', __.event.addEvent);
 	router.get('/api/get-pending-event', __.event.getPendingEvent);
 	router.put('/api/pending-event/:eventid', __.event.updatePendingEvent);
-	router.delete('/api/pending-event/:eventid', __.event.deleteEvent);
-	
+	router.delete('/api/event/:eventid', __.event.deleteEvent);
+	router.put('/api/event/:eventid', __.event.editEvent);
+
 	router.get('/api/get-venues', __.venue.getAll);
 	router.post('/api/addVenue', __.venue.addVenue);
+	router.put('/api/venue/:venueid', __.venue.editVenue);
+	router.delete('/api/venue/:venueid', __.venue.deleteVenue);
 
 	router.all('*', (req, res) => {
 		res.status(404).send({message : 'Unmatched route. =(('});

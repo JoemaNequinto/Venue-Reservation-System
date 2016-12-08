@@ -127,7 +127,7 @@
 
 			$http({
 				method: 'DELETE',
-				url: '/api/pending-event/'+data,
+				url: '/api/event/'+data,
 				headers: headers
 			})
 			.then((res) => {

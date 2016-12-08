@@ -47,7 +47,7 @@
 			}
 			AdminService.addEvent(data)
 				.then((data) => {
-					return Materialize.toast("Event Added.",2000,'',function(){window.location.reload();});
+					return Materialize.toast("Event Added.",2000,'',function(){$scope.getpendingEvents();});
 				}, (err) => {
 					throw new Error(err);
 				});
@@ -71,7 +71,7 @@
 		$scope.approveEvent = (data) => {
 			AdminService.approveEvent(data)
 				.then((data) => {
-					return Materialize.toast("Event Approved!", 2000, '', function(){window.location.reload();});
+					return Materialize.toast("Event Approved!", 2000, '', function(){$scope.getpendingEvents();});
 				}, (err) => {
 					throw new Error(err);
 				});
@@ -79,7 +79,7 @@
 		$scope.disapproveEvent = (data) => {
 			AdminService.disapproveEvent(data)
 				.then((data) => {
-					return Materialize.toast("Event Deleted!", 2000, '', function(){window.location.reload();});
+					return Materialize.toast("Event Deleted!", 2000, '', function(){$scope.getpendingEvents();});
 				}, (err) => {
 					throw new Error(err);
 				});
@@ -87,7 +87,7 @@
 		$scope.approveAccount = (data) => {
 			AdminService.approveAccount(data)
 				.then((data) => {
-					return Materialize.toast("Account Approved!", 2000, '', function(){window.location.reload();});
+					return Materialize.toast("Account Approved!", 2000, '', function(){$scope.getpendingAccounts();});
 				}, (err) => {
 					throw new Error(err);
 				});
@@ -95,7 +95,7 @@
 		$scope.disapproveAccount = (data) => {
 			AdminService.disapproveAccount(data)
 				.then((data) => {
-					return Materialize.toast("Account Deleted!", 2000, '', function(){window.location.reload();});
+					return Materialize.toast("Account Deleted!", 2000, '', function(){$scope.getpendingAccounts();});
 				}, (err) => {
 					throw new Error(err);
 				});
