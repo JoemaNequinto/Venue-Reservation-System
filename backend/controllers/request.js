@@ -12,4 +12,4 @@ exports.getReservation = (req, res, next) => {
     	console.log(result);
         res.send(result);
     });
-} 
+}

@@ -3,9 +3,9 @@
 const importer = require('anytv-node-importer');
 
 module.exports = (router) => {
-	
+
 	const __ = importer.dirloadSync(__dirname + '/../controllers/');
-	
+
 	router.post('/api/signup', __.account.signup);
 	router.post('/api/login', __.account.login);
 	router.get('/api/logout', __.account.logout);
