@@ -17,7 +17,7 @@
 }
 
 /*li {
-    background: red;
+background: red;
 }*/
 
 .card {
@@ -296,7 +296,7 @@ h3 {
 }
 
 .event-content #event-details{
-        font-family: 'Lato Black';
+    font-family: 'Lato Black';
     font-size: 15px;
 }
 
@@ -324,7 +324,7 @@ h3 {
 
 .pending-user{
     font-family: 'Lato Semibold';
-    font-style: italic; 
+    font-style: italic;
 }
 
 
@@ -370,7 +370,7 @@ h3 {
 
 
 .entry-b{
-        font-family: 'Lato Black';
+    font-family: 'Lato Black';
     font-size: 15px;
 }
 
@@ -381,7 +381,17 @@ h3 {
 
 
 .event-content #event-time{
-    
+
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: rgba(0,0,0,0);
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid rgba(0,0,0,0);
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0);
 }
 
 
@@ -393,8 +403,6 @@ h3 {
 .generate-btn:hover{
     background-color: #AA2F3D;
 }
-
-
 
 .collapsible-header.no-pending {
     color: #666;
@@ -423,3 +431,4 @@ h3 {
         font-family: 'Lato Black';
     font-size: 15px;
 }
+

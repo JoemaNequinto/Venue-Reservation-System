@@ -63,8 +63,21 @@
     padding-bottom: 0px;
     border-bottom: 0px;
     height: 300px;
-    overflow: hidden;
     border-bottom: 5px solid #e14658;
+    overflow: scroll;
+}
+
+#activity-log-body {
+    padding: 0px;
+}
+
+#activity-log::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+#activity-log::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }
 
 #activity-log-header {
@@ -75,13 +88,9 @@
     text-align: center;
 }
 
-#activity-log-body {
-    padding: 0px;
-}
-
 .activity {
     background: #e8e5e5;
-    padding: 10px 50px;
+    padding: 5px 20px;
     line-height: 3px;
     font-family: 'Lato Semibold';
     font-weight: 500;
@@ -136,4 +145,9 @@
 
 #all-reservations {
     color: black;
+}
+
+td, th {
+    padding: 5px 20px;
+    font-weight: bold;
 }

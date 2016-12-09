@@ -246,6 +246,13 @@
 			if($scope.password1 != $scope.password2){
 				return utility.errorHandler("Password do not match!");
 			} else {
+				$scope.getCurrentUserInfo();
+				$scope.userinfo.firstname = $scope.first_name;
+				$scope.userinfo.middlename = $scope.middle_name;
+				$scope.userinfo.lastname = $scope.last_name;
+				$scope.userinfo.email = $scope.email;
+				$scope.userinfo.password = $scope.password1;
+
 				const password = $scope.password1;
 				const data = {
 					FirstName: $scope.first_name,
