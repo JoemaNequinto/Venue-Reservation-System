@@ -7,6 +7,7 @@
 	function UserCtrl($scope, $filter, $location, UserService) {
 
 		$scope.events = [];
+		$scope.myevents = [];
 		$scope.venues = [];
 		$scope.people = [];
 		$scope.reservation = [];
@@ -25,10 +26,13 @@
 				userid = data.data.id;
 				$scope.userid = data.data.id;
 				$scope.userinfo = data.data;
+
 				$scope.updateProfile();
 				$scope.getReservation(data.data.id);
 				$scope.getvenues();
-				console.log(data);
+				$scope.getMyEvents();
+
+				// console.log(data);
 			}, (err) => {
 				throw new Error(err);
 			});
@@ -51,7 +55,6 @@
 				throw new Error(err);
 			});
 		}
-
 
 		$scope.signup = () => {
 			if (!$scope.FirstName) {
@@ -163,6 +166,16 @@
 			});
 		}
 
+		$scope.getMyEvents = () => {
+			UserService.getMyEvents($scope.userid)
+			.then((data) => {
+				$scope.myevents = data.data;
+				// console.log($scope.myevents);
+			}, (err) => {
+				throw new Error(err);
+			});
+		}
+
 		$scope.updateEventModal = (id, name, details, eventdate, starttime, endtime) => {
 			const date = $filter('date')(eventdate, "yyyy-MM-dd");
 			const time1 = $filter('date')(starttime, "shortTime");
@@ -198,6 +211,7 @@
 			$('input#latitude').val(latitude);
 			$('.labelText').addClass('active');
 		}
+
 		$scope.updateProfile = () => {
 			const data = {
 				firstname: $scope.userinfo.firstname,
@@ -214,6 +228,7 @@
 			$('#email').val(data.email);
 			$('#password1').val(data.password);
 		}
+
 		$scope.editProfile = () => {
 			if (!$scope.first_name) {
 				return utility.errorHandler("First name is required!");
@@ -247,6 +262,7 @@
 				});
 			}
 		}
+
 		$scope.editEvent = () => {
 			const date = $filter('date')($scope.NewEventDate, "yyyy-MM-dd");
 			const starttime = $filter('date')($scope.NewEventStartTime, "h:mm a");
@@ -302,6 +318,15 @@
 			});
 		}
 
+		$scope.deleteUser = (data) => {
+			UserService.deleteUser(data)
+			.then((data) => {
+				return Materialize.toast("User Deleted.", 2000, '', function(){$scope.getpeople();});
+			}, (err) => {
+				throw new Error(err);
+			});
+		}
+
 		$scope.getvenues = () => {
 			UserService.getvenues()
 			.then((data) => {
@@ -332,5 +357,6 @@
 				throw new Error(err);
 			});
 		}
+
 	}
 })();

@@ -49,60 +49,8 @@
         <div id="card-wrapper">
             <div class="col s12">
 
-                <div class="col s6" class="top-panel">
+                <div class="col s6 top-panel">
                     <div class="card dash-card" id="activity-log">
-                        <div class="s12" id="activity-log-header">Pinned Events</div>
-                        <div class="s12" id="activity-log-body">
-                            <ul>
-                                <li class="activity">
-                                    <p class="activity-title">UP Bugkos Pizza Party</p>
-                                    <p>November 11, 2016 &bullet; 77 Events Place</p>
-                                </li>
-                                <li class="activity">
-                                    <p class="activity-title">Open Air Screen</p>
-                                    <p>November 9, 2016 &bullet; Freedom Park</p>
-                                </li>
-                                <li class="activity">
-                                    <p class="activity-title">Hydro Laguna</p>
-                                    <p>November 4, 2016 &bullet; Calamba, Laguna</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s3" class="top-panel">
-                    <div class="card" id="view-all-events">
-                        <div class="card-image">
-                            <img alt="events" src="assets/images/events-img.jpg"/>
-                        </div>
-                        <div class="card-content">
-                            <p>See what's happening on your neighborhood!</p>
-                        </div>
-                        <div class="card-content card-link-wrapper">
-                            <a href="#/user/events" class="card-link">View All Events</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s3" class="top-panel">
-                    <div class="card" id="view-all-venues">
-                        <div class="card-image">
-                            <img alt="events" src="assets/images/venues-img.jpg"/>
-                        </div>
-                        <div class="card-content">
-                            <p>More venues for your upcoming events!</p>
-                        </div>
-                        <div class="card-content card-link-wrapper" style="padding:20px">
-                            <a href="#/user/venues" class="card-link">View All Venues</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12">
-                <div class="col s6">
-                    <div class="card dash-card" id="request-wrapper">
                         <div class="s12" id="activity-log-header">Reservation Requests</div>
                         <div class="s12" id="activity-log-body">
                             <ul>
@@ -120,12 +68,59 @@
                         </div>
                     </div>
                 </div>
-                <div class="col s6">
-                    <div class="card-panel" id="notification-wrapper">
-                        Notification
-                        <div class="notification">Venue reservation for event has been approved.</div>
-                        <div class="notification">Event submitted for approval.</div>
+
+                <div class="col s3 top-panel">
+                    <div class="card" id="view-all-events">
+                        <div class="card-image">
+                            <img alt="events" src="assets/images/events-img.jpg"/>
+                        </div>
+                        <div class="card-content">
+                            <p>See what's happening on your neighborhood!</p>
+                        </div>
+                        <div class="card-content card-link-wrapper">
+                            <a href="#/user/events" class="card-link">View All Events</a>
+                        </div>
                     </div>
+                </div>
+
+                <div class="col s3 top-panel">
+                    <div class="card" id="view-all-venues">
+                        <div class="card-image">
+                            <img alt="events" src="assets/images/venues-img.jpg"/>
+                        </div>
+                        <div class="card-content">
+                            <p>More venues for your upcoming events!</p>
+                        </div>
+                        <div class="card-content card-link-wrapper" style="padding:20px">
+                            <a href="#/user/venues" class="card-link">View All Venues</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12">
+                <div class="card dash-card" id="all-reservations">
+                    <table class="striped">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Event Name</th>
+                                <th data-field="name">Venue</th>
+                                <th data-field="price">Event Date</th>
+                                <th data-field="price">Event Time</th>
+                                <th data-field="price">Event Details</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="item in myevents">
+                                <td>{{ item.EventName }}</td>
+                                <td>{{ item.Name }}</td>
+                                <td>{{ item.EventDate }}</td>
+                                <td>{{ item.EventStartTime }} - {{ item.EventEndTime }}</td>
+                                <td>{{ item.EventDetails }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -173,8 +168,8 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('.tooltipped').tooltip({delay: 50});
-        $('select').material_select();
-    });
+$(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+    $('select').material_select();
+});
 </script>

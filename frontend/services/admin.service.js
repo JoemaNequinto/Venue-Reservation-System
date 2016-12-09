@@ -21,7 +21,8 @@
 			disapproveEvent: disapproveEvent,
 			approveAccount: approveAccount,
 			disapproveAccount: disapproveAccount,
-			getCurrentUserInfo: getCurrentUserInfo
+			getCurrentUserInfo: getCurrentUserInfo,
+			getPendingCancellations: getPendingCancellations
 		}
 
 		return service;
@@ -42,7 +43,7 @@
 
 			return deferred.promise;
 		}
-		
+
 		function logout() {
 			let deferred = $q.defer();
 
@@ -125,6 +126,22 @@
 
 			return deferred.promise;
 		}
+		function getPendingCancellations() {
+			let deferred = $q.defer();
+
+			$http({
+				method: 'GET',
+				url: '/api/get-pending-cancellations',
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
 		function approveEvent(data) {
 			let deferred = $q.defer();
 
@@ -174,8 +191,8 @@
 			let deferred = $q.defer();
 
 			$http({
-				method: 'DELETE',
-				url: '/api/pending-account/'+data,
+				method: 'GET',
+				url: '/api/disapprove-account/'+data,
 				headers: headers
 			})
 			.then((res) => {

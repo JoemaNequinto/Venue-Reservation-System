@@ -185,3 +185,10 @@ border: solid red 1px;
     font-family: 'Lato Semibold';
     font-size: 20px;
 }
+
+.admin-badge {
+    background: #E14658;
+    color: white !important;
+    margin: auto 10px auto 5px;
+    padding: 5px;
+}

@@ -26,7 +26,6 @@ exports.addEvent = (req, res, next) => {
 	const request = [data.EventName, data.EventDetails, data.EventDate, data.EventStartTime, data.EventEndTime, data.Status, data.VenueId];
 	db.query(query, request, function(err, rows) {
 		if (err) {
-			console.log("error");
 			return res.status(500).send({code: err.code});
 		}
 		res.send(rows);
@@ -57,7 +56,6 @@ exports.reserveEvent = (req, res, next) => {
 				+ " VALUES((SELECT u.UserId FROM user u NATURAL JOIN person p where p.PersonId = ?), (SELECT max(EventId) FROM event), NOW())";
 	db.query(query, req.params.userid, function(err, rows) {
 		if (err) {
-			console.log("foreign error");
 			return res.status(500).send({code: err.code});
 		}
 		res.send(rows);
@@ -76,14 +74,44 @@ exports.getAll = (req, res, next) => {
 	});
 };
 
+exports.getUserEvent = (req, res, next) => {
+	const query = "SELECT * "
+		+ " FROM user_manages_event m, user u, person p, event e, venue v "
+		+ " WHERE m.UserId = u.UserId "
+		+ " AND u.PersonId = p.PersonId "
+		+ " AND p.PersonId = ? "
+		+ " AND m.EventId = e.EventId "
+		+ " AND v.VenueId = e.VenueId "
+		+ " AND e.Status = 1"
+		+ " ORDER BY e.EventDate DESC";
+	db.query(query, [req.params.userid], function(err, result) {
+		// console.log(result);
+		res.send(result);
+	});
+};
+
 exports.getPendingEvent = (req, res, next) => {
 	const query = "SELECT *"
-		+ " FROM event"
-		+ " WHERE Status = 0";
+		+ " FROM event e INNER JOIN venue v"
+		+ " ON e.VenueId = v.VenueId"
+		+ " WHERE e.Status = 0";
 	db.query(query, (err, result) => {
 		res.send(result);
 	});
 };
+
+exports.getPendingCancellations = (req, res, next) => {
+	console.log(req.session);
+	const query = "SELECT *"
+		+ " FROM event e INNER JOIN venue v"
+		+ " ON e.VenueId = v.VenueId"
+		+ " WHERE e.Status = 2";
+	db.query(query, (err, result) => {
+		console.log(result);
+		res.send(result);
+	});
+};
+
 
 exports.updatePendingEvent = (req, res, next) => {
 	var query = "UPDATE event"
