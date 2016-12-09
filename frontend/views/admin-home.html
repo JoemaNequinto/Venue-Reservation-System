@@ -204,25 +204,53 @@
 
             <div id="add-admin" class="modal-card">
                 <div class="modal-content">
-                    <h4>Add Admin</h4>
-                    <div class="input-field col s12">
-                        <input placeholder="Event Name" ng-model="EventName" id="event-name" type="text" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Event Details" ng-model="EventDetails" id="event-details" type="text" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <label for="date">Event Date</label>
-                        <input type="date" ng-model="EventDate" name="date" class="datepicker">
-                    </div>
-                    <div class="input-field col s12">
-                        <!-- <label for="start-time">Start Time</label> -->
-                        <input placeholder="Start Time" ng-model="EventStartTime" name="start-time" id="start-time" type="time" class="validate">
-                    </div>
-                    <div class="input-field col s12">
-                        <!-- <label for="end-time">End Time</label> -->
-                        <input placeholder="End Time" ng-model="EventEndTime" name="end-time" id="end-time" type="time" class="validate">
-                    </div>
+                    <h5 style="margin-top: 0px; margin-bottom: 25px;">Add Admin</h5>
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <input placeholder="Drew" ng-model="FirstName" id="first-name" type="text" class="validate" required>
+                            <label for="first-name">First Name</label>
+                        </div>
+                        <div class="input-field col s2">
+                            <input placeholder="S" ng-model="MiddleName" id="middle-initial" type="text" class="validate" required>
+                            <label for="middle-initial">M.I.</label>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Thirty" ng-model="LastName" id="last-name" type="text" class="validate" required>
+                            <label for="last-name">Last Name</label>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="drew30@up.edu.ph" ng-model="EmailAddress" id="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="" id="username" ng-model="Username" type="text" class="validate" required>
+                            <label for="username">Username</label>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder=" " id="password" ng-model="Password" type="password" class="validate" required>
+                            <label for="password">Password</label>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="09301233030" ng-model="ContactNo" id="contact-no" type="text" class="validate" required>
+                            <label for="contact-no">Contact No.</label>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Drew Dirty Squad (DDS)" ng-model="AffiliationName" id="affiliation" type="text" style="margin-bottom: 0px;">
+                            <label for="affiliation">Affiliation (Optional)</label>
+                        </div>
+                    </div>      
                     <div class="modal-footer">
                         <a href="#/admin/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
                     </div>
