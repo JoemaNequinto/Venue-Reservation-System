@@ -137,6 +137,7 @@
                 <ul>
                     <li id="add-venue-trig"><button class="btn-floating tooltipped" data-position="top" data-delay="50" data-tooltip="Add Venue" id="add-venue-fab"><i class="material-icons">place</i></button></li>
                     <li id="add-event-trig"><button class="btn-floating tooltipped" data-position="top" data-delay="50" data-tooltip="Add Event" id="add-venue-fab"><i class="material-icons">event</i></button></li>
+                    <li id="add-admin-trig"><button class="btn-floating tooltipped" data-position="top" data-delay="50" data-tooltip="Add Admin" id="add-venue-fab"><i class="material-icons">supervisor_account</i></button></li>
                 </ul>
             </div>
 
@@ -177,6 +178,33 @@
             <div id="add-event" class="modal-card">
                 <div class="modal-content">
                     <h4>Add New Event</h4>
+                    <div class="input-field col s12">
+                        <input placeholder="Event Name" ng-model="EventName" id="event-name" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Event Details" ng-model="EventDetails" id="event-details" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <label for="date">Event Date</label>
+                        <input type="date" ng-model="EventDate" name="date" class="datepicker">
+                    </div>
+                    <div class="input-field col s12">
+                        <!-- <label for="start-time">Start Time</label> -->
+                        <input placeholder="Start Time" ng-model="EventStartTime" name="start-time" id="start-time" type="time" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <!-- <label for="end-time">End Time</label> -->
+                        <input placeholder="End Time" ng-model="EventEndTime" name="end-time" id="end-time" type="time" class="validate">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#/admin/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="add-admin" class="modal-card">
+                <div class="modal-content">
+                    <h4>Add Admin</h4>
                     <div class="input-field col s12">
                         <input placeholder="Event Name" ng-model="EventName" id="event-name" type="text" class="validate">
                     </div>
