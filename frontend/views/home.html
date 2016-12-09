@@ -56,12 +56,11 @@
                             <ul>
                                 <li class="activity" ng-repeat="event in reservation">
                                     <div class="action-panel">
-                                        <h5 class="activity-title">{{ event.EventName }}</h5>
+                                        <h6 class="activity-title">{{ event.EventName }}</h6>
                                         <button class="btn-floating waves-effect waves-light tooltipped grey cancel-event"
                                         data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true"
                                         ng-click="cancelRequest(event.EventId)"></i></button>
                                     </div>
-                                    <p>{{ event.EventDetails }}</p>
                                     <p>Requested: {{ event.DateRequested }}</p>
                                 </li>
                             </ul>
@@ -99,28 +98,30 @@
             </div>
 
             <div class="col s12">
-                <div class="card dash-card" id="all-reservations">
-                    <table class="striped">
-                        <thead>
-                            <tr>
-                                <th data-field="id">Event Name</th>
-                                <th data-field="name">Venue</th>
-                                <th data-field="price">Event Date</th>
-                                <th data-field="price">Event Time</th>
-                                <th data-field="price">Event Details</th>
-                            </tr>
-                        </thead>
+                <div class="col s12">
+                    <div class="card dash-card" id="all-reservations">
+                        <table class="striped">
+                            <thead>
+                                <tr>
+                                    <th data-field="id">Event Name</th>
+                                    <th data-field="name">Venue</th>
+                                    <th data-field="price">Event Date</th>
+                                    <th data-field="price">Event Time</th>
+                                    <th data-field="price">Event Details</th>
+                                </tr>
+                            </thead>
 
-                        <tbody>
-                            <tr ng-repeat="item in myevents">
-                                <td>{{ item.EventName }}</td>
-                                <td>{{ item.Name }}</td>
-                                <td>{{ item.EventDate }}</td>
-                                <td>{{ item.EventStartTime }} - {{ item.EventEndTime }}</td>
-                                <td>{{ item.EventDetails }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <tbody>
+                                <tr ng-repeat="item in myevents">
+                                    <td>{{ item.EventName }}</td>
+                                    <td>{{ item.Name }}</td>
+                                    <td>{{ item.EventDate }}</td>
+                                    <td>{{ item.EventStartTime }} - {{ item.EventEndTime }}</td>
+                                    <td>{{ item.EventDetails }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
