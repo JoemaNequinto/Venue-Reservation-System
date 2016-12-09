@@ -61,6 +61,7 @@
                             <h3>Pending Events</h3>
                         </div>
                     </div>
+                    <div class="collapsible-header no-pending" ng-if="!pendingEvents.length">No Pending Events</div>
                     <ul class="collapsible z-depth-0" data-collapsible="expandable">
                         <li ng-repeat="event in pendingEvents">
                             <div class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i>{{ event.EventName }}</div>
@@ -85,6 +86,7 @@
                             <h3>Pending Accounts</h3>
                         </div>
                     </div>
+                    <div class="collapsible-header no-pending" ng-if="!pendingAccounts.length">No Pending Acoount</div>
                     <ul class="collapsible z-depth-0" data-collapsible="expandable">
                         <li ng-repeat="account in pendingAccounts">
                             <div class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i>{{ account.LastName }}, {{ account.FirstName }} {{ account.MiddleName }}</div>
@@ -104,9 +106,10 @@
                 <div class="pending-panel col s4" ng-init="getPendingCancellations()">
                     <div class="row pending-header">
                         <div class="col s12">
-                            <h3>Pending Cancellation</h3>
+                            <h3>Pending Cancellations</h3>
                         </div>
                     </div>
+                    <div class="collapsible-header no-pending" ng-if="!pendingCancellations.length">No Pending Cancellations</div>
                     <ul class="collapsible" data-collapsible="expandable">
                         <li ng-repeat="event in pendingCancellations">
                             <div class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i>{{ event.EventName }}</div>
