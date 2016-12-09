@@ -69,6 +69,7 @@
                                     <span id="event-details">{{ event.EventDetails }}</span> <br>
                                     <span>{{ event.EventDate | date : "fullDate"}}</span> <br>
                                     <span id="event-time">{{ event.EventStartTime }} - {{ event.EventEndTime }}</span><br>
+                                    {{ event.Name }}
                                     <div class="action-panel">
                                         <button class="btn-floating waves-effect waves-light tooltipped left-btn z-depth-0" data-position="top" data-delay="50" data-tooltip="Approve"><i class="fa fa-thumbs-up" aria-hidden="true" ng-click="approveEvent(event.EventId)"></i></button>
                                         <button class="btn-floating waves-effect waves-light tooltipped right-btn z-depth-0" data-position="top" data-delay="50" data-tooltip="Disapprove"><i class="fa fa-thumbs-down" aria-hidden="true" ng-click="disapproveEvent(event.EventId)"></i></button>
@@ -107,13 +108,14 @@
                         </div>
                     </div>
                     <ul class="collapsible" data-collapsible="expandable">
-                        <li ng-repeat="cancel in pendingCancellations">
+                        <li ng-repeat="event in pendingCancellations">
                             <div class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i>{{ event.EventName }}</div>
                             <div class="collapsible-body">
                                 <div class="event-content">
                                     {{ event.EventDetails }} <br>
                                     {{ event.EventDate | date : "fullDate"}} <br>
                                     {{ event.EventStartTime }} - {{ event.EventEndTime }}<br>
+                                    {{ event.Name }}
                                     <div class="action-panel">
                                         <button class="btn-floating waves-effect waves-light tooltipped red" data-position="top" data-delay="50" data-tooltip="Approve"><i class="fa fa-thumbs-up" aria-hidden="true" ng-click="approveEvent(event.EventId)"></i></button>
                                         <button class="btn-floating waves-effect waves-light tooltipped grey" data-position="top" data-delay="50" data-tooltip="Disapprove"><i class="fa fa-thumbs-down" aria-hidden="true" ng-click="disapproveEvent(event.EventId)"></i></button>

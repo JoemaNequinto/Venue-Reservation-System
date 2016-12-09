@@ -14,7 +14,9 @@ module.exports = (router) => {
 	router.get('/api/get-people', __.account.getAllPerson);
 	router.get('/api/get-pending-account', __.account.getPendingAccount);
 	router.put('/api/pending-account/:accountid', __.account.updatePendingAccount);
-	router.delete('/api/pending-account/:accountid', __.account.deleteAccount);
+	router.get('/api/delete-account/:accountid', __.account.deleteAccount);
+	router.get('/api/disapprove-account/:accountid', __.account.disapproveAccount);
+
 
 	router.get('/api/get-events', __.event.getAll);
 	router.post('/api/addEvent', __.event.addEvent);

@@ -18,6 +18,7 @@
 					throw new Error(err);
 				});
 		}
+
 		$scope.logout = () => {
 			AdminService.logout()
 				.then((res) => {
@@ -27,6 +28,7 @@
 					return utility.errorHandler("Something went wrong!");
 				});
 		}
+
 		$scope.addVenue = () => {
 			const data = {
 				Name : $scope.Name,
@@ -43,6 +45,7 @@
 					throw new Error(err);
 				});
 		}
+
 		$scope.addEvent = () => {
 			const date = $filter('date')($scope.EventDate, "yyyy-MM-dd");
 			const starttime = $filter('date')($scope.EventStartTime, "h:mm a");
@@ -61,6 +64,7 @@
 					throw new Error(err);
 				});
 		}
+
 		$scope.getpendingAccounts = () => {
 			AdminService.getpendingAccounts()
 				.then((data) => {
@@ -69,6 +73,7 @@
 					throw new Error(err);
 				});
 		}
+
 		$scope.getpendingEvents = () => {
 			AdminService.getpendingEvents()
 				.then((data) => {
@@ -77,14 +82,17 @@
 					throw new Error(err);
 				});
 		}
+
 		$scope.getPendingCancellations = () => {
 			AdminService.getPendingCancellations()
 				.then((data) => {
 					$scope.pendingCancellations = data.data;
+					// console.log($scope.pendingCancellations);
 				}, (err) => {
 					throw new Error(err);
 				});
 		}
+
 		$scope.approveEvent = (data) => {
 			AdminService.approveEvent(data)
 				.then((data) => {
@@ -93,6 +101,7 @@
 					throw new Error(err);
 				});
 		}
+
 		$scope.disapproveEvent = (data) => {
 			AdminService.disapproveEvent(data)
 				.then((data) => {
@@ -101,6 +110,7 @@
 					throw new Error(err);
 				});
 		}
+
 		$scope.approveAccount = (data) => {
 			AdminService.approveAccount(data)
 				.then((data) => {
@@ -109,6 +119,7 @@
 					throw new Error(err);
 				});
 		}
+
 		$scope.disapproveAccount = (data) => {
 			AdminService.disapproveAccount(data)
 				.then((data) => {
@@ -117,5 +128,6 @@
 					throw new Error(err);
 				});
 		}
+
 	}
 })();

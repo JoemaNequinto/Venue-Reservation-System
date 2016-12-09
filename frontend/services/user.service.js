@@ -28,7 +28,8 @@
 			searchMap: searchMap,
 			editProfile: editProfile,
 			cancelRequest: cancelRequest,
-			getMyEvents: getMyEvents
+			getMyEvents: getMyEvents,
+			deleteUser: deleteUser
 		}
 
 		return service;
@@ -218,6 +219,7 @@
 
 			return deferred.promise;
 		}
+
 		function editEvent(data, id) {
 			let deferred = $q.defer();
 			// console.log(data);
@@ -235,6 +237,7 @@
 
 			return deferred.promise;
 		}
+
 		function editVenue(data, id) {
 			let deferred = $q.defer();
 
@@ -252,6 +255,7 @@
 
 			return deferred.promise;
 		}
+
 		function deleteEvent(data) {
 			let deferred = $q.defer();
 
@@ -275,6 +279,24 @@
 			$http({
 				method: 'DELETE',
 				url: '/api/venue/'+data,
+				headers: headers
+			})
+			.then((res) => {
+					deferred.resolve(res);
+				}, (err) => {
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		}
+
+		function deleteUser(data) {
+			let deferred = $q.defer();
+
+			console.log(data);
+			$http({
+				method: 'GET',
+				url: '/api/delete-account/'+data,
 				headers: headers
 			})
 			.then((res) => {

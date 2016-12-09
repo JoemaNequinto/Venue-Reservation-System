@@ -32,7 +32,7 @@
 				$scope.getvenues();
 				$scope.getMyEvents();
 
-				console.log(data);
+				// console.log(data);
 			}, (err) => {
 				throw new Error(err);
 			});
@@ -55,7 +55,6 @@
 				throw new Error(err);
 			});
 		}
-
 
 		$scope.signup = () => {
 			if (!$scope.FirstName) {
@@ -171,7 +170,7 @@
 			UserService.getMyEvents($scope.userid)
 			.then((data) => {
 				$scope.myevents = data.data;
-				console.log($scope.myevents);
+				// console.log($scope.myevents);
 			}, (err) => {
 				throw new Error(err);
 			});
@@ -212,6 +211,7 @@
 			$('input#latitude').val(latitude);
 			$('.labelText').addClass('active');
 		}
+
 		$scope.updateProfile = () => {
 			const data = {
 				firstname: $scope.userinfo.firstname,
@@ -228,6 +228,7 @@
 			$('#email').val(data.email);
 			$('#password1').val(data.password);
 		}
+
 		$scope.editProfile = () => {
 			if (!$scope.first_name) {
 				return utility.errorHandler("First name is required!");
@@ -261,6 +262,7 @@
 				});
 			}
 		}
+
 		$scope.editEvent = () => {
 			const date = $filter('date')($scope.NewEventDate, "yyyy-MM-dd");
 			const starttime = $filter('date')($scope.NewEventStartTime, "h:mm a");
@@ -311,6 +313,15 @@
 			UserService.deleteVenue(data)
 			.then((data) => {
 				return Materialize.toast("Venue Deleted.", 2000, '', function(){$scope.getvenues();});
+			}, (err) => {
+				throw new Error(err);
+			});
+		}
+
+		$scope.deleteUser = (data) => {
+			UserService.deleteUser(data)
+			.then((data) => {
+				return Materialize.toast("User Deleted.", 2000, '', function(){$scope.getpeople();});
 			}, (err) => {
 				throw new Error(err);
 			});

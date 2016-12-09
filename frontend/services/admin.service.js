@@ -191,8 +191,8 @@
 			let deferred = $q.defer();
 
 			$http({
-				method: 'DELETE',
-				url: '/api/pending-account/'+data,
+				method: 'GET',
+				url: '/api/disapprove-account/'+data,
 				headers: headers
 			})
 			.then((res) => {

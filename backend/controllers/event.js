@@ -92,19 +92,22 @@ exports.getUserEvent = (req, res, next) => {
 
 exports.getPendingEvent = (req, res, next) => {
 	const query = "SELECT *"
-		+ " FROM event"
-		+ " WHERE Status = 0";
+		+ " FROM event e INNER JOIN venue v"
+		+ " ON e.VenueId = v.VenueId"
+		+ " WHERE e.Status = 0";
 	db.query(query, (err, result) => {
 		res.send(result);
 	});
 };
 
 exports.getPendingCancellations = (req, res, next) => {
+	console.log(req.session);
 	const query = "SELECT *"
-		+ " FROM event"
-		+ " WHERE Status = 2";
+		+ " FROM event e INNER JOIN venue v"
+		+ " ON e.VenueId = v.VenueId"
+		+ " WHERE e.Status = 2";
 	db.query(query, (err, result) => {
-		// console.log(result);
+		console.log(result);
 		res.send(result);
 	});
 };
