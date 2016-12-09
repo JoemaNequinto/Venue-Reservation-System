@@ -379,6 +379,7 @@ h3 {
     font-style: italic;
 }
 
+
 .event-content #event-time{
     
 }
@@ -415,4 +416,10 @@ h3 {
 .active-collapsible:hover.no-pending {
     color: #e14658;
     font-weight: bolder;
+}
+
+
+.collapsible-header{
+        font-family: 'Lato Black';
+    font-size: 15px;
 }

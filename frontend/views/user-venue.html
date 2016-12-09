@@ -50,30 +50,29 @@
 
         <div id="pending-wrapper">
 			<div class="pending-panel col s12" ng-init="getvenues()">
-                <div class="row">
-                	<div class="col s12">
-                		<div class="row">
-                			<div class="col s6">
-                				<h3>All Venues</h3>
-                			</div>
-                			<div class="col s6">
-                				<div class="input-field">
-                					<i class="material-icons prefix">search</i>
-                					<input type="text" id="search-input" ng-model="query">
-                					<label for="search-input">Search</label>
-                				</div>
-                			</div>
-                		</div>
-                	</div>
+                <div class="row  panel-header">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="col s8">
+                                <span style="margin-right: 10px;">All Venues</span>
+                            </div>
+                            <div class="col s4 search-bar" >
+                                <div class="input-field">
+                                    <i class="material-icons prefix black-text">search</i>
+                                    <input type="text" id="search-input" ng-model="query" placeholder="Search Events">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <ul class="collapsible" data-collapsible="expandable">
                     <li ng-repeat="venue in venues | filter:query">
                         <div class="collapsible-header"><i class="fa fa-map-marker" aria-hidden="true"></i>{{ venue.Name }}</div>
                         <div class="collapsible-body">
                             <div class="profile-content">
-                                {{ venue.Details }} <br>
-                                {{ venue.Status }} <br>
-                                Capacity: {{ venue.Capacity }}<br>
+                                 {{ venue.Details }} <br>
+                                <span class="entry-i">Capacity: {{ venue.Capacity }}</span><br>
+                                <span class="entry-b">{{ venue.Status }}</span> <br>
                             </div>
                         </div>
                     </li>

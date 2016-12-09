@@ -50,32 +50,31 @@
 
         <div id="pending-wrapper">
 			<div class="pending-panel col s12" ng-init="getevents()">
-                <div class="row">
-                	<div class="col s12">
-                		<div class="row">
-                			<div class="col s6">
-                				<h3>All Events</h3>
-                			</div>
-                			<div class="col s6">
-                				<div class="input-field">
-                					<i class="material-icons prefix">search</i>
-                					<input type="text" id="search-input" ng-model="query">
-                					<label for="search-input">Search</label>
-                				</div>
-                			</div>
-                		</div>
-                	</div>
+                <div class="row  panel-header">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="col s8">
+                                <span style="margin-right: 10px;">All Events</span>
+                            </div>
+                            <div class="col s4 search-bar" >
+                                <div class="input-field">
+                                    <i class="material-icons prefix black-text">search</i>
+                                    <input type="text" id="search-input" ng-model="query" placeholder="Search Events">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <ul class="collapsible" data-collapsible="expandable">
                     <li ng-repeat="event in events | filter:query">
                         <div class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i>{{ event.EventName }}</div>
                         <div class="collapsible-body">
                             <div class="profile-content">
-                                {{ event.EventDetails }} <br>
+                                <span class="entry-i">{{ event.EventDetails }}</span> <br>
                                 {{ event.EventDate | date : "fullDate"}} <br>
-                                {{ event.EventStartTime }} - {{ event.EventEndTime }}<br>
+                                <span class="entry-i">{{ event.EventStartTime }} - {{ event.EventEndTime }} &nbsp;&bullet;&nbsp; {{ event.Name }}</span><br>
                                 <div class="action-panel">
-                                    <button class="action-button"><i class="fa fa-thumb-tack" aria-hidden="true"></i></button>
+                                    <!-- <button class="action-button"><i class="fa fa-thumb-tack" aria-hidden="true"></i></button> -->
                                 </div>
                             </div>
                         </div>
