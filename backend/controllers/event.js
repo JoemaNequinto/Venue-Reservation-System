@@ -101,13 +101,13 @@ exports.getPendingEvent = (req, res, next) => {
 };
 
 exports.getPendingCancellations = (req, res, next) => {
-	console.log(req.session);
+	// console.log(req.session);
 	const query = "SELECT *"
 		+ " FROM event e INNER JOIN venue v"
 		+ " ON e.VenueId = v.VenueId"
 		+ " WHERE e.Status = 2";
 	db.query(query, (err, result) => {
-		console.log(result);
+		// console.log(result);
 		res.send(result);
 	});
 };
@@ -157,12 +157,20 @@ exports.editEvent = (req, res, next) => {
 };
 
 exports.deleteEvent = (req, res, next) => {
-	const query = "DELETE FROM event"
-		+ " WHERE EventId = ?";
+	var query = "DELETE FROM user_manages_event WHERE EventId = ?";
 	db.query(query, [req.params.eventid], (err, result) => {
 		if (err) {
 			return res.status(500).send({code: err.code});
 		}
-		res.send(result);
+		// res.send(result);
+		query = "DELETE FROM event WHERE EventId = ?";
+		db.query(query, [req.params.eventid], (err, result) => {
+			if (err) {
+				return res.status(500).send({code: err.code});
+			}
+			res.send(result);
+		});
+
 	});
+
 };
