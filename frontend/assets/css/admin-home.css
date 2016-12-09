@@ -17,7 +17,7 @@
 }
 
 /*li {
-    background: red;
+background: red;
 }*/
 
 .card {
@@ -296,7 +296,7 @@ h3 {
 }
 
 .event-content #event-details{
-        font-family: 'Lato Black';
+    font-family: 'Lato Black';
     font-size: 15px;
 }
 
@@ -334,7 +334,12 @@ h3 {
     border-bottom: 5px solid #e14658;
 }
 
-.panel-header h3{
+
+.panel-header .col.s8{
+    line-height: 82.67px;
+}
+
+.panel-header span{
     font-family: 'Lato Bold';
     font-size: 20px;
     margin: 29.5px 0px;
@@ -358,13 +363,14 @@ h3 {
     line-height: 50px;
 }
 
+
 .col.s4.search-bar{
     padding: 17.5px 0px;
 }
 
 
 .entry-b{
-        font-family: 'Lato Black';
+    font-family: 'Lato Black';
     font-size: 15px;
 }
 
@@ -378,11 +384,21 @@ h3 {
 }
 
 /* label focus color */
-  .input-field input[type=text]:focus + label {
+.input-field input[type=text]:focus + label {
     color: rgba(0,0,0,0);
 }
 /* label underline focus color */
-  .input-field input[type=text]:focus {
+.input-field input[type=text]:focus {
     border-bottom: 1px solid rgba(0,0,0,0);
     box-shadow: 0 1px 0 0 rgba(0,0,0,0);
-  }
+}
+
+
+.generate-btn{
+    background-color: #e14658;
+    text-transform: capitalize;
+}
+
+.generate-btn:hover{
+    background-color: #AA2F3D;
+}

@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="assets/css/admin-home.css">
+<script type="text/javascript" src="assets/js/jspdf.min.js"></script>
+<script type="text/javascript" src="assets/js/jspdf.plugin.autotable.js"></script>
+
 <script type="text/javascript" src="assets/js/auth.js"></script>
 <script type="text/javascript" src="assets/js/admin-all-users.js"></script>
 <script type="text/javascript" src="assets/js/defaults.js"></script>
@@ -59,7 +62,8 @@
                     <div class="col s12">
                         <div class="row">
                             <div class="col s8">
-                                <h3>All Users</h3>
+                                <span style="margin-right: 10px;">All Events</span>
+                                <btn class="waves-effect waves-light btn generate-btn z-depth-0" onclick="generatePDF()" style="margin-right: 10px; padding: 0px 15px;">Generate Report</btn>
                             </div>
                             <div class="col s4 search-bar" >
                                 <div class="input-field">
@@ -78,6 +82,12 @@
 								<span class="entry-b">{{ person.LastName }}, {{ person.FirstName }} {{ person.MiddleName }}</span> <br>
                                 {{ person.Username }} <br>
 								{{ person.EmailAddress }} <br>
+                                <span class="entry-i">Status:
+                                    <span ng-if="person.Status == 0">Not approved yet ({{ person.Status }})</span> 
+                                    <span ng-if="person.Status == 1">Approved ({{ person.Status }})</span>
+                                    <span ng-if="person.Status == 2">Granted admin privileges ({{ person.Status }})</span>
+                                    <span ng-if="person.Status == 3">Deleted account ({{ person.Status }})</span>
+                                </span><br>
 								<div class="action-panel">
 									<!-- <button class="btn-floating waves-effect waves-light tooltipped left-btn z-depth-0" data-position="top" data-delay="50" data-tooltip="Update"><i class="fa fa-pencil" aria-hidden="true" ng-click="updateVenueModal(venue.VenueId, venue.Name, venue.Capacity, venue.Details, venue.Status, venue.Longitude, venue.Latitude)" onclick="update()"></i></button> -->
 									<button class="btn-floating waves-effect waves-light tooltipped right-btn z-depth-0" data-position="top" data-delay="50" data-tooltip="Delete"><i class="fa fa-trash-o" aria-hidden="true" ng-click="deleteUser(person.PersonId)"></i></button>
@@ -86,6 +96,27 @@
                         </div>
                     </li>
                 </ul>
+                <table id="exportable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email Address</th>
+                            <th>Username</th>
+                            <th>Account Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="person in people | filter:query">
+                            <td>{{ person.FirstName }} {{ person.MiddleName }} {{ person.LastName }}</td>
+                            <td>{{ person.EmailAddress }}</td>
+                            <td>{{ person.Username }}</td>
+                            <td ng-if="person.Status == 0">Not yet approved</td>
+                            <td ng-if="person.Status == 1">Approved</td>
+                            <td ng-if="person.Status == 2">Granted admin privileges</td>
+                            <td ng-if="person.Status == 3">Deleted account</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
@@ -160,5 +191,40 @@
     });
     function update(){
         $('#modal1').openModal();
+    };
+</script>
+<script type="text/javascript">
+    function generatePDF() {
+        var centeredText = function(text, y) {
+            var textWidth = pdf.getStringUnitWidth(text) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
+            var textOffset = (pdf.internal.pageSize.width - textWidth) / 2;
+            pdf.setFontSize(50);
+            pdf.text(textOffset, y, text);
+        }
+        var pdfsize = 'a0';
+        var pdf = new jsPDF('l', 'pt', pdfsize);
+
+        var res = pdf.autoTableHtmlToJson(document.getElementById("exportable"));
+
+
+        centeredText("All Users ", 130);
+        pdf.autoTable(res.columns, res.data, {
+            startY: 200,
+            styles: {
+                overflow: 'linebreak',
+                fontSize: 40,
+                rowHeight: 100,
+                columnWidth: 'auto',
+            },
+
+            columnStyles: {
+                1: {
+                    columnWidth: 'auto'
+                }
+            }
+
+        });
+
+        pdf.output('datauri');
     };
 </script>
