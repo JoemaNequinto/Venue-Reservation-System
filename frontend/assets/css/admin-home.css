@@ -334,7 +334,12 @@ h3 {
     border-bottom: 5px solid #e14658;
 }
 
-.panel-header h3{
+
+.panel-header .col.s8{
+    line-height: 82.67px;
+}
+
+.panel-header span{
     font-family: 'Lato Bold';
     font-size: 20px;
     margin: 29.5px 0px;
@@ -358,6 +363,7 @@ h3 {
     line-height: 50px;
 }
 
+
 .col.s4.search-bar{
     padding: 17.5px 0px;
 }
@@ -375,4 +381,14 @@ h3 {
 
 .event-content #event-time{
     
+}
+
+
+.generate-btn{
+    background-color: #e14658;
+    text-transform: capitalize;
+}
+
+.generate-btn:hover{
+    background-color: #AA2F3D;
 }
