@@ -379,6 +379,7 @@ h3 {
     font-style: italic;
 }
 
+
 .event-content #event-time{
 
 }
@@ -402,3 +403,32 @@ h3 {
 .generate-btn:hover{
     background-color: #AA2F3D;
 }
+
+.collapsible-header.no-pending {
+    color: #666;
+    text-align: center;
+    transition: all 0.3s linear;
+}
+
+.collapsible-header:hover.no-pending {
+    color: #22252c;
+}
+
+.active-collapsible.no-pending {
+    color: #e14658;
+    font-weight: normal;
+    text-align: center;
+    font-size: 15px;
+}
+
+.active-collapsible:hover.no-pending {
+    color: #e14658;
+    font-weight: bolder;
+}
+
+
+.collapsible-header{
+        font-family: 'Lato Black';
+    font-size: 15px;
+}
+

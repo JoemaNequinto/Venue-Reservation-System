@@ -61,6 +61,7 @@
                             <h3>Pending Events</h3>
                         </div>
                     </div>
+                    <div class="collapsible-header no-pending" ng-if="!pendingEvents.length">No Pending Events</div>
                     <ul class="collapsible z-depth-0" data-collapsible="expandable">
                         <li ng-repeat="event in pendingEvents">
                             <div class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i>{{ event.EventName }}</div>
@@ -85,6 +86,7 @@
                             <h3>Pending Accounts</h3>
                         </div>
                     </div>
+                    <div class="collapsible-header no-pending" ng-if="!pendingAccounts.length">No Pending Acoount</div>
                     <ul class="collapsible z-depth-0" data-collapsible="expandable">
                         <li ng-repeat="account in pendingAccounts">
                             <div class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i>{{ account.LastName }}, {{ account.FirstName }} {{ account.MiddleName }}</div>
@@ -104,9 +106,10 @@
                 <div class="pending-panel col s4" ng-init="getPendingCancellations()">
                     <div class="row pending-header">
                         <div class="col s12">
-                            <h3>Pending Cancellation</h3>
+                            <h3>Pending Cancellations</h3>
                         </div>
                     </div>
+                    <div class="collapsible-header no-pending" ng-if="!pendingCancellations.length">No Pending Cancellations</div>
                     <ul class="collapsible" data-collapsible="expandable">
                         <li ng-repeat="event in pendingCancellations">
                             <div class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i>{{ event.EventName }}</div>
@@ -134,6 +137,7 @@
                 <ul>
                     <li id="add-venue-trig"><button class="btn-floating tooltipped" data-position="top" data-delay="50" data-tooltip="Add Venue" id="add-venue-fab"><i class="material-icons">place</i></button></li>
                     <li id="add-event-trig"><button class="btn-floating tooltipped" data-position="top" data-delay="50" data-tooltip="Add Event" id="add-venue-fab"><i class="material-icons">event</i></button></li>
+                    <li id="add-admin-trig"><button class="btn-floating tooltipped" data-position="top" data-delay="50" data-tooltip="Add Admin" id="add-venue-fab"><i class="material-icons">supervisor_account</i></button></li>
                 </ul>
             </div>
 
@@ -174,6 +178,33 @@
             <div id="add-event" class="modal-card">
                 <div class="modal-content">
                     <h4>Add New Event</h4>
+                    <div class="input-field col s12">
+                        <input placeholder="Event Name" ng-model="EventName" id="event-name" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Event Details" ng-model="EventDetails" id="event-details" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <label for="date">Event Date</label>
+                        <input type="date" ng-model="EventDate" name="date" class="datepicker">
+                    </div>
+                    <div class="input-field col s12">
+                        <!-- <label for="start-time">Start Time</label> -->
+                        <input placeholder="Start Time" ng-model="EventStartTime" name="start-time" id="start-time" type="time" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <!-- <label for="end-time">End Time</label> -->
+                        <input placeholder="End Time" ng-model="EventEndTime" name="end-time" id="end-time" type="time" class="validate">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#/admin/home" class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="addEvent()">ADD</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="add-admin" class="modal-card">
+                <div class="modal-content">
+                    <h4>Add Admin</h4>
                     <div class="input-field col s12">
                         <input placeholder="Event Name" ng-model="EventName" id="event-name" type="text" class="validate">
                     </div>

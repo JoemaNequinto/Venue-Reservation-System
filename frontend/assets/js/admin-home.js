@@ -20,6 +20,11 @@ $(document).ready(function(){
         $("#add-event").fadeIn("fast");
     });
 
+$("#add-admin-trig").click(function(){
+    $(".modal-card").fadeOut("fast");
+    $("#add-admin").fadeIn("fast");
+});
+
     $("#overlay").click(function(){
         $(this).hide();
         $(".modal-card").fadeOut("fast");
